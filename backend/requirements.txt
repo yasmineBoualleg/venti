@@ -1,0 +1,14 @@
+Django>=5.0.0
+djangorestframework>=3.14.0
+django-cors-headers>=4.3.1
+django-environ>=0.11.2
+Pillow>=10.0.0  # For image handling
+python-dotenv>=1.0.0
+google-auth>=2.25.0  # For Google authentication
+django-filter>=23.5  # For filtering in DRF
+drf-yasg>=1.21.7  # For API documentation
+django-storages>=1.14  # For media file handling
+psycopg2-binary>=2.9.9  # For PostgreSQL (optional)
+gunicorn>=21.2.0  # For production deployment
+whitenoise>=6.6.0  # For serving static files
+django-cleanup>=8.0.0  # For automatic file cleanup 
