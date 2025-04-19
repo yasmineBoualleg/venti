@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+# venti
+all in one platform for university, students, teachers and brands
+>>>>>>> ad69d3cff99e1a099173999cfa86a58fb4800eda
 # Venti - Academic Social Platform
 
 Venti is a comprehensive academic social platform that combines social networking, communication, and educational resources in one place. Built with React, Django, and Firebase, it provides a seamless experience for students and educators.
@@ -85,4 +90,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgments
 
 - Thanks to all contributors
+<<<<<<< HEAD
 - Special thanks to the open-source community
+=======
+- Special thanks to the open-source community
+>>>>>>> ad69d3cff99e1a099173999cfa86a58fb4800eda
