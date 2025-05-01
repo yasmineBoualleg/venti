@@ -1,18 +1,14 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { 
-  User,
-  GoogleAuthProvider,
-  signInWithPopup,
-  signOut,
-  onAuthStateChanged
-} from 'firebase/auth';
+import { User } from 'firebase/auth';
 import { auth } from '../config/firebase';
+import { onAuthStateChanged } from 'firebase/auth';
+import { signInWithGoogle, signOut } from '../api/auth';
 
 interface AuthContextType {
   user: User | null;
   loading: boolean;
-  signInWithGoogle: () => Promise<void>;
-  logout: () => Promise<void>;
+  signInWithGoogle: () => Promise<User>;
+  signOut: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -42,30 +38,11 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     return () => unsubscribe();
   }, []);
 
-  const signInWithGoogle = async () => {
-    try {
-      const provider = new GoogleAuthProvider();
-      await signInWithPopup(auth, provider);
-    } catch (error) {
-      console.error('Error signing in with Google:', error);
-      throw error;
-    }
-  };
-
-  const logout = async () => {
-    try {
-      await signOut(auth);
-    } catch (error) {
-      console.error('Error signing out:', error);
-      throw error;
-    }
-  };
-
   const value = {
     user,
     loading,
     signInWithGoogle,
-    logout
+    signOut
   };
 
   return (

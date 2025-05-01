@@ -2,17 +2,16 @@ import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAazjVFAnmLv6sd_eTar0_dZYCs-AOEuOM",
-  authDomain: "venti-login.firebaseapp.com",
-  projectId: "venti-login",
-  storageBucket: "venti-login.firebasestorage.app",
-  messagingSenderId: "184192612892",
-  appId: "1:184192612892:web:29705b8b212f19a4f5bdd9",
-  measurementId: "G-YESX7L8NQP"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-export { auth }; 
+export const auth = getAuth(app);
+export default app; 

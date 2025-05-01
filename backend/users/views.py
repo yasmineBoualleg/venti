@@ -5,24 +5,9 @@ from django.contrib.auth import get_user_model
 from .models import Profile
 from .serializers import UserSerializer, UserCreateSerializer, ProfileSerializer
 from django.shortcuts import get_object_or_404
+from .permissions import IsOwnerOrReadOnly
 
 User = get_user_model()
-
-class IsOwnerOrReadOnly(permissions.BasePermission):
-    """Custom permission to only allow owners of an object to edit it."""
-    
-    def has_object_permission(self, request, view, obj):
-        if request.method in permissions.SAFE_METHODS:
-            return True
-        
-        # For User objects
-        if isinstance(obj, User):
-            return obj == request.user
-        # For Profile objects
-        elif isinstance(obj, Profile):
-            return obj.user == request.user
-        
-        return False
 
 class UserViewSet(viewsets.ModelViewSet):
     """ViewSet for viewing and editing User instances."""
@@ -66,8 +51,64 @@ class ProfileViewSet(viewsets.ModelViewSet):
         serializer.save(user=self.request.user)
     
     @action(detail=False, methods=['get'])
+    @action(detail=False, methods=['get'])
     def me(self, request):
-        """Get the current user's profile."""
-        profile = get_object_or_404(Profile, user=request.user)
+        """Get the current user's profile (create if missing)."""
+        profile, _ = Profile.objects.get_or_create(user=request.user)
         serializer = self.get_serializer(profile)
-        return Response(serializer.data) 
+        return Response(serializer.data)
+    
+
+    @action(detail=True, methods=['post'])
+    def follow(self, request, pk=None):
+        """Follow a user."""
+        profile = self.get_object()
+        if profile.user == request.user:
+            return Response(
+                {'error': 'You cannot follow yourself'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
+        request.user.following.add(profile.user)
+        return Response({'status': 'following'})
+
+    @action(detail=True, methods=['post'])
+    def unfollow(self, request, pk=None):
+        """Unfollow a user."""
+        profile = self.get_object()
+        request.user.following.remove(profile.user)
+        return Response({'status': 'unfollowed'})
+
+    @action(detail=True, methods=['get'])
+    def followers(self, request, pk=None):
+        """Get a user's followers."""
+        profile = self.get_object()
+        followers = profile.user.followers.all()
+        return Response({
+            'followers': [
+                {
+                    'id': user.id,
+                    'username': user.username,
+                    'email': user.email,
+                    'profile_picture': user.profile.avatar.url if user.profile.avatar else None
+                }
+                for user in followers
+            ]
+        })
+
+    @action(detail=True, methods=['get'])
+    def following(self, request, pk=None):
+        """Get users that a user is following."""
+        profile = self.get_object()
+        following = profile.user.following.all()
+        return Response({
+            'following': [
+                {
+                    'id': user.id,
+                    'username': user.username,
+                    'email': user.email,
+                    'profile_picture': user.profile.avatar.url if user.profile.avatar else None
+                }
+                for user in following
+            ]
+        }) 

@@ -40,6 +40,12 @@ dist/
 dist-ssr/
 *.local
 
+# Frontend specific
+frontend/.env
+frontend/.env.local
+frontend/.env.development
+frontend/.env.production
+
 # IDE
 .idea/
 .vscode/

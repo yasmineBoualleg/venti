@@ -43,8 +43,12 @@ export const authAPI = {
 };
 
 export const userAPI = {
-  getProfile: () => api.get('/users/profile'),
-  updateProfile: (data: any) => api.put('/users/profile', data),
+  getProfile: () => api.get('/users/profiles/me/'),
+  updateProfile: (data: any) => api.put('/users/profiles/me/', data),
+  follow: (profileId: number) => api.post(`/users/profiles/${profileId}/follow/`),
+  unfollow: (profileId: number) => api.post(`/users/profiles/${profileId}/unfollow/`),
+  getFollowers: (profileId: number) => api.get(`/users/profiles/${profileId}/followers/`),
+  getFollowing: (profileId: number) => api.get(`/users/profiles/${profileId}/following/`),
 };
 
 export const clubAPI = {

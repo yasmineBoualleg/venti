@@ -1,30 +1,11 @@
 import { auth } from '../config/firebase';
 import { GoogleAuthProvider, signInWithPopup, signOut as firebaseSignOut } from 'firebase/auth';
-import axios from 'axios';
-
-const api = axios.create({
-  baseURL: '/api',
-});
 
 export const signInWithGoogle = async () => {
   try {
     const provider = new GoogleAuthProvider();
     const result = await signInWithPopup(auth, provider);
-    
-    // Send the user info to Django backend
-    const response = await api.post('/auth/google/', {
-      uid: result.user.uid,
-      email: result.user.email,
-      displayName: result.user.displayName,
-      photoURL: result.user.photoURL
-    });
-
-    // Store the Django session/token
-    if (response.data.token) {
-      localStorage.setItem('token', response.data.token);
-    }
-
-    return response.data;
+    return result.user;
   } catch (error) {
     console.error('Error signing in with Google:', error);
     throw error;
@@ -34,8 +15,6 @@ export const signInWithGoogle = async () => {
 export const signOut = async () => {
   try {
     await firebaseSignOut(auth);
-    await api.post('/auth/logout/');
-    localStorage.removeItem('token');
   } catch (error) {
     console.error('Error signing out:', error);
     throw error;
