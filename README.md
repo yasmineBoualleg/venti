@@ -22,13 +22,10 @@ Venti is a comprehensive academic social platform that combines social networkin
 
 ## Tech Stack
 
-- **Frontend**: React, TypeScript, Tailwind CSS, Framer Motion
+- **Frontend**: React, TypeScript, Tailwind CSS
 - **Backend**: Django, Django REST Framework
 - **Authentication**: Firebase (Google Sign-In)
 - **Database**: PostgreSQL
-- **Deployment**: TBD
-
-## Getting Started
 
 ### Prerequisites
 
@@ -59,10 +56,6 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. Configure environment variables:
-- Create `.env` files in both frontend and backend directories
-- Add Firebase configuration
-- Set up database credentials
 
 5. Run the development servers:
 ```bash
@@ -73,25 +66,11 @@ npm run dev
 # Backend
 cd backend
 python manage.py runserver
+it is possible this doesnt work unless you specify the port 8001 for backend and 8000 for frontend
 ```
 
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
-
-- Thanks to all contributors
-<<<<<<< HEAD
-- Special thanks to the open-source community
-=======
-- Special thanks to the open-source community
->>>>>>> ad69d3cff99e1a099173999cfa86a58fb4800eda
