@@ -13,6 +13,8 @@ class User(AbstractUser):
     level = models.PositiveIntegerField(default=1)
     xp = models.PositiveIntegerField(default=0)
     xp_to_next_level = models.PositiveIntegerField(default=100)
+    # Comment: Add a field to store the Firebase UID for Google-authenticated users
+    firebase_uid = models.CharField(max_length=128, unique=True, null=True, blank=True)
     
     # Make email the username field
     USERNAME_FIELD = 'email'
@@ -59,7 +61,6 @@ class Profile(models.Model):
         validators=[MinValueValidator(2000)]
     )
     major = models.CharField(max_length=100, blank=True)
-    interests = models.ManyToManyField('clubs.Interest', blank=True)
     location = models.CharField(max_length=100, blank=True)
     linkedin_url = models.URLField(blank=True)
     github_url = models.URLField(blank=True)

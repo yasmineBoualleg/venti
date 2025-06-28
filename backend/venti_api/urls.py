@@ -9,6 +9,7 @@ api_patterns = [
     path('users/', include('users.urls')),
     path('activities/', include('activities.urls')),
     path('university/', include('university.urls')),
+    path('posts/', include('posts.urls')),
 ]
 
 urlpatterns = [

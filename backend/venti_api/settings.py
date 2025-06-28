@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'users',
-    'clubs',
     'posts',
     'activities',
     'university',
@@ -140,13 +139,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # CORS settings
 CORS_ALLOW_ALL_ORIGINS = True  # Only for development
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
+    "http://localhost:8000",
+    "http://127.0.0.1:8000","http://localhost:8001",
+    "http://127.0.0.1:8001",
 ]
 
 # REST Framework settings
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
+        # Comment: Enable FirebaseAuthentication for DRF
+        'core.authentication.FirebaseAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ],

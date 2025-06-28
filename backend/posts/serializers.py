@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Post, Poll, PollOption, Comment
+from .models import Post, Poll, PollOption, Comment, Notebook
 
 class PollOptionSerializer(serializers.ModelSerializer):
     vote_count = serializers.IntegerField(read_only=True)
@@ -104,3 +104,9 @@ class PostSerializer(serializers.ModelSerializer):
         if request and request.user.is_authenticated:
             return obj.likes.filter(id=request.user.id).exists()
         return False 
+
+class NotebookSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Notebook
+        fields = ['id', 'user', 'title', 'content', 'type', 'created_at', 'updated_at']
+        read_only_fields = ['id', 'user', 'created_at', 'updated_at'] 

@@ -6,8 +6,20 @@ from .models import Profile
 from .serializers import UserSerializer, UserCreateSerializer, ProfileSerializer
 from django.shortcuts import get_object_or_404
 from .permissions import IsOwnerOrReadOnly
+import firebase_admin
+from firebase_admin import auth as firebase_auth, credentials
+import os
 
 User = get_user_model()
+
+# Comment: Get the absolute path to the service account key, relative to this file
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+service_account_path = os.path.join(BASE_DIR, 'venti-login-firebase-adminsdk-fbsvc-3d4d24d680.json')
+# Comment: Use the dynamic path for the Firebase service account key
+cred = credentials.Certificate(service_account_path)
+
+if not firebase_admin._apps:
+    firebase_admin.initialize_app(cred)
 
 class UserViewSet(viewsets.ModelViewSet):
     """ViewSet for viewing and editing User instances."""
@@ -51,13 +63,52 @@ class ProfileViewSet(viewsets.ModelViewSet):
         serializer.save(user=self.request.user)
     
     @action(detail=False, methods=['get'])
-    @action(detail=False, methods=['get'])
     def me(self, request):
-        """Get the current user's profile (create if missing)."""
-        profile, _ = Profile.objects.get_or_create(user=request.user)
+        # Comment: Always allow the admin user by email, even if not authenticated
+        admin_email = 'yasmineboualleg260@gmail.com'
+        user = request.user
+
+        # Comment: If not authenticated, check for Bearer token in Authorization header
+        if not user or not user.is_authenticated:
+            auth_header = request.headers.get('Authorization')
+            if auth_header and auth_header.startswith('Bearer '):
+                token = auth_header.split(' ')[1]
+                try:
+                    # Comment: Verify the Firebase ID token
+                    decoded_token = firebase_auth.verify_id_token(token)
+                    firebase_uid = decoded_token.get('uid')
+                    email = decoded_token.get('email')
+                    from django.contrib.auth import get_user_model
+                    User = get_user_model()
+                    # Comment: Try to get the user by Firebase UID or email
+                    try:
+                        user = User.objects.get(firebase_uid=firebase_uid)
+                    except User.DoesNotExist:
+                        try:
+                            user = User.objects.get(email=email)
+                        except User.DoesNotExist:
+                            # Comment: Optionally, create a new user if not found
+                            user = User.objects.create_user(
+                                username=email.split('@')[0],
+                                email=email,
+                                firebase_uid=firebase_uid
+                            )
+                except Exception as e:
+                    return Response({'error': 'Invalid or expired Firebase token', 'detail': str(e)}, status=401)
+            else:
+                return Response({'error': 'Authentication required'}, status=401)
+
+        # Comment: If the user is the admin, always allow
+        if user.email == admin_email:
+            profile, _ = Profile.objects.get_or_create(user=user)
+            serializer = self.get_serializer(profile)
+            return Response(serializer.data)
+
+        if not user.is_authenticated:
+            return Response({'error': 'Authentication required'}, status=401)
+        profile, _ = Profile.objects.get_or_create(user=user)
         serializer = self.get_serializer(profile)
         return Response(serializer.data)
-    
 
     @action(detail=True, methods=['post'])
     def follow(self, request, pk=None):
@@ -112,3 +163,45 @@ class ProfileViewSet(viewsets.ModelViewSet):
                 for user in following
             ]
         }) 
+
+    @action(detail=False, methods=['patch', 'put'], url_path='me')
+    def update_me(self, request):
+        # Comment: Allow PATCH/PUT to /profiles/me/ to update the current user's profile
+        admin_email = 'yasmineboualleg260@gmail.com'
+        user = request.user
+        # Comment: If not authenticated, check for Bearer token in Authorization header
+        if not user or not user.is_authenticated:
+            auth_header = request.headers.get('Authorization')
+            if auth_header and auth_header.startswith('Bearer '):
+                token = auth_header.split(' ')[1]
+                try:
+                    # Comment: Verify the Firebase ID token
+                    decoded_token = firebase_auth.verify_id_token(token)
+                    firebase_uid = decoded_token.get('uid')
+                    email = decoded_token.get('email')
+                    from django.contrib.auth import get_user_model
+                    User = get_user_model()
+                    try:
+                        user = User.objects.get(firebase_uid=firebase_uid)
+                    except User.DoesNotExist:
+                        try:
+                            user = User.objects.get(email=email)
+                        except User.DoesNotExist:
+                            user = User.objects.create_user(
+                                username=email.split('@')[0],
+                                email=email,
+                                firebase_uid=firebase_uid
+                            )
+                except Exception as e:
+                    return Response({'error': 'Invalid or expired Firebase token', 'detail': str(e)}, status=401)
+            else:
+                return Response({'error': 'Authentication required'}, status=401)
+        # Comment: If the user is the admin, always allow
+        if user.email == admin_email or user.is_authenticated:
+            profile, _ = Profile.objects.get_or_create(user=user)
+            serializer = self.get_serializer(profile, data=request.data, partial=True)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data)
+            return Response(serializer.errors, status=400)
+        return Response({'error': 'Authentication required'}, status=401) 

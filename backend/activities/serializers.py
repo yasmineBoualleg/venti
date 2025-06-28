@@ -3,13 +3,12 @@ from .models import Activity
 
 class ActivitySerializer(serializers.ModelSerializer):
     user = serializers.SerializerMethodField()
-    club = serializers.SerializerMethodField()
     activity_text = serializers.SerializerMethodField()
 
     class Meta:
         model = Activity
         fields = [
-            'id', 'user', 'type', 'club', 'target_id', 'target_type',
+            'id', 'user', 'type', 'target_id', 'target_type',
             'data', 'created_at', 'is_public', 'activity_text'
         ]
         read_only_fields = ['user', 'activity_text']
@@ -21,16 +20,6 @@ class ActivitySerializer(serializers.ModelSerializer):
             'profile_picture': obj.user.profile.avatar.url if obj.user.profile.avatar else None,
             'level': obj.user.level if hasattr(obj.user, 'level') else None
         }
-
-    def get_club(self, obj):
-        if obj.club:
-            return {
-                'id': obj.club.id,
-                'name': obj.club.name,
-                'slug': obj.club.slug,
-                'cover_photo': obj.club.cover_photo.url if obj.club.cover_photo else None
-            }
-        return None
 
     def get_activity_text(self, obj):
         """Generate a human-readable description of the activity."""

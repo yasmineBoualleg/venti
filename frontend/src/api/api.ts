@@ -1,7 +1,9 @@
 import axios from 'axios';
+import { auth } from '../config/firebase';
 
 const api = axios.create({
-  baseURL: '/api',
+  //ALWAYS USE THIS  BASE FOR API CALLS I MESSED THE ENDPOINTS ...
+  baseURL: 'http://127.0.0.1:8001/api',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -9,14 +11,34 @@ const api = axios.create({
 
 // Request interceptor for adding auth token
 api.interceptors.request.use(
-  (config) => {
+  async (config) => {
+    // Get the token from localStorage (for Django sessions)
     const token = localStorage.getItem('token');
-    if (token) {
+    // Try to get the Firebase ID token if a user is logged in
+    let firebaseToken = null;
+    // Check if a user is logged in to Firebase
+    if (auth.currentUser) {
+      // Try to get the ID token from Firebase Auth
+      firebaseToken = await auth.currentUser.getIdToken();
+      // Comment: Log the Firebase ID token for debugging
+      console.log('Firebase ID token:', firebaseToken);
+    }
+    // If a Firebase ID token exists, use it as the Authorization header
+    if (firebaseToken) {
+      // Comment: Set the Authorization header to the Firebase ID token
+      config.headers.Authorization = `Bearer ${firebaseToken}`;
+      // Comment: Log the Authorization header for debugging
+      console.log('Authorization header:', config.headers.Authorization);
+    } else if (token) {
+      // Comment: Fallback to the token from localStorage if no Firebase token
       config.headers.Authorization = `Bearer ${token}`;
     }
+    // Comment: Return the config for the request
     return config;
   },
+  // Comment: Handle request errors
   (error) => {
+    // Comment: Reject the promise with the error
     return Promise.reject(error);
   }
 );
@@ -44,19 +66,11 @@ export const authAPI = {
 
 export const userAPI = {
   getProfile: () => api.get('/users/profiles/me/'),
-  updateProfile: (data: any) => api.put('/users/profiles/me/', data),
+  updateProfile: (data: any) => api.patch('/users/profiles/me/', data),
   follow: (profileId: number) => api.post(`/users/profiles/${profileId}/follow/`),
   unfollow: (profileId: number) => api.post(`/users/profiles/${profileId}/unfollow/`),
   getFollowers: (profileId: number) => api.get(`/users/profiles/${profileId}/followers/`),
   getFollowing: (profileId: number) => api.get(`/users/profiles/${profileId}/following/`),
-};
-
-export const clubAPI = {
-  getClubs: () => api.get('/clubs'),
-  getClubById: (id: string) => api.get(`/clubs/${id}`),
-  createClub: (data: any) => api.post('/clubs', data),
-  updateClub: (id: string, data: any) => api.put(`/clubs/${id}`, data),
-  deleteClub: (id: string) => api.delete(`/clubs/${id}`),
 };
 
 export const eventAPI = {

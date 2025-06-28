@@ -4,8 +4,9 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from django.db.models import Count, Q
-from .models import Post, Poll, PollOption, Comment
-from .serializers import PostSerializer, PollSerializer, PollOptionSerializer, CommentSerializer
+from .models import Post, Poll, PollOption, Comment, Notebook
+from .serializers import PostSerializer, PollSerializer, PollOptionSerializer, CommentSerializer, NotebookSerializer
+from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 
@@ -107,3 +108,13 @@ class CommentViewSet(viewsets.ModelViewSet):
         else:
             comment.likes.add(request.user)
             return Response({'status': 'liked'})
+
+class NotebookViewSet(viewsets.ModelViewSet):
+    serializer_class = NotebookSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Notebook.objects.filter(user=self.request.user)
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)

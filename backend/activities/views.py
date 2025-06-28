@@ -19,11 +19,6 @@ class ActivityViewSet(viewsets.ReadOnlyModelViewSet):
         if user_id:
             queryset = queryset.filter(user_id=user_id)
 
-        # Filter by club if specified
-        club_id = self.request.query_params.get('club', None)
-        if club_id:
-            queryset = queryset.filter(club_id=club_id)
-
         # Filter by type if specified
         activity_type = self.request.query_params.get('type', None)
         if activity_type:
@@ -39,4 +34,4 @@ class ActivityViewSet(viewsets.ReadOnlyModelViewSet):
                 Q(is_public=True) | Q(user=self.request.user)
             )
 
-        return queryset.select_related('user', 'club') 
+        return queryset.select_related('user') 

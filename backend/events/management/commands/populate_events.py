@@ -2,7 +2,6 @@ from django.core.management.base import BaseCommand
 from django.utils import timezone
 from django.contrib.auth import get_user_model
 from events.models import Event, EventParticipant
-from clubs.models import Club
 from datetime import timedelta
 
 User = get_user_model()
@@ -34,30 +33,12 @@ class Command(BaseCommand):
         user2.set_password('user123')
         user2.save()
 
-        # Create test clubs if they don't exist
-        tech_club, _ = Club.objects.get_or_create(
-            name='Tech Enthusiasts',
-            description='A club for technology lovers',
-            created_by=admin_user
-        )
-        tech_club.admins.add(admin_user)
-        tech_club.members.add(user1, user2)
-
-        art_club, _ = Club.objects.get_or_create(
-            name='Art Society',
-            description='Express yourself through art',
-            created_by=user1
-        )
-        art_club.admins.add(user1)
-        art_club.members.add(user2)
-
         # Create events
         now = timezone.now()
         events_data = [
             {
                 'title': 'Python Workshop',
                 'description': 'Learn Python programming basics',
-                'club': tech_club,
                 'organizer': admin_user,
                 'start_date': now + timedelta(days=7),
                 'end_date': now + timedelta(days=7, hours=2),
@@ -71,7 +52,6 @@ class Command(BaseCommand):
             {
                 'title': 'Virtual Art Exhibition',
                 'description': 'Showcase your digital art',
-                'club': art_club,
                 'organizer': user1,
                 'start_date': now + timedelta(days=14),
                 'end_date': now + timedelta(days=15),
@@ -85,7 +65,6 @@ class Command(BaseCommand):
             {
                 'title': 'Ongoing Hackathon',
                 'description': 'Build innovative solutions',
-                'club': tech_club,
                 'organizer': admin_user,
                 'start_date': now - timedelta(hours=12),
                 'end_date': now + timedelta(hours=12),
@@ -98,7 +77,6 @@ class Command(BaseCommand):
             {
                 'title': 'Past Tech Talk',
                 'description': 'Discussion about AI trends',
-                'club': tech_club,
                 'organizer': user1,
                 'start_date': now - timedelta(days=7),
                 'end_date': now - timedelta(days=7, hours=2),

@@ -6,11 +6,10 @@ const Sidebar: React.FC = () => {
 
   const navItems = [
     { path: '/', label: 'Landing', icon: 'home' },
-    { path: '/profile', label: 'Profile', icon: 'user' },
-    { path: '/clubs', label: 'Clubs', icon: 'users' },
     { path: '/university', label: 'University', icon: 'academic-cap' },
     { path: '/events', label: 'Events', icon: 'calendar' },
     { path: '/opportunities', label: 'Opportunities', icon: 'briefcase' },
+    { path: '/profile', label: 'Profile', icon: 'user' },
   ];
 
   return (

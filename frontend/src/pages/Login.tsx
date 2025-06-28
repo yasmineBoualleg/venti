@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState, Suspense, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
@@ -8,12 +8,21 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { signInWithGoogle } = useAuth();
+  const preloadRef = useRef(false);
+
+  useEffect(() => {
+    if (!preloadRef.current) {
+      import('../api/auth').then(() => {
+        preloadRef.current = true;
+      });
+    }
+  }, []);
 
   const handleGoogleSignIn = async () => {
     try {
       setLoading(true);
       await signInWithGoogle();
-      navigate('/profile');
+      navigate('/home');
     } catch (error: any) {
       setError(error.message);
     } finally {
@@ -47,6 +56,7 @@ const Login = () => {
             src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
             alt="Google"
             className="h-5 w-5"
+            loading="lazy"
           />
           <span>{loading ? 'Signing in...' : 'Continue with Google'}</span>
         </button>

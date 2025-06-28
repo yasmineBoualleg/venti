@@ -19,6 +19,7 @@ const Navbar = () => {
               src="/venti-icon.svg" 
               alt="Venti" 
               className="h-8 w-8 transition-transform group-hover:scale-110" 
+              loading='lazy'
             />
             <span className="ml-2 text-xl font-bold text-gray-900">Venti</span>
           </Link>

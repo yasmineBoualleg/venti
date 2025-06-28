@@ -1,6 +1,5 @@
 from django.db import models
 from django.conf import settings
-from clubs.models import Club
 
 class Post(models.Model):
     """Base model for all types of posts."""
@@ -12,7 +11,6 @@ class Post(models.Model):
     ]
 
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='posts')
-    club = models.ForeignKey(Club, on_delete=models.CASCADE, related_name='club_posts', null=True, blank=True)
     type = models.CharField(max_length=10, choices=TYPE_CHOICES)
     title = models.CharField(max_length=200)
     content = models.TextField()
@@ -67,3 +65,15 @@ class Comment(models.Model):
         
     def __str__(self):
         return f"Comment by {self.author.username} on {self.post.title}"
+
+class Notebook(models.Model):
+    """Model for user notebooks."""
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='notebooks')
+    title = models.CharField(max_length=255)
+    content = models.JSONField(blank=True, default=dict)
+    type = models.CharField(max_length=50, default='copybook')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.title} ({self.user.email})"

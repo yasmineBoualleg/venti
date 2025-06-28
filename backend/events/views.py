@@ -19,11 +19,6 @@ class EventViewSet(LikeableMixin, viewsets.ModelViewSet):
     def get_queryset(self):
         queryset = Event.objects.all()
         
-        # Filter by club
-        club_id = self.request.query_params.get('club', None)
-        if club_id:
-            queryset = queryset.filter(club_id=club_id)
-
         # Filter by organizer
         organizer_id = self.request.query_params.get('organizer', None)
         if organizer_id:

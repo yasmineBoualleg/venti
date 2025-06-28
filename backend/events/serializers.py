@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from core.serializers import UserStampedSerializer, LikeableSerializer
 from .models import Event, EventParticipant
-from clubs.serializers import ClubSerializer
 
 class EventParticipantSerializer(serializers.ModelSerializer):
     user = serializers.SerializerMethodField()
@@ -19,11 +18,6 @@ class EventParticipantSerializer(serializers.ModelSerializer):
         }
 
 class EventSerializer(UserStampedSerializer, LikeableSerializer):
-    club = ClubSerializer(read_only=True)
-    club_id = serializers.PrimaryKeyRelatedField(
-        source='club', write_only=True, 
-        queryset=Club.objects.all()
-    )
     organizer = serializers.SerializerMethodField()
     participant_count = serializers.SerializerMethodField()
     is_registered = serializers.SerializerMethodField()
@@ -33,12 +27,10 @@ class EventSerializer(UserStampedSerializer, LikeableSerializer):
     class Meta:
         model = Event
         fields = [
-            'id', 'title', 'description', 'club', 'club_id', 'organizer',
-            'start_date', 'end_date', 'registration_deadline', 'location',
-            'is_online', 'meeting_link', 'max_participants', 'status',
-            'visibility', 'cover_image', 'participant_count', 'is_registered',
-            'registration_status', 'time_status', 'is_featured', 'like_count',
-            'is_liked', 'created_at', 'updated_at', 'created_by', 'updated_by'
+            'id', 'title', 'description', 'start_date', 'end_date', 'registration_deadline', 'location',
+            'is_online', 'meeting_link', 'max_participants', 'status', 'visibility', 'cover_image',
+            'participant_count', 'is_registered', 'registration_status', 'time_status', 'is_featured',
+            'like_count', 'is_liked', 'created_at', 'updated_at', 'created_by', 'updated_by'
         ]
         read_only_fields = [
             'organizer', 'participant_count', 'is_registered',

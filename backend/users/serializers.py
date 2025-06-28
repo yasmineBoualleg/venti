@@ -10,7 +10,6 @@ class ProfileSerializer(serializers.ModelSerializer):
     is_admin = serializers.SerializerMethodField()
     followers_count = serializers.SerializerMethodField()
     following_count = serializers.SerializerMethodField()
-    clubs_count = serializers.SerializerMethodField()
     events_attended = serializers.SerializerMethodField()
     xp = serializers.SerializerMethodField()
 
@@ -20,8 +19,7 @@ class ProfileSerializer(serializers.ModelSerializer):
             'id', 'user', 'avatar', 'bio', 'university', 'graduation_year',
             'major', 'interests', 'location', 'linkedin_url', 'github_url',
             'website', 'created_at', 'updated_at', 'is_admin',
-            'followers_count', 'following_count', 'clubs_count',
-            'events_attended', 'xp'
+            'followers_count', 'following_count', 'events_attended', 'xp'
         ]
         read_only_fields = ['created_at', 'updated_at']
 
@@ -43,9 +41,6 @@ class ProfileSerializer(serializers.ModelSerializer):
     def get_following_count(self, obj):
         return obj.user.following.count()
 
-    def get_clubs_count(self, obj):
-        return obj.user.clubmember_set.count()
-
     def get_events_attended(self, obj):
         return obj.user.eventattendance_set.count()
 
@@ -60,8 +55,6 @@ class ProfileSerializer(serializers.ModelSerializer):
         # XP for social connections
         xp += obj.user.followers.count() * 10
         xp += obj.user.following.count() * 5
-        # XP for club participation
-        xp += obj.user.clubmember_set.count() * 50
         # XP for event attendance
         xp += obj.user.eventattendance_set.count() * 25
         return xp

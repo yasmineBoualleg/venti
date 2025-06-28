@@ -28,6 +28,7 @@ const PostCard: React.FC<PostCardProps> = ({
           src={author.avatar}
           alt={author.name}
           className="w-10 h-10 rounded-full mr-3"
+          loading='lazy'
         />
         <div>
           <h3 className="font-semibold">{author.name}</h3>

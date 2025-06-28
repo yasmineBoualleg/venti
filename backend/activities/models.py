@@ -1,6 +1,5 @@
 from django.db import models
 from django.conf import settings
-from clubs.models import Club
 
 class Activity(models.Model):
     """Model for tracking user activities across the platform."""
@@ -19,7 +18,6 @@ class Activity(models.Model):
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='activities')
     type = models.CharField(max_length=20, choices=TYPE_CHOICES)
-    club = models.ForeignKey(Club, on_delete=models.SET_NULL, null=True, blank=True, related_name='activities')
     target_id = models.PositiveIntegerField(null=True, blank=True)  # ID of the related object (post, comment, etc.)
     target_type = models.CharField(max_length=50, null=True, blank=True)  # Type of the related object
     data = models.JSONField(default=dict, blank=True)  # Additional activity-specific data

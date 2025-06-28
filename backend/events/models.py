@@ -1,7 +1,6 @@
 from django.db import models
 from django.conf import settings
 from core.models import UserStampedModel
-from clubs.models import Club
 
 class Event(UserStampedModel):
     """Model for club events."""
@@ -20,8 +19,6 @@ class Event(UserStampedModel):
 
     title = models.CharField(max_length=200)
     description = models.TextField()
-    club = models.ForeignKey(Club, on_delete=models.CASCADE, related_name='events')
-    organizer = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='organized_events')
     
     # Date and time
     start_date = models.DateTimeField()
@@ -52,7 +49,6 @@ class Event(UserStampedModel):
         ordering = ['-start_date']
         indexes = [
             models.Index(fields=['start_date', 'status']),
-            models.Index(fields=['club', 'status']),
         ]
 
     def __str__(self):

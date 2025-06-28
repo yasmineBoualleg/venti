@@ -2,10 +2,10 @@ import { createContext, useContext, useState, useEffect, ReactNode } from 'react
 import { User } from 'firebase/auth';
 import { auth } from '../config/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
-import { signInWithGoogle, signOut } from '../api/auth';
+import axios from 'axios';
 
 interface AuthContextType {
-  user: User | null;
+  user: (User & { id: string; djangoId?: number }) | null;
   loading: boolean;
   signInWithGoogle: () => Promise<User>;
   signOut: () => Promise<void>;
@@ -26,23 +26,44 @@ interface AuthProviderProps {
 }
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<(User & { id: string; djangoId?: number }) | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setUser(user);
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        try {
+          // Get Django user ID
+          const response = await axios.get('/api/auth/user/');
+          setUser({ ...user, id: user.uid, djangoId: response.data.id });
+        } catch (error) {
+          console.error('Error fetching Django user:', error);
+          setUser({ ...user, id: user.uid });
+        }
+      } else {
+        setUser(null);
+      }
       setLoading(false);
     });
 
     return () => unsubscribe();
   }, []);
 
+  // Provide dynamic imports for signInWithGoogle and signOut
+  const dynamicSignInWithGoogle = async () => {
+    const { signInWithGoogle } = await import('../api/auth');
+    return signInWithGoogle();
+  };
+  const dynamicSignOut = async () => {
+    const { signOut } = await import('../api/auth');
+    return signOut();
+  };
+
   const value = {
     user,
     loading,
-    signInWithGoogle,
-    signOut
+    signInWithGoogle: dynamicSignInWithGoogle,
+    signOut: dynamicSignOut
   };
 
   return (

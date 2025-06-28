@@ -15,7 +15,6 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('auth', '0012_alter_user_first_name_max_length'),
-        ('clubs', '__first__'),
         ('university', '0002_remove_university_city_remove_university_country_and_more'),
     ]
 
@@ -63,7 +62,6 @@ class Migration(migrations.Migration):
                 ('website', models.URLField(blank=True)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
-                ('interests', models.ManyToManyField(blank=True, to='clubs.interest')),
                 ('university', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='students', to='university.university')),
                 ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='profile', to=settings.AUTH_USER_MODEL)),
             ],

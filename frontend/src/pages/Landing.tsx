@@ -1,8 +1,9 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRef } from 'react';
 import Navbar from '../components/Navbar';
+import React from 'react';
 
 const languages = [
   { code: 'en', name: 'English' },
@@ -26,8 +27,6 @@ const translations = {
       virtualClassroomDesc: 'Manage assignments, discussions, and course materials',
       teacherCourses: 'Teacher Courses',
       teacherCoursesDesc: 'Access specialized courses and materials from your professors',
-      clubsManagement: 'Clubs Management',
-      clubsManagementDesc: 'Create, join, and manage academic and social clubs',
       studyGroups: 'Study Groups',
       studyGroupsDesc: 'Create and join study groups with your peers',
       xpRewards: 'XP Rewards',
@@ -53,8 +52,6 @@ const translations = {
       virtualClassroomDesc: 'Gérez les devoirs, discussions et supports de cours',
       teacherCourses: 'Cours des Professeurs',
       teacherCoursesDesc: 'Accédez aux cours et supports spécialisés de vos professeurs',
-      clubsManagement: 'Gestion des Clubs',
-      clubsManagementDesc: 'Créez, rejoignez et gérez des clubs académiques et sociaux',
       studyGroups: 'Groupes d\'Étude',
       studyGroupsDesc: 'Créez et rejoignez des groupes d\'étude avec vos pairs',
       xpRewards: 'Récompenses XP',
@@ -80,8 +77,6 @@ const translations = {
       virtualClassroomDesc: 'إدارة المهام والمناقشات ومواد الدورة',
       teacherCourses: 'دورات الأساتذة',
       teacherCoursesDesc: 'الوصول إلى الدورات والمواد المتخصصة من أساتذتك',
-      clubsManagement: 'إدارة الأندية',
-      clubsManagementDesc: 'إنشاء والانضمام وإدارة الأندية الأكاديمية والاجتماعية',
       studyGroups: 'مجموعات الدراسة',
       studyGroupsDesc: 'إنشاء والانضمام إلى مجموعات الدراسة مع أقرانك',
       xpRewards: 'مكافآت الخبرة',
@@ -107,8 +102,6 @@ const translations = {
       virtualClassroomDesc: 'سير المهام، النقاشات ومواد الدورة',
       teacherCourses: 'دورات الأساتذة',
       teacherCoursesDesc: 'الوصول للدورات والمواد المتخصصة من أساتذتك',
-      clubsManagement: 'تدبير النوادي',
-      clubsManagementDesc: 'سوي، انضم وسير النوادي الدراسية والاجتماعية',
       studyGroups: 'مجموعات الدراسة',
       studyGroupsDesc: 'سوي وانضم لمجموعات الدراسة مع زملائك',
       xpRewards: 'مكافآت الخبرة',
@@ -134,8 +127,6 @@ const translations = {
       virtualClassroomDesc: 'Sefrek tizmilin, tameslayt d tiɣbula n tɣawsiwin',
       teacherCourses: 'Tɣawsiwin n Imsseḥḥa',
       teacherCoursesDesc: 'Kcem ɣer tɣawsiwin d tiɣbula n imsseḥḥa-ik',
-      clubsManagement: 'Tasefsit n Tdukliwin',
-      clubsManagementDesc: 'Rnu, ɣer d ssefrek tdukliwin n tmusni d timettant',
       studyGroups: 'Tdukliwin n Uɣerfad',
       studyGroupsDesc: 'Rnu d ɣer tdukliwin n uɣerfad d imdukal-ik',
       xpRewards: 'Arraz n Uɣerfad',
@@ -194,15 +185,6 @@ const features = [
     )
   },
   {
-    title: (lang: string) => translations[lang as keyof typeof translations].features.clubsManagement,
-    description: (lang: string) => translations[lang as keyof typeof translations].features.clubsManagementDesc,
-    icon: (
-      <svg className="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-    )
-  },
-  {
     title: (lang: string) => translations[lang as keyof typeof translations].features.studyGroups,
     description: (lang: string) => translations[lang as keyof typeof translations].features.studyGroupsDesc,
     icon: (
@@ -249,6 +231,27 @@ const features = [
   }
 ];
 
+// Add throttle utility
+function throttle<T extends (...args: any[]) => void>(fn: T, limit: number): T {
+  let inThrottle: boolean;
+  let lastArgs: any[] = [];
+  return function(this: any, ...args: any[]) {
+    if (!inThrottle) {
+      fn.apply(this, args);
+      inThrottle = true;
+      setTimeout(() => {
+        inThrottle = false;
+        if (lastArgs.length) {
+          fn.apply(this, lastArgs);
+          lastArgs = [];
+        }
+      }, limit);
+    } else {
+      lastArgs = args;
+    }
+  } as T;
+}
+
 const Landing = () => {
   const [currentLang, setCurrentLang] = useState('en');
   const containerRef = useRef<HTMLDivElement>(null);
@@ -257,19 +260,62 @@ const Landing = () => {
     offset: ["start start", "end start"]
   });
 
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [0.2, 0.8]);
+  // Throttle scroll-based animation updates
+  const [throttledScroll, setThrottledScroll] = useState(0);
+  useEffect(() => {
+    const update = throttle((v: number) => setThrottledScroll(v), 33); // ~30fps
+    const unsubscribe = scrollYProgress.on('change', update);
+    return () => unsubscribe();
+  }, [scrollYProgress]);
+
+  // Fix useTransform usage and skip parallax/opacity in dev
+  const isDev = process.env.NODE_ENV === 'development';
+  const backgroundY = isDev ? '0%' : useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const opacity = isDev ? 1 : useTransform(scrollYProgress, [0, 0.5], [0.2, 0.8]);
+
+  // Limit animated social icons in development
+  const animatedIcons = isDev ? socialIcons.slice(0, 1) : socialIcons;
+
+  // Memoize feature cards
+  const MemoizedFeatures = React.useMemo(() => (
+    <div id="features" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      {features.map((feature, index) => (
+        <motion.div
+          key={index}
+          initial={isDev ? false : { opacity: 0, y: 20 }}
+          animate={isDev ? false : { opacity: 1, y: 0 }}
+          transition={isDev ? undefined : { delay: index * 0.1 }}
+          whileHover={isDev ? undefined : { scale: 1.05 }}
+          className="group relative overflow-hidden rounded-2xl shadow-2xl shadow-blue-200/60 ring-1 ring-blue-100"
+          style={isDev ? { willChange: 'auto' } : { willChange: 'transform, opacity' }}
+        >
+          <div className="absolute inset-0 bg-white/20 backdrop-blur-xl border border-white/30 group-hover:bg-white/30 transition-all duration-300" />
+          <div className="relative p-6">
+            <div className="text-primary mb-4">{feature.icon}</div>
+            <h3 className="text-lg font-semibold mb-2">{feature.title(currentLang)}</h3>
+            <p className="text-gray-600">{feature.description(currentLang)}</p>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  ), [currentLang, isDev]);
+
+  // Remove system font override for <h1> and always use Poppins
+  const fallbackTitle = 'From Chaos to Focus';
+
+  // In dev, use static backgrounds and no blur for overlays
+  const overlayClass = isDev ? 'absolute inset-0 bg-white/60' : 'absolute inset-0 backdrop-blur-glass bg-glass-gradient';
 
   return (
     <div ref={containerRef} className="relative min-h-screen overflow-hidden pt-4">
       {/* Parallax Background */}
       <motion.div
         className="absolute inset-0 bg-gradient-to-b from-white to-blue-400"
-        style={{ y: backgroundY, opacity }}
+        style={{ y: backgroundY, opacity, willChange: 'transform, opacity' }}
       />
 
       {/* Glassmorphism Overlay */}
-      <div className="absolute inset-0 backdrop-blur-glass bg-glass-gradient" />
+      <div className={overlayClass} />
 
       {/* Main Content Card */}
       <div className="relative max-w-7xl mx-auto px-4">
@@ -320,13 +366,14 @@ const Landing = () => {
               />
               
               <div className="relative inline-block mb-12">
-                <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
-                  {translations[currentLang as keyof typeof translations].title}
+                <h1
+                  className="text-4xl sm:text-6xl font-bold text-gray-900 mb-6 font-poppins"
+                >
+                  {isDev ? fallbackTitle : translations[currentLang as keyof typeof translations].title}
                 </h1>
-
                 {/* Floating Social Icons */}
                 <div className="absolute inset-0 -z-10">
-                  {socialIcons.map((icon, index) => (
+                  {animatedIcons.map((icon, index) => (
                     <motion.img
                       key={icon.name}
                       src={icon.src}
@@ -362,30 +409,7 @@ const Landing = () => {
               </motion.p>
 
               {/* Feature Grid - All 4 cards visible */}
-              <div id="features" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-                {features.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    whileHover={{ scale: 1.05 }}
-                    className="group relative overflow-hidden rounded-2xl shadow-2xl shadow-blue-200/60 ring-1 ring-blue-100"
-                  >
-                    {/* Glass Background */}
-                    <div className="absolute inset-0 bg-white/20 backdrop-blur-xl border border-white/30 group-hover:bg-white/30 transition-all duration-300" />
-                    
-                    {/* Content */}
-                    <div className="relative p-6">
-                      <div className="text-primary mb-4">
-                        {feature.icon}
-                      </div>
-                      <h3 className="text-lg font-semibold mb-2">{feature.title(currentLang)}</h3>
-                      <p className="text-gray-600">{feature.description(currentLang)}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+              {MemoizedFeatures}
 
               {/* How It Works Section */}
               <div id="how-it-works" className="max-w-4xl mx-auto mb-32">
