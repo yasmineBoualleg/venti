@@ -4,20 +4,13 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-# API URL patterns
-api_patterns = [
-    path('users/', include('users.urls')),
-    path('activities/', include('activities.urls')),
-    path('university/', include('university.urls')),
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/auth/', include('custom_auth.urls')),
+    path('api/users/', include('users.urls')),
 ]
 
-urlpatterns = [
-    # Admin URLs
-    path('admin/', admin.site.urls),
-    
-    # API URLs - all under /api prefix
-    path('api/', include(api_patterns)),
-    
-    # Authentication URLs
-    path('api-auth/', include('rest_framework.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
+# Serve static and media files in development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 

@@ -12,7 +12,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 
+# Load environment variables
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,13 +25,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-your-secret-key-here'
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-your-secret-key-here')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'True').lower() == 'true'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']  # Allow all hosts for development - change this in production
 
+# Firebase Configuration
+FIREBASE_API_KEY = os.getenv('FIREBASE_API_KEY', 'AIzaSyAazjVFAnmLv6sd_eTar0_dZYCs-AOEuOM')
+FIREBASE_PROJECT_ID = os.getenv('FIREBASE_PROJECT_ID', 'venti-login')
+FIREBASE_SERVICE_ACCOUNT_PATH = os.getenv('FIREBASE_SERVICE_ACCOUNT_PATH', os.path.join(BASE_DIR, 'firebase-service-account.json'))
 
 # Application definition
 
@@ -41,11 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'custom_auth',
     'users',
-    'clubs',
-    'posts',
-    'activities',
-    'university',
 ]
 
 MIDDLEWARE = [
@@ -142,6 +146,19 @@ CORS_ALLOW_ALL_ORIGINS = True  # Only for development
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    "http://0.0.0.0:3000",
+]
+
+# Allow all origins for development (remove in production)
+CORS_ALLOW_ALL_ORIGINS = True
+
+# Custom user model
+AUTH_USER_MODEL = 'users.User'
+
+# Authentication backends
+AUTHENTICATION_BACKENDS = [
+    'users.authentication.FirebaseAuthenticationBackend',
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
 # REST Framework settings
@@ -153,9 +170,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ],
-    'DEFAULT_PAGINATION_CLASS': 'core.pagination.StandardResultsSetPagination',
-    'PAGE_SIZE': 10,
-    'EXCEPTION_HANDLER': 'core.exceptions.custom_exception_handler',
     'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
@@ -167,5 +181,75 @@ REST_FRAMEWORK = {
     ],
 }
 
-# Custom user model
-AUTH_USER_MODEL = 'users.User'
+# Logging configuration
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+        'detailed': {
+            'format': '[{asctime}] [{levelname}] [{name}] {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'detailed',
+        },
+        'file': {
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs', 'django.log'),
+            'formatter': 'detailed',
+        },
+        'error_file': {
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs', 'django_errors.log'),
+            'formatter': 'detailed',
+            'level': 'ERROR',
+        },
+        'venti_file': {
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs', 'venti.log'),
+            'formatter': 'detailed',
+        },
+    },
+    'root': {
+        'handlers': ['console', 'file', 'error_file'],
+        'level': 'INFO',
+    },
+    'loggers': {
+        'users.authentication': {
+            'handlers': ['console', 'venti_file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'custom_auth.views': {
+            'handlers': ['console', 'venti_file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'venti_logger': {
+            'handlers': ['console', 'venti_file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'django.request': {
+            'handlers': ['console', 'file', 'error_file'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.security': {
+            'handlers': ['console', 'file', 'error_file'],
+            'level': 'WARNING',
+            'propagate': False,
+        },
+    },
+}

@@ -41,7 +41,7 @@ Venti is a comprehensive academic social platform that combines social networkin
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/venti.git
+git clone https://github.com/yasmineBoualleg/venti.git
 cd venti
 ```
 

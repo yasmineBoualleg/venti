@@ -1,0 +1,465 @@
+[2025-06-29 12:45:08,711] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-06-29 12:45:08,900] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-06-29 12:50:56,202] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-06-29 12:50:56,350] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-06-29 18:54:31,722] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-29 18:54:31,968] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-29 19:05:30,222] [INFO] [users.authentication] Firebase token verified for user: bouallegyasmine260@gmail.com (UID: bHszjbCkQpP4i4ZOa1YS4sesLOr2)
+[2025-06-29 19:05:30,263] [INFO] [users.authentication] Existing user found and updated: bouallegyasmine260@gmail.com
+[2025-06-29 19:05:30,311] [INFO] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": true, "timestamp": "2025-06-29T19:05:30.310750+00:00"}
+[2025-06-29 19:40:53,184] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-29 19:40:53,459] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-29 19:41:24,327] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-29 19:41:24,791] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-29 19:41:45,267] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-06-29 19:41:45,579] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-06-29 19:42:06,809] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-06-29 19:42:07,181] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-06-29 20:01:35,551] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-29 20:01:36,207] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-29 20:04:54,663] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-29 20:04:55,150] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-29 20:07:44,068] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-29 20:07:44,243] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-29 20:08:32,965] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-06-29 20:08:33,242] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-06-29 20:11:35,631] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-29 20:11:36,153] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-29 20:11:41,641] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-06-29 20:11:42,164] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-06-29 20:13:08,442] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-06-29 20:13:09,021] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-06-29 20:13:32,310] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-06-29 20:13:32,838] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-06-29 20:30:49,579] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-29 20:30:50,091] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-29 20:31:08,985] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-06-29 20:31:09,426] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-06-29 20:31:26,698] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-06-29 20:31:27,358] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-06-29 20:40:37,018] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-29 20:40:37,685] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-29 20:44:41,726] [ERROR] [users.authentication] Firebase authentication error: Wrong number of segments in token: b'mock_token_123'
+[2025-06-29 20:56:10,901] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-29 20:56:11,015] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-29 21:01:22,442] [INFO] [users.authentication] Firebase token verified for user: usmista2006@gmail.com (UID: HY647ibGdyNkYREdkjZoL7NgKBH3)
+[2025-06-29 21:01:22,505] [INFO] [users.authentication] New user created: usmista2006@gmail.com
+[2025-06-29 21:01:22,566] [INFO] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": true, "timestamp": "2025-06-29T21:01:22.565991+00:00"}
+[2025-06-29 21:05:37,867] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-29 21:05:38,001] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-29 21:32:44,754] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-06-29 21:32:45,044] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-06-29 21:40:49,355] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-06-29 21:40:49,764] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-06-29 21:42:21,579] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-06-29 21:42:22,201] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-06-29 21:42:32,911] [ERROR] [users.authentication] Firebase authentication error: Wrong number of segments in token: b'test'
+[2025-06-29 21:42:32,915] [ERROR] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": false, "timestamp": "2025-06-29T21:42:32.914623+00:00", "error": "Invalid Firebase token"}
+[2025-06-29 21:44:57,933] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-06-29 21:44:58,019] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-06-29 21:48:09,849] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-29 21:48:10,598] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-29 21:51:40,471] [ERROR] [users.authentication] Firebase authentication error: Wrong number of segments in token: b'test'
+[2025-06-29 21:51:40,475] [ERROR] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": false, "timestamp": "2025-06-29T21:51:40.474972+00:00", "error": "Invalid Firebase token"}
+[2025-06-29 21:53:16,418] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-29 21:53:17,116] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-29 21:55:28,851] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-29 21:55:29,051] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-29 21:56:22,472] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-29 21:56:22,768] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-29 22:03:19,802] [INFO] [users.authentication] Firebase token verified for user: airijapan1@gmail.com (UID: 2Oj0GqJwaoTGIyBOWzSXwWb26qD2)
+[2025-06-29 22:03:19,832] [INFO] [users.authentication] Existing user found and updated: airijapan1@gmail.com
+[2025-06-29 22:03:19,865] [INFO] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": true, "timestamp": "2025-06-29T22:03:19.865596+00:00"}
+[2025-06-29 22:03:20,128] [INFO] [users.authentication] Firebase token verified for user: airijapan1@gmail.com (UID: 2Oj0GqJwaoTGIyBOWzSXwWb26qD2)
+[2025-06-29 22:03:20,150] [INFO] [users.authentication] Existing user found and updated: airijapan1@gmail.com
+[2025-06-29 22:12:06,705] [ERROR] [users.authentication] Firebase authentication error: Wrong number of segments in token: b'test'
+[2025-06-29 22:12:06,709] [ERROR] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": false, "timestamp": "2025-06-29T22:12:06.709444+00:00", "error": "Invalid Firebase token"}
+[2025-06-29 22:16:37,416] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-29 22:16:37,539] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-29 22:22:28,643] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-29 22:22:29,074] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-29 22:50:09,884] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-29 22:50:10,219] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-29 23:01:11,990] [ERROR] [users.authentication] Firebase authentication error: Wrong number of segments in token: b'test'
+[2025-06-29 23:01:11,993] [ERROR] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": false, "timestamp": "2025-06-29T23:01:11.992608+00:00", "error": "Invalid Firebase token"}
+[2025-06-29 23:01:14,742] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-29 23:01:14,987] [INFO] [users.authentication] New user created: dangdangtinder@gmail.com
+[2025-06-29 23:01:15,193] [INFO] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": true, "timestamp": "2025-06-29T23:01:15.193077+00:00"}
+[2025-06-29 23:01:15,759] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-29 23:01:15,938] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-29 23:01:16,273] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-29 23:01:16,410] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-29 23:04:44,371] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-29 23:04:44,578] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-29 23:04:44,906] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-29 23:04:45,134] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-29 23:07:33,775] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-29 23:07:34,076] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-29 23:32:13,245] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-29 23:32:13,562] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-29 23:32:43,030] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-29 23:32:43,184] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-29 23:32:43,454] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-29 23:32:43,562] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-29 23:36:51,102] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-29 23:36:51,186] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-29 23:37:10,520] [INFO] [users.authentication] Firebase token verified for user: bouallegyasmine260@gmail.com (UID: bHszjbCkQpP4i4ZOa1YS4sesLOr2)
+[2025-06-29 23:37:10,579] [INFO] [users.authentication] Existing user found and updated: bouallegyasmine260@gmail.com
+[2025-06-29 23:37:10,676] [INFO] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": true, "timestamp": "2025-06-29T23:37:10.675660+00:00"}
+[2025-06-29 23:37:40,983] [INFO] [users.authentication] Firebase token verified for user: bouallegyasmine260@gmail.com (UID: bHszjbCkQpP4i4ZOa1YS4sesLOr2)
+[2025-06-29 23:37:41,119] [INFO] [users.authentication] Existing user found and updated: bouallegyasmine260@gmail.com
+[2025-06-29 23:37:41,210] [INFO] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": true, "timestamp": "2025-06-29T23:37:41.210014+00:00"}
+[2025-06-29 23:37:41,587] [INFO] [users.authentication] Firebase token verified for user: bouallegyasmine260@gmail.com (UID: bHszjbCkQpP4i4ZOa1YS4sesLOr2)
+[2025-06-29 23:37:41,722] [INFO] [users.authentication] Existing user found and updated: bouallegyasmine260@gmail.com
+[2025-06-29 23:37:41,863] [INFO] [users.authentication] Firebase token verified for user: bouallegyasmine260@gmail.com (UID: bHszjbCkQpP4i4ZOa1YS4sesLOr2)
+[2025-06-29 23:37:41,948] [INFO] [users.authentication] Existing user found and updated: bouallegyasmine260@gmail.com
+[2025-06-29 23:37:56,791] [INFO] [users.authentication] Firebase token verified for user: bouallegyasmine260@gmail.com (UID: bHszjbCkQpP4i4ZOa1YS4sesLOr2)
+[2025-06-29 23:37:56,834] [INFO] [users.authentication] Existing user found and updated: bouallegyasmine260@gmail.com
+[2025-06-29 23:37:56,927] [INFO] [users.authentication] Firebase token verified for user: bouallegyasmine260@gmail.com (UID: bHszjbCkQpP4i4ZOa1YS4sesLOr2)
+[2025-06-29 23:37:56,993] [INFO] [users.authentication] Existing user found and updated: bouallegyasmine260@gmail.com
+[2025-06-29 23:39:15,688] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-29 23:39:15,913] [INFO] [users.authentication] Firebase token verified for user: bouallegyasmine260@gmail.com (UID: bHszjbCkQpP4i4ZOa1YS4sesLOr2)
+[2025-06-29 23:39:15,935] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-29 23:39:16,113] [INFO] [users.authentication] Existing user found and updated: bouallegyasmine260@gmail.com
+[2025-06-29 23:39:16,445] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-29 23:39:16,802] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-29 23:39:32,776] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-29 23:39:32,890] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-29 23:39:33,015] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-29 23:39:33,111] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-29 23:44:48,333] [INFO] [users.authentication] Firebase token verified for user: airijapan1@gmail.com (UID: 2Oj0GqJwaoTGIyBOWzSXwWb26qD2)
+[2025-06-29 23:44:48,428] [INFO] [users.authentication] Existing user found and updated: airijapan1@gmail.com
+[2025-06-29 23:44:48,519] [INFO] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": true, "timestamp": "2025-06-29T23:44:48.518763+00:00"}
+[2025-06-29 23:44:48,768] [INFO] [users.authentication] Firebase token verified for user: airijapan1@gmail.com (UID: 2Oj0GqJwaoTGIyBOWzSXwWb26qD2)
+[2025-06-29 23:44:48,824] [INFO] [users.authentication] Existing user found and updated: airijapan1@gmail.com
+[2025-06-29 23:44:54,714] [INFO] [users.authentication] Firebase token verified for user: airijapan1@gmail.com (UID: 2Oj0GqJwaoTGIyBOWzSXwWb26qD2)
+[2025-06-29 23:44:54,803] [INFO] [users.authentication] Existing user found and updated: airijapan1@gmail.com
+[2025-06-29 23:45:02,486] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-29 23:45:02,561] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-29 23:45:02,818] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-29 23:45:02,913] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-29 23:45:21,477] [INFO] [users.authentication] Firebase token verified for user: airijapan1@gmail.com (UID: 2Oj0GqJwaoTGIyBOWzSXwWb26qD2)
+[2025-06-29 23:45:21,552] [INFO] [users.authentication] Existing user found and updated: airijapan1@gmail.com
+[2025-06-29 23:45:36,564] [INFO] [users.authentication] Firebase token verified for user: airijapan1@gmail.com (UID: 2Oj0GqJwaoTGIyBOWzSXwWb26qD2)
+[2025-06-29 23:45:36,705] [INFO] [users.authentication] Existing user found and updated: airijapan1@gmail.com
+[2025-06-29 23:45:59,002] [INFO] [users.authentication] Firebase token verified for user: airijapan1@gmail.com (UID: 2Oj0GqJwaoTGIyBOWzSXwWb26qD2)
+[2025-06-29 23:45:59,084] [INFO] [users.authentication] Existing user found and updated: airijapan1@gmail.com
+[2025-06-29 23:46:40,166] [INFO] [users.authentication] Firebase token verified for user: airijapan1@gmail.com (UID: 2Oj0GqJwaoTGIyBOWzSXwWb26qD2)
+[2025-06-29 23:46:40,231] [INFO] [users.authentication] Existing user found and updated: airijapan1@gmail.com
+[2025-06-29 23:46:40,283] [INFO] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": true, "timestamp": "2025-06-29T23:46:40.283429+00:00"}
+[2025-06-29 23:46:40,494] [INFO] [users.authentication] Firebase token verified for user: airijapan1@gmail.com (UID: 2Oj0GqJwaoTGIyBOWzSXwWb26qD2)
+[2025-06-29 23:46:40,554] [INFO] [users.authentication] Existing user found and updated: airijapan1@gmail.com
+[2025-06-29 23:50:15,720] [INFO] [users.authentication] Firebase token verified for user: bouallegyasmine260@gmail.com (UID: bHszjbCkQpP4i4ZOa1YS4sesLOr2)
+[2025-06-29 23:50:15,852] [INFO] [users.authentication] Existing user found and updated: bouallegyasmine260@gmail.com
+[2025-06-29 23:50:16,069] [INFO] [users.authentication] Firebase token verified for user: bouallegyasmine260@gmail.com (UID: bHszjbCkQpP4i4ZOa1YS4sesLOr2)
+[2025-06-29 23:50:16,286] [INFO] [users.authentication] Existing user found and updated: bouallegyasmine260@gmail.com
+[2025-06-29 23:50:22,837] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-29 23:50:22,967] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-29 23:50:23,264] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-29 23:50:23,425] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-29 23:52:27,002] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-29 23:52:27,138] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-29 23:52:27,359] [INFO] [users.authentication] Firebase token verified for user: bouallegyasmine260@gmail.com (UID: bHszjbCkQpP4i4ZOa1YS4sesLOr2)
+[2025-06-29 23:52:27,538] [INFO] [users.authentication] Existing user found and updated: bouallegyasmine260@gmail.com
+[2025-06-29 23:52:27,588] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-29 23:52:27,953] [INFO] [users.authentication] Firebase token verified for user: bouallegyasmine260@gmail.com (UID: bHszjbCkQpP4i4ZOa1YS4sesLOr2)
+[2025-06-29 23:52:28,360] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-29 23:52:28,406] [INFO] [users.authentication] Existing user found and updated: bouallegyasmine260@gmail.com
+[2025-06-29 23:52:45,374] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-29 23:52:45,438] [INFO] [users.authentication] Firebase token verified for user: bouallegyasmine260@gmail.com (UID: bHszjbCkQpP4i4ZOa1YS4sesLOr2)
+[2025-06-29 23:52:45,517] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-29 23:52:45,627] [INFO] [users.authentication] Existing user found and updated: bouallegyasmine260@gmail.com
+[2025-06-29 23:53:04,759] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-29 23:53:04,951] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-29 23:53:04,956] [INFO] [users.authentication] Firebase token verified for user: bouallegyasmine260@gmail.com (UID: bHszjbCkQpP4i4ZOa1YS4sesLOr2)
+[2025-06-29 23:53:05,108] [INFO] [users.authentication] Existing user found and updated: bouallegyasmine260@gmail.com
+[2025-06-30 10:50:25,846] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-30 10:50:26,796] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-30 11:01:21,747] [INFO] [users.authentication] Firebase token verified for user: bouallegyasmine260@gmail.com (UID: bHszjbCkQpP4i4ZOa1YS4sesLOr2)
+[2025-06-30 11:01:21,797] [INFO] [users.authentication] Existing user found and updated: bouallegyasmine260@gmail.com
+[2025-06-30 11:01:21,890] [INFO] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": true, "timestamp": "2025-06-30T11:01:21.887883+00:00"}
+[2025-06-30 11:01:22,154] [INFO] [users.authentication] Firebase token verified for user: bouallegyasmine260@gmail.com (UID: bHszjbCkQpP4i4ZOa1YS4sesLOr2)
+[2025-06-30 11:01:22,215] [INFO] [users.authentication] Existing user found and updated: bouallegyasmine260@gmail.com
+[2025-06-30 11:01:22,314] [INFO] [users.authentication] Firebase token verified for user: bouallegyasmine260@gmail.com (UID: bHszjbCkQpP4i4ZOa1YS4sesLOr2)
+[2025-06-30 11:01:22,372] [INFO] [users.authentication] Existing user found and updated: bouallegyasmine260@gmail.com
+[2025-06-30 11:06:47,975] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-06-30 11:06:48,235] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-06-30 11:07:02,603] [ERROR] [users.authentication] Firebase authentication error: Wrong number of segments in token: b'test'
+[2025-06-30 11:07:16,310] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-06-30 11:07:16,557] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-06-30 12:35:45,924] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-30 12:35:46,481] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-30 12:37:58,398] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 12:37:58,437] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 12:37:58,478] [INFO] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": true, "timestamp": "2025-06-30T12:37:58.477742+00:00"}
+[2025-06-30 12:37:58,691] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 12:37:58,737] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 12:37:58,832] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 12:37:58,896] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 12:48:23,688] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 12:48:23,821] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 12:48:24,052] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 12:48:24,199] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 12:53:44,179] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 12:53:44,309] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 12:53:44,622] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 12:53:44,703] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 12:55:52,145] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 12:55:52,275] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 12:55:52,586] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 12:55:52,782] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 12:56:13,217] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 12:56:13,302] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 12:56:13,520] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 12:56:13,626] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 12:57:30,003] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 12:57:30,045] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 12:57:30,171] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 12:57:30,233] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 12:58:30,998] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 12:58:31,053] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 12:58:31,162] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 12:58:31,229] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 12:59:36,411] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 12:59:36,514] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 12:59:36,683] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 12:59:36,809] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 13:00:36,670] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 13:00:36,712] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 13:00:36,806] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 13:00:36,867] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 13:03:31,548] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 13:03:31,651] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 13:03:31,840] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 13:03:32,046] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 13:12:31,712] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 13:12:31,753] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 13:12:31,822] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 13:12:31,863] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 13:12:35,350] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 13:12:35,385] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 13:12:35,448] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 13:12:35,493] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 13:14:33,015] [INFO] [users.authentication] Firebase token verified for user: airijapan1@gmail.com (UID: 2Oj0GqJwaoTGIyBOWzSXwWb26qD2)
+[2025-06-30 13:14:33,180] [INFO] [users.authentication] Existing user found and updated: airijapan1@gmail.com
+[2025-06-30 13:14:33,285] [INFO] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": true, "timestamp": "2025-06-30T13:14:33.285522+00:00"}
+[2025-06-30 13:14:33,769] [INFO] [users.authentication] Firebase token verified for user: airijapan1@gmail.com (UID: 2Oj0GqJwaoTGIyBOWzSXwWb26qD2)
+[2025-06-30 13:14:33,838] [INFO] [users.authentication] Existing user found and updated: airijapan1@gmail.com
+[2025-06-30 13:14:34,024] [INFO] [users.authentication] Firebase token verified for user: airijapan1@gmail.com (UID: 2Oj0GqJwaoTGIyBOWzSXwWb26qD2)
+[2025-06-30 13:14:34,073] [INFO] [users.authentication] Existing user found and updated: airijapan1@gmail.com
+[2025-06-30 13:14:39,245] [INFO] [users.authentication] Firebase token verified for user: airijapan1@gmail.com (UID: 2Oj0GqJwaoTGIyBOWzSXwWb26qD2)
+[2025-06-30 13:14:39,356] [INFO] [users.authentication] Existing user found and updated: airijapan1@gmail.com
+[2025-06-30 13:14:39,460] [INFO] [users.authentication] Firebase token verified for user: airijapan1@gmail.com (UID: 2Oj0GqJwaoTGIyBOWzSXwWb26qD2)
+[2025-06-30 13:14:39,496] [INFO] [users.authentication] Existing user found and updated: airijapan1@gmail.com
+[2025-06-30 13:15:18,120] [INFO] [users.authentication] Firebase token verified for user: airijapan1@gmail.com (UID: 2Oj0GqJwaoTGIyBOWzSXwWb26qD2)
+[2025-06-30 13:15:18,175] [INFO] [users.authentication] Existing user found and updated: airijapan1@gmail.com
+[2025-06-30 13:15:18,290] [INFO] [users.authentication] Firebase token verified for user: airijapan1@gmail.com (UID: 2Oj0GqJwaoTGIyBOWzSXwWb26qD2)
+[2025-06-30 13:15:18,344] [INFO] [users.authentication] Existing user found and updated: airijapan1@gmail.com
+[2025-06-30 13:15:26,813] [INFO] [users.authentication] Firebase token verified for user: airijapan1@gmail.com (UID: 2Oj0GqJwaoTGIyBOWzSXwWb26qD2)
+[2025-06-30 13:15:26,869] [INFO] [users.authentication] Existing user found and updated: airijapan1@gmail.com
+[2025-06-30 13:15:26,981] [INFO] [users.authentication] Firebase token verified for user: airijapan1@gmail.com (UID: 2Oj0GqJwaoTGIyBOWzSXwWb26qD2)
+[2025-06-30 13:15:27,043] [INFO] [users.authentication] Existing user found and updated: airijapan1@gmail.com
+[2025-06-30 13:15:58,559] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 13:15:58,691] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 13:15:58,796] [INFO] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": true, "timestamp": "2025-06-30T13:15:58.795893+00:00"}
+[2025-06-30 13:15:59,079] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 13:15:59,145] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 13:15:59,358] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 13:15:59,419] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 13:16:05,724] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 13:16:05,806] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 13:16:05,928] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 13:16:05,987] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 13:20:35,758] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 13:20:35,847] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 13:20:36,182] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 13:20:36,410] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 13:44:46,605] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 13:44:46,673] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 13:44:46,865] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 13:44:46,963] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 13:51:48,329] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-30 13:51:48,453] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-30 14:04:42,107] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 14:04:42,185] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 14:04:42,316] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 14:04:42,385] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 14:07:48,203] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-30 14:07:48,899] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-30 14:08:33,958] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 14:08:34,062] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 14:08:34,403] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 14:08:34,484] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 14:12:26,170] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 14:12:26,302] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 14:12:26,665] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 14:12:26,887] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 14:18:29,374] [ERROR] [users.authentication] Firebase authentication error: Token expired, 1751292956 < 1751293109
+[2025-06-30 14:18:29,602] [ERROR] [users.authentication] Firebase authentication error: Token expired, 1751292956 < 1751293109
+[2025-06-30 14:19:02,046] [ERROR] [users.authentication] Firebase authentication error: Token expired, 1751292956 < 1751293142
+[2025-06-30 14:19:03,040] [ERROR] [users.authentication] Firebase authentication error: Token expired, 1751292956 < 1751293143
+[2025-06-30 14:20:48,638] [ERROR] [users.authentication] Firebase authentication error: Token expired, 1751292956 < 1751293248
+[2025-06-30 14:20:48,735] [ERROR] [users.authentication] Firebase authentication error: Token expired, 1751292956 < 1751293248
+[2025-06-30 14:56:09,049] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-30 14:56:09,500] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-30 15:10:52,359] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 15:10:52,549] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 15:10:52,755] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 15:10:52,875] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 15:29:47,986] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 15:29:48,265] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 15:29:48,370] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 15:29:48,430] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 15:30:41,335] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 15:30:41,373] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 15:30:41,437] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 15:30:41,487] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 15:30:47,304] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 15:30:47,359] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 15:30:47,491] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 15:30:47,528] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 15:31:07,482] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 15:31:07,556] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 15:31:58,190] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 15:31:58,245] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 15:31:58,404] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 15:31:58,480] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 21:40:06,153] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-30 21:40:06,835] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-30 21:40:59,304] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-30 21:40:59,830] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-30 21:42:01,038] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 21:42:01,179] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 21:42:01,562] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 21:42:01,640] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 21:54:18,437] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-06-30 21:54:19,246] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-06-30 21:55:02,182] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 21:55:02,275] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 21:55:02,459] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 21:55:02,552] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 21:57:43,846] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 21:57:43,924] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:00:52,039] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:00:52,126] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:00:52,614] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:00:52,759] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:01:33,599] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:01:33,761] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:01:34,090] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:01:34,149] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:03:46,872] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:03:47,165] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:03:47,839] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:03:47,997] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:03:52,031] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:03:52,379] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:03:52,711] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:03:52,942] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:05:18,464] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:05:18,621] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:05:19,049] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:05:19,168] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:08:15,933] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:08:16,080] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:08:16,581] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:08:16,683] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:08:21,837] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:08:22,018] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:08:22,361] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:08:22,506] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:08:26,283] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:08:26,484] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:08:26,985] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:08:27,226] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:08:31,158] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:08:31,242] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:08:31,752] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:08:31,921] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:34:28,349] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:34:28,393] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:34:28,647] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:34:28,699] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:38:11,537] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:38:11,624] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:38:11,740] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:38:11,803] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:38:18,922] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:38:18,979] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:38:19,077] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:38:19,129] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:39:37,203] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:39:37,242] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:39:37,455] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:39:37,513] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:39:48,886] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:39:48,949] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:39:49,411] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:39:49,521] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:40:45,264] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:40:45,314] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-06-30 22:40:45,581] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-06-30 22:40:45,636] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-07-01 11:23:03,575] [ERROR] [users.authentication] Firebase authentication error: Token expired: Token expired, 1751326690 < 1751368983
+[2025-07-01 11:23:03,640] [ERROR] [users.authentication] Firebase authentication error: Token expired: Token expired, 1751326690 < 1751368983
+[2025-07-01 13:54:31,132] [ERROR] [users.authentication] Firebase authentication error: Token expired: Token expired, 1751326690 < 1751378071
+[2025-07-01 13:54:31,297] [ERROR] [users.authentication] Firebase authentication error: Token expired: Token expired, 1751326690 < 1751378071
+[2025-07-01 14:02:11,039] [ERROR] [users.authentication] Firebase authentication error: Token expired: Token expired, 1751326690 < 1751378531
+[2025-07-01 14:02:11,900] [ERROR] [users.authentication] Firebase authentication error: Token expired: Token expired, 1751326690 < 1751378531
+[2025-07-01 14:02:26,987] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-07-01 14:02:27,199] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-07-01 14:02:27,673] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-07-01 14:02:27,949] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-07-01 14:03:05,699] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-07-01 14:03:05,904] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-07-01 14:03:06,195] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-07-01 14:03:06,377] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-07-01 14:04:11,287] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-07-01 14:04:11,523] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-07-01 14:04:13,542] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-07-01 14:04:13,693] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-07-01 14:09:42,145] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-07-01 14:09:42,237] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-07-01 14:09:42,764] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-07-01 14:09:42,858] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-07-01 14:10:36,916] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-07-01 14:10:37,160] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-07-01 14:10:37,382] [INFO] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": true, "timestamp": "2025-07-01T14:10:37.381789+00:00"}
+[2025-07-01 14:10:38,145] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-07-01 14:10:38,393] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-07-01 14:10:38,685] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-07-01 14:10:38,851] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-07-01 14:14:10,136] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-07-01 14:14:10,176] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-07-01 14:14:10,223] [INFO] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": true, "timestamp": "2025-07-01T14:14:10.223433+00:00"}
+[2025-07-01 14:14:10,625] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-07-01 14:14:10,667] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-07-01 14:14:10,853] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-07-01 14:14:10,895] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-07-01 14:14:37,897] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-07-01 14:14:37,957] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-07-01 14:14:53,193] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-07-01 14:14:53,233] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-07-01 14:24:33,815] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-01 14:24:34,302] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-01 14:25:13,251] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-07-01 14:25:13,296] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-07-01 14:25:13,350] [INFO] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": true, "timestamp": "2025-07-01T14:25:13.349303+00:00"}
+[2025-07-01 14:25:28,877] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-07-01 14:25:28,925] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-07-01 14:25:28,981] [INFO] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": true, "timestamp": "2025-07-01T14:25:28.979045+00:00"}
+[2025-07-01 14:25:29,604] [INFO] [users.authentication] Firebase token verified for user: dangdangtinder@gmail.com (UID: kLTmtjgCQjf6OUuhb3eHAAaIDNy2)
+[2025-07-01 14:25:29,650] [INFO] [users.authentication] Existing user found and updated: dangdangtinder@gmail.com
+[2025-07-01 14:25:29,710] [INFO] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": true, "timestamp": "2025-07-01T14:25:29.709752+00:00"}
+[2025-07-01 14:26:33,464] [INFO] [users.authentication] Firebase token verified for user: kaito443322@gmail.com (UID: 1SYe09m57EXRvBrI6JIhs20PLN23)
+[2025-07-01 14:26:33,517] [INFO] [users.authentication] New user created: kaito443322@gmail.com
+[2025-07-01 14:26:33,588] [INFO] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": true, "timestamp": "2025-07-01T14:26:33.588437+00:00"}
+[2025-07-01 14:26:33,933] [INFO] [users.authentication] Firebase token verified for user: kaito443322@gmail.com (UID: 1SYe09m57EXRvBrI6JIhs20PLN23)
+[2025-07-01 14:26:33,982] [INFO] [users.authentication] Existing user found and updated: kaito443322@gmail.com
+[2025-07-01 14:26:34,062] [INFO] [users.authentication] Firebase token verified for user: kaito443322@gmail.com (UID: 1SYe09m57EXRvBrI6JIhs20PLN23)
+[2025-07-01 14:26:34,113] [INFO] [users.authentication] Existing user found and updated: kaito443322@gmail.com
+[2025-07-01 14:32:27,032] [INFO] [users.authentication] Firebase token verified for user: kaito443322@gmail.com (UID: 1SYe09m57EXRvBrI6JIhs20PLN23)
+[2025-07-01 14:32:27,111] [INFO] [users.authentication] Existing user found and updated: kaito443322@gmail.com
+[2025-07-01 14:35:51,851] [INFO] [users.authentication] Firebase token verified for user: kaito443322@gmail.com (UID: 1SYe09m57EXRvBrI6JIhs20PLN23)
+[2025-07-01 14:35:52,050] [INFO] [users.authentication] Existing user found and updated: kaito443322@gmail.com
+                                                                                                                                                                                                                                                                   

@@ -1,0 +1,98 @@
+[2025-06-29 12:45:07,575] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 12:50:55,101] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 18:54:27,559] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 19:40:42,174] [INFO] [django.utils.autoreload] /home/meeh/Desktop/venti2.0/backend/users/models.py changed, reloading.
+[2025-06-29 19:40:47,938] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 19:41:16,683] [INFO] [django.utils.autoreload] /home/meeh/Desktop/venti2.0/backend/users/serializers.py changed, reloading.
+[2025-06-29 19:41:20,828] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 20:01:21,527] [INFO] [django.utils.autoreload] /home/meeh/Desktop/venti2.0/backend/users/models.py changed, reloading.
+[2025-06-29 20:01:29,456] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 20:04:43,808] [INFO] [django.utils.autoreload] /home/meeh/Desktop/venti2.0/backend/users/serializers.py changed, reloading.
+[2025-06-29 20:04:49,446] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 20:06:43,302] [ERROR] [django.request] Internal Server Error: /api/users/users/me/
+Traceback (most recent call last):
+  File "/home/meeh/.local/lib/python3.12/site-packages/rest_framework/fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/.local/lib/python3.12/site-packages/rest_framework/fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'email'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/meeh/.local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/.local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/.local/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/.local/lib/python3.12/site-packages/rest_framework/viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/.local/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/.local/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/meeh/.local/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/meeh/.local/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/users/views.py", line 26, in me
+    return Response(serializer.data)
+                   ^^^^^^^^^^^^^^^
+  File "/home/meeh/.local/lib/python3.12/site-packages/rest_framework/serializers.py", line 571, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/meeh/.local/lib/python3.12/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/.local/lib/python3.12/site-packages/rest_framework/serializers.py", line 525, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/.local/lib/python3.12/site-packages/rest_framework/fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `email` on serializer `UserSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `AnonymousUser` instance.
+Original exception text was: 'AnonymousUser' object has no attribute 'email'.
+[2025-06-29 20:07:35,393] [INFO] [django.utils.autoreload] /home/meeh/Desktop/venti2.0/backend/users/views.py changed, reloading.
+[2025-06-29 20:07:40,467] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 20:11:25,128] [INFO] [django.utils.autoreload] /home/meeh/Desktop/venti2.0/backend/users/authentication.py changed, reloading.
+[2025-06-29 20:11:30,666] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 20:30:39,175] [INFO] [django.utils.autoreload] /home/meeh/Desktop/venti2.0/backend/users/serializers.py changed, reloading.
+[2025-06-29 20:30:45,123] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 20:40:29,892] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 20:56:07,592] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 21:05:36,913] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 21:32:40,706] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 21:40:37,252] [INFO] [django.utils.autoreload] /home/meeh/Desktop/venti2.0/backend/users/models.py changed, reloading.
+[2025-06-29 21:40:45,065] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 21:44:56,058] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 21:48:05,288] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 21:53:07,074] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 21:55:27,683] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 21:56:21,489] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 22:16:36,255] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 22:22:23,567] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 22:50:07,011] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-29 23:32:09,947] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-30 10:50:13,383] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-30 11:07:12,695] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-30 12:35:39,596] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-30 13:51:41,473] [INFO] [django.utils.autoreload] /home/meeh/Desktop/venti2.0/backend/users/models.py changed, reloading.
+[2025-06-30 13:51:46,124] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-30 14:07:29,683] [INFO] [django.utils.autoreload] /home/meeh/Desktop/venti2.0/backend/users/models.py changed, reloading.
+[2025-06-30 14:07:38,522] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-30 14:51:23,602] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-30 14:55:51,108] [INFO] [django.utils.autoreload] /home/meeh/Desktop/venti2.0/backend/users/authentication.py changed, reloading.
+[2025-06-30 14:56:02,958] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-30 21:39:56,929] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-30 21:40:53,619] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-06-30 21:54:10,421] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader
+[2025-07-01 14:24:30,963] [INFO] [django.utils.autoreload] Watching for file changes with StatReloader

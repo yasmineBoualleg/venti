@@ -1,7 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
-import { useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState, useRef, useMemo, useCallback, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 
 const languages = [
@@ -12,6 +11,7 @@ const languages = [
   { code: 'qb', name: 'ⵜⴰⵎⴰⵣⵉⵖⵜ' }
 ];
 
+// Memoized translations to prevent re-creation on every render
 const translations = {
   en: {
     title: 'From Chaos to Focus',
@@ -150,12 +150,14 @@ const translations = {
   }
 };
 
+// Optimized social icons with reduced animation complexity
 const socialIcons = [
   { name: 'facebook', src: '/icons/facebook.svg' },
   { name: 'instagram', src: '/icons/instagram.svg' },
   { name: 'twitter', src: '/icons/twitter.svg' }
 ];
 
+// Memoized features array to prevent re-creation
 const features = [
   {
     title: (lang: string) => translations[lang as keyof typeof translations].features.socialConnect,
@@ -207,7 +209,7 @@ const features = [
     description: (lang: string) => translations[lang as keyof typeof translations].features.studyGroupsDesc,
     icon: (
       <svg className="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
       </svg>
     )
   },
@@ -216,7 +218,7 @@ const features = [
     description: (lang: string) => translations[lang as keyof typeof translations].features.xpRewardsDesc,
     icon: (
       <svg className="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
       </svg>
     )
   },
@@ -243,49 +245,127 @@ const features = [
     description: (lang: string) => translations[lang as keyof typeof translations].features.institutionsDesc,
     icon: (
       <svg className="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
       </svg>
     )
   }
 ];
 
+// Memoized components for better performance
+const FloatingIcon = ({ icon, index }: { icon: { name: string; src: string }; index: number }) => (
+  <img
+    src={icon.src}
+    alt={icon.name}
+    className={`absolute w-8 h-8 opacity-30 float-animation ${
+      index === 1 ? 'float-animation-delay-1' : index === 2 ? 'float-animation-delay-2' : ''
+    }`}
+    style={{
+      filter: 'invert(1)',
+      top: `${Math.sin(index) * 50}%`,
+      left: `${Math.cos(index) * 50 + 50}%`,
+    }}
+  />
+);
+
+// Optimized Feature Card Component
+const FeatureCard = ({ feature, index, currentLang }: { feature: any; index: number; currentLang: string }) => (
+  <motion.div
+    key={index}
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: index * 0.1 }}
+    whileHover={{ scale: 1.05 }}
+    className="group relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-blue-100"
+  >
+    {/* Glass Background */}
+    <div className="absolute inset-0 glass-effect group-hover:glass-effect-hover transition-all duration-300" />
+    
+    {/* Content */}
+    <div className="relative p-4 sm:p-6">
+      <div className="text-primary mb-3 sm:mb-4">
+        {feature.icon}
+      </div>
+      <h3 className="text-base sm:text-lg font-semibold mb-2">{feature.title(currentLang)}</h3>
+      <p className="text-sm sm:text-base text-gray-600">{feature.description(currentLang)}</p>
+    </div>
+  </motion.div>
+);
+
 const Landing = () => {
   const [currentLang, setCurrentLang] = useState('en');
   const containerRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
+  
+  // Check if user is already authenticated
+  useEffect(() => {
+    const user = localStorage.getItem('user');
+    if (user) {
+      // User is already authenticated, redirect to welcome page
+      navigate('/welcome');
+    }
+  }, [navigate]);
+  
+  // Optimized scroll handling with throttling
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
   });
 
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [0.2, 0.8]);
+  // Memoized transforms to prevent recalculation
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [0.3, 0.7]);
+
+  // Memoized language change handler
+  const handleLanguageChange = useCallback((langCode: string) => {
+    setCurrentLang(langCode);
+  }, []);
+
+  // Memoized current translation
+  const currentTranslation = useMemo(() => 
+    translations[currentLang as keyof typeof translations], 
+    [currentLang]
+  );
+
+  // Memoized feature cards to prevent re-creation
+  const featureCards = useMemo(() => 
+    features.map((feature, index) => (
+      <FeatureCard 
+        key={index} 
+        feature={feature} 
+        index={index} 
+        currentLang={currentLang} 
+      />
+    )), 
+    [currentLang]
+  );
 
   return (
     <div ref={containerRef} className="relative min-h-screen overflow-hidden pt-4">
-      {/* Parallax Background */}
+      {/* Optimized Parallax Background */}
       <motion.div
         className="absolute inset-0 bg-gradient-to-b from-white to-blue-400"
         style={{ y: backgroundY, opacity }}
       />
 
-      {/* Glassmorphism Overlay */}
-      <div className="absolute inset-0 backdrop-blur-glass bg-glass-gradient" />
+      {/* Simplified Glassmorphism Overlay */}
+      <div className="absolute inset-0 bg-white/5 backdrop-blur-sm" />
 
       {/* Main Content Card */}
-      <div className="relative max-w-7xl mx-auto px-4">
-        <div className="bg-white/20 backdrop-blur-xl rounded-2xl border border-white/30 shadow-lg pt-4 pb-8">
+      <div className="relative max-w-7xl mx-auto px-2 sm:px-4">
+        <div className="glass-effect rounded-2xl shadow-lg pt-2 sm:pt-4 pb-4 sm:pb-8">
           <Navbar />
 
           {/* Language Bar - Centered */}
-          <div className="mt-20 flex justify-center">
-            <div className="flex items-center bg-white/20 backdrop-blur-xl rounded-full shadow-lg border border-white/30 px-2 py-1">
+          <div className="mt-8 sm:mt-12 md:mt-20 flex justify-center px-2">
+            <div className="flex items-center glass-effect rounded-full shadow-lg px-1 sm:px-2 py-1 max-w-full overflow-x-auto">
               {languages.map((lang) => (
                 <button
                   key={lang.code}
-                  onClick={() => setCurrentLang(lang.code)}
-                  className={`px-4 py-2 text-sm rounded-full transition-all ${
+                  onClick={() => handleLanguageChange(lang.code)}
+                  className={`px-2 sm:px-3 md:px-4 py-1 sm:py-2 text-xs sm:text-sm rounded-full transition-all whitespace-nowrap ${
                     currentLang === lang.code
-                      ? 'text-white bg-primary/80 shadow-lg backdrop-blur-lg'
+                      ? 'text-white bg-primary/80 shadow-lg'
                       : 'text-gray-700 hover:text-primary hover:bg-white/30'
                   }`}
                 >
@@ -295,56 +375,50 @@ const Landing = () => {
             </div>
           </div>
 
-          {/* Algeria Flag - Next to profile picture */}
-          <div className="fixed top-20 right-4 z-50 flex items-center gap-2">
+          {/* Algeria Flag */}
+          <div className="fixed top-4 sm:top-8 md:top-20 right-2 sm:right-4 z-50 flex items-center gap-2">
             <img
               src="/icons/algeria-flag.svg"
               alt="Algeria Flag"
-              className="w-6 h-4 shadow-lg rounded"
+              className="w-4 h-3 sm:w-6 sm:h-4 shadow-lg rounded"
               loading="lazy"
             />
           </div>
 
           {/* Main Content */}
-          <div className="px-4 pt-16">
+          <div className="px-2 sm:px-4 pt-8 sm:pt-12 md:pt-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
               className="text-center"
             >
               <img
                 src="/venti-icon.svg"
                 alt="Venti"
-                className="h-24 mx-auto mb-8"
+                className="h-16 sm:h-20 md:h-24 mx-auto mb-4 sm:mb-6 md:mb-8"
                 loading="lazy"
               />
               
-              <div className="relative inline-block mb-12">
-                <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
-                  {translations[currentLang as keyof typeof translations].title}
+              <div className="relative inline-block mb-6 sm:mb-8 md:mb-12">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
+                  {currentTranslation.title}
                 </h1>
 
-                {/* Floating Social Icons */}
+                {/* Optimized Floating Social Icons */}
                 <div className="absolute inset-0 -z-10">
                   {socialIcons.map((icon, index) => (
-                    <motion.img
+                    <img
                       key={icon.name}
                       src={icon.src}
                       alt={icon.name}
-                      className="absolute w-8 h-8 opacity-30"
+                      className={`absolute w-6 h-6 sm:w-8 sm:h-8 opacity-30 float-animation ${
+                        index === 1 ? 'float-animation-delay-1' : index === 2 ? 'float-animation-delay-2' : ''
+                      }`}
                       style={{
                         filter: 'invert(1)',
                         top: `${Math.sin(index) * 50}%`,
                         left: `${Math.cos(index) * 50 + 50}%`,
-                      }}
-                      animate={{
-                        y: [0, -10, 0],
-                        rotate: [0, 5, -5, 0],
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        delay: index * 0.2,
                       }}
                     />
                   ))}
@@ -352,60 +426,39 @@ const Landing = () => {
               </div>
 
               <motion.p
-                className="text-xl text-gray-700 mb-12 max-w-3xl mx-auto"
+                className="text-base sm:text-lg md:text-xl text-gray-700 mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto px-2"
                 style={{
-                  opacity: useTransform(scrollYProgress, [0, 0.2], [1, 0.5]),
-                  y: useTransform(scrollYProgress, [0, 1], [0, 50]),
+                  opacity: useTransform(scrollYProgress, [0, 0.2], [1, 0.7]),
+                  y: useTransform(scrollYProgress, [0, 1], [0, 30]),
                 }}
               >
-                {translations[currentLang as keyof typeof translations].description}
+                {currentTranslation.description}
               </motion.p>
 
-              {/* Feature Grid - All 4 cards visible */}
-              <div id="features" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-                {features.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    whileHover={{ scale: 1.05 }}
-                    className="group relative overflow-hidden rounded-2xl shadow-2xl shadow-blue-200/60 ring-1 ring-blue-100"
-                  >
-                    {/* Glass Background */}
-                    <div className="absolute inset-0 bg-white/20 backdrop-blur-xl border border-white/30 group-hover:bg-white/30 transition-all duration-300" />
-                    
-                    {/* Content */}
-                    <div className="relative p-6">
-                      <div className="text-primary mb-4">
-                        {feature.icon}
-                      </div>
-                      <h3 className="text-lg font-semibold mb-2">{feature.title(currentLang)}</h3>
-                      <p className="text-gray-600">{feature.description(currentLang)}</p>
-                    </div>
-                  </motion.div>
-                ))}
+              {/* Optimized Feature Grid */}
+              <div id="features" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16 px-2">
+                {featureCards}
               </div>
 
               {/* How It Works Section */}
-              <div id="how-it-works" className="max-w-4xl mx-auto mb-32">
-                <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div id="how-it-works" className="max-w-4xl mx-auto mb-16 sm:mb-24 md:mb-32 px-2">
+                <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">How It Works</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
                   {/* Step 1 */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="relative shadow-2xl shadow-blue-200/60 ring-1 ring-blue-100"
+                    className="relative shadow-lg ring-1 ring-blue-100"
                   >
-                    <div className="bg-white/20 backdrop-blur-xl rounded-2xl border border-white/30 p-6 text-center">
-                      <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
-                        <div className="w-12 h-12 bg-primary/80 backdrop-blur-xl rounded-full flex items-center justify-center text-white text-xl font-bold">
+                    <div className="glass-effect rounded-2xl p-4 sm:p-6 text-center">
+                      <div className="absolute -top-4 sm:-top-6 left-1/2 transform -translate-x-1/2">
+                        <div className="w-8 h-8 sm:w-12 sm:h-12 bg-primary/80 rounded-full flex items-center justify-center text-white text-sm sm:text-xl font-bold">
                           ①
                         </div>
                       </div>
-                      <h3 className="text-xl font-semibold mt-6 mb-3">Sign Up</h3>
-                      <p className="text-gray-600">Create your free account</p>
+                      <h3 className="text-lg sm:text-xl font-semibold mt-4 sm:mt-6 mb-2 sm:mb-3">Sign Up</h3>
+                      <p className="text-sm sm:text-base text-gray-600">Create your free account</p>
                     </div>
                   </motion.div>
 
@@ -415,16 +468,16 @@ const Landing = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
-                    className="relative shadow-2xl shadow-blue-200/60 ring-1 ring-blue-100"
+                    className="relative shadow-lg ring-1 ring-blue-100"
                   >
-                    <div className="bg-white/20 backdrop-blur-xl rounded-2xl border border-white/30 p-6 text-center">
-                      <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
-                        <div className="w-12 h-12 bg-primary/80 backdrop-blur-xl rounded-full flex items-center justify-center text-white text-xl font-bold">
+                    <div className="glass-effect rounded-2xl p-4 sm:p-6 text-center">
+                      <div className="absolute -top-4 sm:-top-6 left-1/2 transform -translate-x-1/2">
+                        <div className="w-8 h-8 sm:w-12 sm:h-12 bg-primary/80 rounded-full flex items-center justify-center text-white text-sm sm:text-xl font-bold">
                           ②
                         </div>
                       </div>
-                      <h3 className="text-xl font-semibold mt-6 mb-3">Explore Spaces</h3>
-                      <p className="text-gray-600">Join your university space</p>
+                      <h3 className="text-lg sm:text-xl font-semibold mt-4 sm:mt-6 mb-2 sm:mb-3">Explore Spaces</h3>
+                      <p className="text-sm sm:text-base text-gray-600">Join your university space</p>
                     </div>
                   </motion.div>
 
@@ -434,64 +487,67 @@ const Landing = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.4 }}
-                    className="relative shadow-2xl shadow-blue-200/60 ring-1 ring-blue-100"
+                    className="relative shadow-lg ring-1 ring-blue-100"
                   >
-                    <div className="bg-white/20 backdrop-blur-xl rounded-2xl border border-white/30 p-6 text-center">
-                      <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
-                        <div className="w-12 h-12 bg-primary/80 backdrop-blur-xl rounded-full flex items-center justify-center text-white text-xl font-bold">
+                    <div className="glass-effect rounded-2xl p-4 sm:p-6 text-center">
+                      <div className="absolute -top-4 sm:-top-6 left-1/2 transform -translate-x-1/2">
+                        <div className="w-8 h-8 sm:w-12 sm:h-12 bg-primary/80 rounded-full flex items-center justify-center text-white text-sm sm:text-xl font-bold">
                           ③
                         </div>
                       </div>
-                      <h3 className="text-xl font-semibold mt-6 mb-3">Join. Learn. Win.</h3>
-                      <p className="text-gray-600">Discover clubs, events, and level up 🎮</p>
+                      <h3 className="text-lg sm:text-xl font-semibold mt-4 sm:mt-6 mb-2 sm:mb-3">Join. Learn. Win.</h3>
+                      <p className="text-sm sm:text-base text-gray-600">Discover clubs, events, and level up 🎮</p>
                     </div>
                   </motion.div>
                 </div>
               </div>
 
               {/* CTA Button */}
-              <div className="mb-64">
+              <div className="mb-32 sm:mb-48 md:mb-64 px-2">
                 <Link
                   to="/login"
-                  className="relative inline-flex items-center px-8 py-3 text-base font-medium rounded-xl text-white overflow-hidden group"
+                  className="inline-flex items-center px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base font-medium rounded-xl text-white bg-primary/80 hover:bg-primary transition-all duration-300"
                 >
-                  {/* Glass Background */}
-                  <div className="absolute inset-0 bg-primary/80 backdrop-blur-xl group-hover:bg-primary transition-all duration-300" />
-                  
-                  {/* Button Text */}
-                  <span className="relative px-8 py-3 md:py-4 md:text-lg md:px-10">
-                    {translations[currentLang as keyof typeof translations].getStarted}
+                  <span className="px-4 sm:px-8 py-2 sm:py-3 md:py-4 md:text-lg md:px-10">
+                    {currentTranslation.getStarted}
                   </span>
                 </Link>
               </div>
 
               {/* Footer Card */}
-              <div className="max-w-7xl mx-auto px-4 mb-8">
-                <div className="bg-white/20 backdrop-blur-xl rounded-2xl border border-white/30 shadow-lg p-6">
-                  <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                    <div className="flex items-center space-x-4">
+              <div className="max-w-7xl mx-auto px-2 sm:px-4 mb-4 sm:mb-8">
+                <div className="glass-effect rounded-2xl shadow-lg p-4 sm:p-6">
+                  <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
+                    <div className="flex items-center space-x-2 sm:space-x-4">
                       <img
                         src="/venti-icon.svg"
                         alt="Venti"
-                        className="h-8 w-8"
+                        className="h-6 w-6 sm:h-8 sm:w-8"
                         loading="lazy"
                       />
-                      <span className="text-gray-700">© 2024 Venti. All rights reserved.</span>
+                      <span className="text-sm sm:text-base text-gray-700">© 2024 Venti. All rights reserved.</span>
                     </div>
-                    <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
+                    <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 md:gap-6 text-sm sm:text-base">
                       <a href="#" className="text-gray-700 hover:text-primary">Terms</a>
                       <a href="#" className="text-gray-700 hover:text-primary">Privacy</a>
-                      <div className="flex items-center gap-2 text-gray-700">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="flex items-center gap-1 sm:gap-2 text-gray-700">
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                         <a 
                           href="mailto:airijapan1@gmail.com" 
-                          className="text-gray-700 hover:text-primary whitespace-nowrap"
+                          className="text-gray-700 hover:text-primary whitespace-nowrap text-xs sm:text-sm"
                         >
                           airijapan1@gmail.com
                         </a>
                       </div>
+                      <a 
+                        href="/admin/logs" 
+                        className="text-gray-500 hover:text-gray-700 text-xs opacity-60 hover:opacity-100 transition-opacity"
+                        title="Admin Access"
+                      >
+                        Admin
+                      </a>
                     </div>
                   </div>
                 </div>

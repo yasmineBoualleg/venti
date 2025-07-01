@@ -2,88 +2,177 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.core.validators import MinValueValidator
-from django.dispatch import receiver
-from django.db.models.signals import post_save
+import json
 
 class User(AbstractUser):
     """
     Custom User model extending Django's AbstractUser.
     """
     email = models.EmailField(_('email address'), unique=True)
-    level = models.PositiveIntegerField(default=1)
-    xp = models.PositiveIntegerField(default=0)
-    xp_to_next_level = models.PositiveIntegerField(default=100)
+    firebase_uid = models.CharField(max_length=128, unique=True, null=True, blank=True)
+    place = models.CharField(max_length=255, null=True, blank=True, help_text=_('User location/place for location-based features'))
     
     # Make email the username field
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
-    
-    def add_xp(self, amount):
-        """Add XP and handle level ups."""
-        self.xp += amount
-        while self.xp >= self.xp_to_next_level:
-            self.level_up()
-        self.save()
-    
-    def level_up(self):
-        """Handle level up logic."""
-        self.level += 1
-        self.xp -= self.xp_to_next_level
-        self.xp_to_next_level = int(self.xp_to_next_level * 1.5)  # Increase XP needed for next level
-        
-    @property
-    def level_progress(self):
-        """Return level progress as percentage."""
-        return (self.xp / self.xp_to_next_level) * 100
         
     def __str__(self):
         return self.email
 
 class Profile(models.Model):
     """
-    Extended profile information for users.
+    Extended user profile with XP, skills, interests, and collaboration data.
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
-    avatar = models.ImageField(upload_to='avatars/', default='avatars/default.png')
-    bio = models.TextField(max_length=500, blank=True)
-    university = models.ForeignKey(
-        'university.University',
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-        related_name='students'
-    )
-    graduation_year = models.PositiveIntegerField(
-        null=True,
-        blank=True,
-        validators=[MinValueValidator(2000)]
-    )
-    major = models.CharField(max_length=100, blank=True)
-    interests = models.ManyToManyField('clubs.Interest', blank=True)
-    location = models.CharField(max_length=100, blank=True)
-    linkedin_url = models.URLField(blank=True)
-    github_url = models.URLField(blank=True)
-    website = models.URLField(blank=True)
+    xp = models.IntegerField(default=0, validators=[MinValueValidator(0)])
+    skills = models.JSONField(default=list, help_text=_('List of user skills'))
+    interests = models.JSONField(default=list, help_text=_('List of user interests'))
+    hobbies = models.JSONField(default=list, help_text=_('List of user hobbies'))
+    bio = models.TextField(blank=True, help_text=_('User biography'))
+    profile_image = models.ImageField(upload_to='profile_images/', null=True, blank=True)
+    badges = models.JSONField(default=list, help_text=_('List of earned badges'))
+    
+    # ManyToMany fields for future models
+    # clubs_joined = models.ManyToManyField('Club', blank=True, related_name='members')
+    
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        verbose_name = _('Profile')
+        verbose_name_plural = _('Profiles')
+    
     def __str__(self):
-        return f"{self.user.username}'s profile"
+        return f"{self.user.email}'s Profile"
+    
+    def add_xp(self, amount):
+        """Add XP to the profile."""
+        self.xp += amount
+        self.save()
+    
+    def add_badge(self, badge):
+        """Add a badge if not already present."""
+        if badge not in self.badges:
+            self.badges.append(badge)
+            self.save()
+    
+    def get_skill_level(self, skill):
+        """Get the level of a specific skill based on collaborations."""
+        from .models import PastCollaboration
+        
+        collaborations = PastCollaboration.objects.filter(
+            models.Q(user_a=self.user) | models.Q(user_b=self.user),
+            skill_used=skill
+        ).count()
+        
+        if collaborations >= 10:
+            return "Expert"
+        elif collaborations >= 5:
+            return "Advanced"
+        elif collaborations >= 2:
+            return "Intermediate"
+        else:
+            return "Beginner"
 
-# Signal to create profile when user is created
-@receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(user=instance)
+class CollabRequest(models.Model):
+    """
+    Collaboration request between users.
+    """
+    STATUS_CHOICES = [
+        ('pending', 'Pending'),
+        ('accepted', 'Accepted'),
+        ('declined', 'Declined'),
+    ]
+    
+    from_user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sent_collabs')
+    to_user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='received_collabs')
+    message = models.TextField(blank=True, help_text=_('Collaboration request message'))
+    skill_focus = models.CharField(max_length=100, help_text=_('Primary skill for collaboration'))
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
-@receiver(post_save, sender=User)
-def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
+    class Meta:
+        verbose_name = _('Collaboration Request')
+        verbose_name_plural = _('Collaboration Requests')
+        unique_together = ['from_user', 'to_user', 'skill_focus']
+        ordering = ['-created_at']
 
-# Add follower/following relationships to User model
-User.add_to_class('followers', models.ManyToManyField(
-    'self',
-    symmetrical=False,
-    related_name='following',
-    blank=True
-)) 
+    def __str__(self):
+        return f"{self.from_user.email} → {self.to_user.email} ({self.skill_focus})"
+    
+    def accept(self):
+        """Accept the collaboration request."""
+        self.status = 'accepted'
+        self.save()
+        
+        # Add XP to both users
+        self.from_user.profile.add_xp(20)
+        self.to_user.profile.add_xp(20)
+        
+        # Create PastCollaboration record
+        PastCollaboration.objects.create(
+            user_a=self.from_user,
+            user_b=self.to_user,
+            skill_used=self.skill_focus,
+            collab_type='request'
+        )
+        
+        # Check for frequent collaborator badge
+        self._check_frequent_collaborator_badge()
+    
+    def decline(self):
+        """Decline the collaboration request."""
+        self.status = 'declined'
+        self.save()
+    
+    def _check_frequent_collaborator_badge(self):
+        """Check if users should get frequent collaborator badge."""
+        from_user_collabs = PastCollaboration.objects.filter(
+            models.Q(user_a=self.from_user) | models.Q(user_b=self.from_user)
+        ).count()
+        
+        to_user_collabs = PastCollaboration.objects.filter(
+            models.Q(user_a=self.to_user) | models.Q(user_b=self.to_user)
+        ).count()
+        
+        if from_user_collabs >= 3:
+            self.from_user.profile.add_badge("🔥 Frequent Collaborator")
+        
+        if to_user_collabs >= 3:
+            self.to_user.profile.add_badge("🔥 Frequent Collaborator")
+
+class PastCollaboration(models.Model):
+    """
+    Record of past collaborations between users.
+    """
+    COLLAB_TYPE_CHOICES = [
+        ('notebook', 'Notebook'),
+        ('event', 'Event'),
+        ('post', 'Post'),
+        ('request', 'Request'),
+        ('study_group', 'Study Group'),
+        ('project', 'Project'),
+    ]
+    
+    user_a = models.ForeignKey(User, on_delete=models.CASCADE, related_name='collaborations_a')
+    user_b = models.ForeignKey(User, on_delete=models.CASCADE, related_name='collaborations_b')
+    skill_used = models.CharField(max_length=100, help_text=_('Skill used in collaboration'))
+    collab_type = models.CharField(max_length=20, choices=COLLAB_TYPE_CHOICES, default='request')
+    timestamp = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        verbose_name = _('Past Collaboration')
+        verbose_name_plural = _('Past Collaborations')
+        ordering = ['-timestamp']
+    
+    def __str__(self):
+        return f"{self.user_a.email} + {self.user_b.email} ({self.skill_used})"
+    
+    @classmethod
+    def get_collaboration_count(cls, user1, user2):
+        """Get the number of collaborations between two users."""
+        return cls.objects.filter(
+            models.Q(user_a=user1, user_b=user2) | 
+            models.Q(user_a=user2, user_b=user1)
+        ).count() 

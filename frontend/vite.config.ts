@@ -5,16 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 8000,
-    host: '127.0.0.1',
+    port: 3000,
+    host: '0.0.0.0', // Allow access from any IP on the network
     open: true, // Automatically open the browser
-    proxy: {
-      '/api': {
-        target: 'http://127.0.0.1:8000',  // Django's default port
-        changeOrigin: true,
-        secure: false,
-        rewrite: (path) => path.replace(/^\/api/, '')
-      }
-    }
   }
 })
