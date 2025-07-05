@@ -5,7 +5,7 @@ from rest_framework.authentication import SessionAuthentication
 from django.contrib.auth import get_user_model
 from django.db.models import Q, Count
 from django.shortcuts import get_object_or_404
-from .models import Profile, CollabRequest, PastCollaboration
+from .models import Profile, CollabRequest, PastCollaboration, UserActivity, XPLog
 from .serializers import (
     UserSerializer, UserCreateSerializer, ProfileSerializer, ProfileUpdateSerializer,
     CollabRequestSerializer, CollabRequestResponseSerializer,
@@ -13,6 +13,7 @@ from .serializers import (
 )
 from .permissions import IsOwnerOrReadOnly
 from .authentication import FirebaseAuthentication
+from .xp_system import add_xp_by_reason, get_user_xp_stats, get_top_xp_users, award_xp_for_profile_completion
 
 User = get_user_model()
 
@@ -57,17 +58,61 @@ class ProfileViewSet(viewsets.ModelViewSet):
             return ProfileUpdateSerializer
         return ProfileSerializer
     
-    @action(detail=False, methods=['get'])
+    def update(self, request, *args, **kwargs):
+        """Update profile and award XP for editing."""
+        response = super().update(request, *args, **kwargs)
+        
+        # Award XP for profile edit using centralized system
+        result = add_xp_by_reason(request.user, 'profile_edit', 'Profile updated')
+        
+        # Check for profile completion bonus
+        completion_result = award_xp_for_profile_completion(request.user)
+        
+        return response
+    
+    def partial_update(self, request, *args, **kwargs):
+        """Update profile and award XP for editing."""
+        response = super().partial_update(request, *args, **kwargs)
+        
+        # Award XP for profile edit using centralized system
+        result = add_xp_by_reason(request.user, 'profile_edit', 'Profile updated')
+        
+        # Check for profile completion bonus
+        completion_result = award_xp_for_profile_completion(request.user)
+        
+        return response
+    
+    @action(detail=False, methods=['get', 'patch'])
     def me(self, request):
-        """Get current user's profile."""
+        """Get or update current user's profile."""
         profile = get_object_or_404(Profile, user=request.user)
+        if request.method == 'PATCH':
+            serializer = self.get_serializer(profile, data=request.data, partial=True)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+            return Response(serializer.data)
         serializer = self.get_serializer(profile)
         return Response(serializer.data)
+    
+    @action(detail=False, methods=['get'])
+    def xp_stats(self, request):
+        """Get comprehensive XP statistics for current user."""
+        stats = get_user_xp_stats(request.user)
+        if stats:
+            return Response(stats)
+        else:
+            return Response(
+                {'error': 'Failed to get XP stats'}, 
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
     
     @action(detail=False, methods=['post'])
     def add_xp(self, request):
         """Add XP to current user's profile."""
         amount = request.data.get('amount', 0)
+        reason = request.data.get('reason', 'admin_grant')
+        description = request.data.get('description', '')
+        
         if amount <= 0:
             return Response(
                 {'error': 'XP amount must be positive'}, 
@@ -75,9 +120,16 @@ class ProfileViewSet(viewsets.ModelViewSet):
             )
         
         profile = get_object_or_404(Profile, user=request.user)
-        profile.add_xp(amount)
-        serializer = self.get_serializer(profile)
-        return Response(serializer.data)
+        success = profile.add_xp(amount, reason, description)
+        
+        if success:
+            serializer = self.get_serializer(profile)
+            return Response(serializer.data)
+        else:
+            return Response(
+                {'error': 'Daily XP limit reached'}, 
+                status=status.HTTP_400_BAD_REQUEST
+            )
     
     @action(detail=False, methods=['post'])
     def add_badge(self, request):
@@ -93,6 +145,79 @@ class ProfileViewSet(viewsets.ModelViewSet):
         profile.add_badge(badge)
         serializer = self.get_serializer(profile)
         return Response(serializer.data)
+    
+    @action(detail=False, methods=['get'])
+    def xp_logs(self, request):
+        """Get XP logs for current user."""
+        profile = get_object_or_404(Profile, user=request.user)
+        logs = XPLog.objects.filter(profile=profile)[:20]  # Last 20 logs
+        
+        log_data = []
+        for log in logs:
+            log_data.append({
+                'amount': log.amount,
+                'reason': log.reason,
+                'description': log.description,
+                'created_at': log.created_at.isoformat()
+            })
+        
+        return Response({
+            'logs': log_data,
+            'daily_xp_earned': profile.daily_xp_earned,
+            'daily_xp_remaining': profile.get_daily_xp_remaining()
+        })
+    
+    @action(detail=False, methods=['post'])
+    def start_activity(self, request):
+        """Start an activity session."""
+        profile = get_object_or_404(Profile, user=request.user)
+        session = profile.start_activity_session()
+        
+        return Response({
+            'message': 'Activity session started',
+            'session_id': session.id
+        })
+    
+    @action(detail=False, methods=['post'])
+    def end_activity(self, request):
+        """End the current activity session."""
+        profile = get_object_or_404(Profile, user=request.user)
+        session = profile.end_activity_session()
+        
+        if session:
+            return Response({
+                'message': 'Activity session ended',
+                'duration_minutes': session.duration_minutes,
+                'xp_earned': session.duration_minutes >= 30
+            })
+        else:
+            return Response(
+                {'error': 'No active session found'}, 
+                status=status.HTTP_400_BAD_REQUEST
+            )
+    
+    @action(detail=False, methods=['get'])
+    def activity_stats(self, request):
+        """Get activity statistics for current user."""
+        profile = get_object_or_404(Profile, user=request.user)
+        
+        # Get today's activities
+        from django.utils import timezone
+        today = timezone.now().date()
+        today_activities = UserActivity.objects.filter(
+            user=request.user,
+            session_start__date=today
+        )
+        
+        total_today_minutes = sum(activity.duration_minutes for activity in today_activities)
+        
+        return Response({
+            'daily_xp_earned': profile.daily_xp_earned,
+            'daily_xp_remaining': profile.get_daily_xp_remaining(),
+            'today_minutes': total_today_minutes,
+            'today_sessions': today_activities.count(),
+            'has_active_session': UserActivity.objects.filter(user=request.user, is_active=True).exists()
+        })
 
 class CollabRequestViewSet(viewsets.ModelViewSet):
     """ViewSet for collaboration requests."""

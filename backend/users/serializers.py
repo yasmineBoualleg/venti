@@ -27,7 +27,7 @@ class UserCreateSerializer(serializers.ModelSerializer):
     
     def create(self, validated_data):
         user = User.objects.create_user(**validated_data)
-        return user
+        return user 
 
 class ProfileSerializer(serializers.ModelSerializer):
     """Serializer for user profiles."""
@@ -38,7 +38,8 @@ class ProfileSerializer(serializers.ModelSerializer):
         model = Profile
         fields = [
             'id', 'user', 'xp', 'skills', 'interests', 'hobbies', 'bio',
-            'profile_image', 'badges', 'skill_levels', 'created_at', 'updated_at'
+            'profile_image', 'badges', 'skill_levels', 'created_at', 'updated_at',
+            'show_email'
         ]
         read_only_fields = ['xp', 'badges', 'created_at', 'updated_at']
     

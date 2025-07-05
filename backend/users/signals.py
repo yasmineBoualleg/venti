@@ -9,7 +9,8 @@ User = get_user_model()
 def create_user_profile(sender, instance, created, **kwargs):
     """Create a profile for new users."""
     if created:
-        Profile.objects.create(user=instance)
+        profile = Profile.objects.create(user=instance)
+        # Profile already starts with 10 XP by default, so no need to add extra
 
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):

@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import api from '../api/api';
 import Navigation from '../components/Navigation';
 import Spinner from '../components/Spinner';
 import { MdEdit } from 'react-icons/md';
-import './ProfileGlass.css';
+import React from 'react';
 
 interface Profile {
   id: number;
@@ -25,6 +25,25 @@ interface Profile {
   badges: string[];
   created_at: string;
   updated_at: string;
+  daily_xp_earned: number;
+  last_daily_reset: string;
+  level: number;
+  show_email: boolean;
+}
+
+interface XPLog {
+  amount: number;
+  reason: string;
+  description: string;
+  created_at: string;
+}
+
+interface ActivityStats {
+  daily_xp_earned: number;
+  daily_xp_remaining: number;
+  today_minutes: number;
+  today_sessions: number;
+  has_active_session: boolean;
 }
 
 interface EditFormData {
@@ -62,7 +81,15 @@ const translations = {
     addHobby: 'Add Hobby',
     tellUsAboutYourself: 'Tell us about yourself...',
     level: 'Level',
-    xpToNext: 'XP to next level'
+    xpToNext: 'XP to next level',
+    dailyProgress: 'Daily Progress',
+    xpRemaining: 'XP remaining today',
+    activityStats: 'Activity Stats',
+    todayMinutes: 'Minutes today',
+    sessionsToday: 'Sessions today',
+    startSession: 'Start Session',
+    endSession: 'End Session',
+    xpLogs: 'XP History'
   },
   fr: {
     profile: 'Profil',
@@ -82,7 +109,15 @@ const translations = {
     addHobby: 'Ajouter un loisir',
     tellUsAboutYourself: 'Parlez-nous de vous...',
     level: 'Niveau',
-    xpToNext: 'XP pour le niveau suivant'
+    xpToNext: 'XP pour le niveau suivant',
+    dailyProgress: 'Progrès quotidien',
+    xpRemaining: 'XP restant aujourd\'hui',
+    activityStats: 'Statistiques d\'activité',
+    todayMinutes: 'Minutes aujourd\'hui',
+    sessionsToday: 'Sessions aujourd\'hui',
+    startSession: 'Démarrer Session',
+    endSession: 'Terminer Session',
+    xpLogs: 'Historique XP'
   },
   ar: {
     profile: 'الملف الشخصي',
@@ -102,7 +137,15 @@ const translations = {
     addHobby: 'إضافة هواية',
     tellUsAboutYourself: 'أخبرنا عن نفسك...',
     level: 'المستوى',
-    xpToNext: 'XP للمستوى التالي'
+    xpToNext: 'XP للمستوى التالي',
+    dailyProgress: 'التقدم اليومي',
+    xpRemaining: 'XP المتبقي اليوم',
+    activityStats: 'إحصائيات النشاط',
+    todayMinutes: 'الدقائق اليوم',
+    sessionsToday: 'الجلسات اليوم',
+    startSession: 'بدء الجلسة',
+    endSession: 'إنهاء الجلسة',
+    xpLogs: 'سجل XP'
   },
   dz: {
     profile: 'البروفايل',
@@ -122,7 +165,15 @@ const translations = {
     addHobby: 'زود هواية',
     tellUsAboutYourself: 'قل لينا على نفسك...',
     level: 'المستوى',
-    xpToNext: 'XP للمستوى الجاي'
+    xpToNext: 'XP للمستوى الجاي',
+    dailyProgress: 'التقدم اليومي',
+    xpRemaining: 'XP المتبقي اليوم',
+    activityStats: 'إحصائيات النشاط',
+    todayMinutes: 'الدقائق اليوم',
+    sessionsToday: 'الجلسات اليوم',
+    startSession: 'بدء الجلسة',
+    endSession: 'إنهاء الجلسة',
+    xpLogs: 'سجل XP'
   },
   qb: {
     profile: 'Aɣbalu',
@@ -142,7 +193,15 @@ const translations = {
     addHobby: 'Rnu Urar',
     tellUsAboutYourself: 'Ini-aɣ ɣef iman-ik...',
     level: 'Aɣerfad',
-    xpToNext: 'XP iɣerfad i d-itteddun'
+    xpToNext: 'XP iɣerfad i d-itteddun',
+    dailyProgress: 'Asnerni n wass',
+    xpRemaining: 'XP i d-yeqqan ass-a',
+    activityStats: 'Istatistik n urmud',
+    todayMinutes: 'Ndaqat ass-a',
+    sessionsToday: 'Iɣmisen ass-a',
+    startSession: 'Bdu Iɣmis',
+    endSession: 'Fakk Iɣmis',
+    xpLogs: 'Amezruy XP'
   }
 };
 
@@ -153,6 +212,107 @@ const calculateLevel = (xp: number) => {
   const xpToNextLevel = 100 - xpInCurrentLevel;
   const progress = (xpInCurrentLevel / 100) * 100;
   return { level, xpInCurrentLevel, xpToNextLevel, progress };
+};
+
+// LiquidXPProgress: Circular liquid fill progress indicator
+const LiquidXPProgress = ({ percent, size = 160, nextTitle }: { percent: number; size?: number; nextTitle: string }) => {
+  // Animate percent from 0 to target
+  const [animatedPercent, setAnimatedPercent] = useState(0);
+  const animationRef = useRef<number>();
+  useEffect(() => {
+    let start: number | null = null;
+    const duration = 2500; // ms
+    const animate = (timestamp: number) => {
+      if (!start) start = timestamp;
+      const elapsed = timestamp - start;
+      const progress = Math.min(elapsed / duration, 1);
+      setAnimatedPercent(percent * progress);
+      if (progress < 1) {
+        animationRef.current = requestAnimationFrame(animate);
+      } else {
+        setAnimatedPercent(percent);
+      }
+    };
+    setAnimatedPercent(0);
+    animationRef.current = requestAnimationFrame(animate);
+    return () => { if (animationRef.current) cancelAnimationFrame(animationRef.current); };
+  }, [percent]);
+
+  // Clamp percent
+  const pct = Math.max(0, Math.min(100, animatedPercent));
+  // Wave parameters
+  const waveAmplitude = size * 0.04;
+  const waveLength = size * 0.9;
+  const waveCount = 1.5;
+  const centerY = size / 2;
+  const radius = size / 2 - 2;
+  // Calculate wave path
+  const waveHeight = size * (1 - pct / 100);
+  let wavePath = '';
+  for (let x = 0; x <= size; x += 1) {
+    const y = waveHeight + waveAmplitude * Math.sin((x / waveLength) * waveCount * 2 * Math.PI);
+    wavePath += x === 0 ? `M${x},${y}` : ` L${x},${y}`;
+  }
+  wavePath += ` L${size},${size} L0,${size} Z`;
+  // Determine text color: white if >= 50%, blue otherwise
+  const textColor = pct >= 50 ? '#fff' : '#2563eb';
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <svg width={size} height={size} style={{ display: 'block' }}>
+        {/* Outer circle */}
+        <circle
+          cx={centerY}
+          cy={centerY}
+          r={radius}
+          fill="#f8faff"
+          stroke="#e0e7ff"
+          strokeWidth={2}
+        />
+        {/* Liquid wave fill */}
+        <clipPath id="liquid-clip">
+          <circle cx={centerY} cy={centerY} r={radius} />
+        </clipPath>
+        <g clipPath="url(#liquid-clip)">
+          <path
+            d={wavePath}
+            fill="url(#liquid-gradient)"
+            style={{ opacity: 0.92, transition: 'd 2.5s cubic-bezier(.4,2,.6,1)' }}
+          />
+        </g>
+        {/* Gradient definition */}
+        <defs>
+          <linearGradient id="liquid-gradient" x1="0" y1="0" x2="0" y2={size} gradientUnits="userSpaceOnUse">
+            <stop stopColor="#b7aaff" />
+            <stop offset="1" stopColor="#7fd7ff" />
+          </linearGradient>
+        </defs>
+        {/* Next title floating inside the circle, color depends on fill */}
+        <text
+          x="50%"
+          y={size * 0.48}
+          textAnchor="middle"
+          fontSize={size * 0.18}
+          fontWeight={700}
+          fill={textColor}
+          style={{ textShadow: textColor === '#fff' ? '0 1px 8px #b7aaff88' : '0 1px 8px #fff' }}
+        >
+          {nextTitle}
+        </text>
+        {/* Percentage below the title, small */}
+        <text
+          x="50%"
+          y={size * 0.62}
+          textAnchor="middle"
+          fontSize={size * 0.11}
+          fontWeight={500}
+          fill={textColor}
+          style={{ opacity: 0.85, textShadow: textColor === '#fff' ? '0 1px 8px #b7aaff88' : '0 1px 8px #fff' }}
+        >
+          {Math.round(pct)}%
+        </text>
+      </svg>
+    </div>
+  );
 };
 
 const ProfilePage = () => {
@@ -172,8 +332,19 @@ const ProfilePage = () => {
   const [newSkill, setNewSkill] = useState('');
   const [newInterest, setNewInterest] = useState('');
   const [newHobby, setNewHobby] = useState('');
+  const [showEmail, setShowEmail] = useState(true);
+  const [showLevelUpModal, setShowLevelUpModal] = useState(false);
+  const [animatedXP, setAnimatedXP] = useState(0);
+  const [xpBarAnimated, setXpBarAnimated] = useState(false);
+  const [animatedProfileXP, setAnimatedProfileXP] = useState(0);
+  const [xp, setXP] = useState(0);
+  const [xpPulse, setXpPulse] = useState(false);
+  const [activityStats, setActivityStats] = useState<ActivityStats | null>(null);
+  const [xpLogs, setXpLogs] = useState<XPLog[]>([]);
+  const [showXPLogs, setShowXPLogs] = useState(false);
   const navigate = useNavigate();
   const currentTranslation = translations[currentLang as keyof typeof translations];
+  const xpBarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -181,6 +352,8 @@ const ProfilePage = () => {
         setLoading(true);
         const res = await api.get('users/profiles/me/');
         setProfile(res.data);
+        setShowEmail(res.data.show_email);
+        setXP(res.data.xp);
         // Initialize edit form data
         setEditFormData({
           bio: res.data.bio || '',
@@ -201,6 +374,116 @@ const ProfilePage = () => {
     fetchProfile();
   }, [navigate]);
 
+  useEffect(() => {
+    const fetchActivityStats = async () => {
+      try {
+        const res = await api.get('users/profiles/activity_stats/');
+        setActivityStats(res.data);
+      } catch (err) {
+        console.error('Failed to fetch activity stats:', err);
+      }
+    };
+    fetchActivityStats();
+  }, []);
+
+  useEffect(() => {
+    const fetchXPLogs = async () => {
+      try {
+        const res = await api.get('users/profiles/xp_logs/');
+        setXpLogs(res.data.logs);
+      } catch (err) {
+        console.error('Failed to fetch XP logs:', err);
+      }
+    };
+    fetchXPLogs();
+  }, []);
+
+  useEffect(() => {
+    // Show level up modal only once per session
+    if (profile && !localStorage.getItem('profileLevelUpShown')) {
+      setShowLevelUpModal(true);
+      localStorage.setItem('profileLevelUpShown', 'true');
+      setAnimatedXP(0);
+      setTimeout(() => {
+        setAnimatedXP(profile.xp > 500 ? 500 : profile.xp);
+      }, 500);
+    }
+  }, [profile]);
+
+  useEffect(() => {
+    if (profile) {
+      setXP(profile.xp > 100 ? 100 : profile.xp);
+      if (!localStorage.getItem('profileXPBarAnimated')) {
+        setXpBarAnimated(true);
+        setAnimatedProfileXP(0);
+        setTimeout(() => {
+          let start = 0;
+          const end = profile.xp > 100 ? 100 : profile.xp;
+          const duration = 1800; // ms
+          const startTime = performance.now();
+          function animateXPBar(now: number) {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            setAnimatedProfileXP(Math.floor(progress * end));
+            if (progress < 1) {
+              requestAnimationFrame(animateXPBar);
+            } else {
+              setAnimatedProfileXP(end);
+              localStorage.setItem('profileXPBarAnimated', 'true');
+            }
+          }
+          requestAnimationFrame(animateXPBar);
+        }, 400);
+      } else {
+        setAnimatedProfileXP(profile.xp > 100 ? 100 : profile.xp);
+      }
+    }
+  }, [profile]);
+
+  useEffect(() => {
+    if (animatedProfileXP !== xp) {
+      setXpPulse(true);
+      let start = animatedProfileXP;
+      const end = xp;
+      const duration = 1200;
+      const startTime = performance.now();
+      function animateXP(now: number) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        setAnimatedProfileXP(Math.floor(start + (end - start) * progress));
+        if (progress < 1) {
+          requestAnimationFrame(animateXP);
+        } else {
+          setAnimatedProfileXP(end);
+          setTimeout(() => setXpPulse(false), 600);
+        }
+      }
+      requestAnimationFrame(animateXP);
+    }
+  }, [xp]);
+
+  useEffect(() => {
+    if (!profile || !xpBarRef.current) return;
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setXpBarAnimated(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(xpBarRef.current);
+    return () => observer.disconnect();
+  }, [profile, xpBarRef]);
+
+  // Fallback: always animate in after profile loads
+  useEffect(() => {
+    if (profile) {
+      setTimeout(() => setXpBarAnimated(true), 300);
+    }
+  }, [profile]);
+
   const handleEditProfile = () => {
     setShowEditModal(true);
   };
@@ -211,6 +494,14 @@ const ProfilePage = () => {
       const res = await api.patch(`/users/profiles/${profile?.id}/`, editFormData);
       setProfile(res.data);
       setShowEditModal(false);
+      
+      // Refresh activity stats and XP logs after profile update
+      const [statsRes, logsRes] = await Promise.all([
+        api.get('users/profiles/activity_stats/'),
+        api.get('users/profiles/xp_logs/')
+      ]);
+      setActivityStats(statsRes.data);
+      setXpLogs(logsRes.data.logs);
     } catch (err: any) {
       console.error('Failed to update profile:', err);
       setError('Failed to update profile. Please try again.');
@@ -253,6 +544,52 @@ const ProfilePage = () => {
     }
   };
 
+  const handleStartActivity = async () => {
+    try {
+      await api.post('users/profiles/start_activity/');
+      // Refresh activity stats
+      const res = await api.get('users/profiles/activity_stats/');
+      setActivityStats(res.data);
+    } catch (err) {
+      console.error('Failed to start activity session:', err);
+    }
+  };
+
+  const handleEndActivity = async () => {
+    try {
+      const res = await api.post('users/profiles/end_activity/');
+      // Refresh activity stats and XP logs
+      const [statsRes, logsRes] = await Promise.all([
+        api.get('users/profiles/activity_stats/'),
+        api.get('users/profiles/xp_logs/')
+      ]);
+      setActivityStats(statsRes.data);
+      setXpLogs(logsRes.data.logs);
+      
+      // Show XP gained notification if applicable
+      if (res.data.xp_earned) {
+        setXpPulse(true);
+        setTimeout(() => setXpPulse(false), 2000);
+      }
+    } catch (err) {
+      console.error('Failed to end activity session:', err);
+    }
+  };
+
+  const handleAddXP = () => {
+    setXP(prev => Math.min(prev + 10, 100));
+  };
+
+  const handleShowEmailToggle = async () => {
+    const newValue = !showEmail;
+    setShowEmail(newValue);
+    try {
+      await api.patch('users/profiles/me/', { show_email: newValue });
+    } catch (err) {
+      // Optionally show error
+    }
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen bg-light-bg flex items-center justify-center">
@@ -274,27 +611,35 @@ const ProfilePage = () => {
   if (!profile) return null;
 
   const { level, xpInCurrentLevel, xpToNextLevel, progress } = calculateLevel(profile.xp);
+  let xpNeeded = 100;
+  let xpInLevel = 0;
+  let xpPercent = 0;
+  if (profile && typeof profile.xp === 'number') {
+    xpNeeded = 100;
+    xpInLevel = profile.xp % xpNeeded;
+    xpPercent = Math.max(0, Math.min(100, (xpInLevel / xpNeeded) * 100));
+  }
+  console.log('xpBarAnimated:', xpBarAnimated, 'xpPercent:', xpPercent, 'profile.xp:', profile?.xp);
 
   return (
-    <div className="min-h-screen relative flex items-center justify-center bg-blue-glass-bg overflow-hidden">
-      {/* Blue glassmorphism background with abstract lines */}
-      <div className="absolute inset-0 z-0 bg-blue-glass-bg pointer-events-none" />
+    <div className="min-h-screen relative flex items-center justify-center overflow-hidden" style={{ background: '#2563eb' }}>
+      <svg className="absolute inset-0 w-full h-full z-0" style={{ pointerEvents: 'none' }} xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" fill="none" viewBox="0 0 1440 900">
+        <g stroke="white" strokeWidth="1.2" opacity="0.18">
+          <path d="M0 100 Q360 200 720 100 T1440 100" />
+          <path d="M0 300 Q360 400 720 300 T1440 300" />
+          <path d="M0 500 Q360 600 720 500 T1440 500" />
+          <path d="M0 700 Q360 800 720 700 T1440 700" />
+          <path d="M0 200 Q180 100 360 200 T720 200 T1080 200 T1440 200" />
+          <path d="M0 400 Q180 300 360 400 T720 400 T1080 400 T1440 400" />
+          <path d="M0 600 Q180 500 360 600 T720 600 T1080 600 T1440 600" />
+          <path d="M0 800 Q180 700 360 800 T720 800 T1080 800 T1440 800" />
+        </g>
+      </svg>
       {/* Main Content Card */}
-      <div className="relative z-10 max-w-xl w-full mx-auto px-2 sm:px-4 flex flex-col items-center justify-center min-h-[600px]">
-        <div className="profile-glass-card rounded-3xl shadow-2xl p-10 sm:p-12 flex flex-col items-center w-full">
-          {/* Floating Edit Button */}
-          <button
-            onClick={handleEditProfile}
-            className="absolute -top-6 -left-6 z-10 bg-white/40 backdrop-blur-xl border border-white/40 shadow-lg rounded-full p-3 hover:bg-white/70 transition-all flex items-center justify-center"
-            style={{ boxShadow: '0 4px 24px 0 rgba(80,80,180,0.10)' }}
-            aria-label="Edit Profile"
-          >
-            <MdEdit size={22} color="#2563eb" />
-          </button>
-
-          {/* Language Bar - Centered */}
-          <div className="mt-8 sm:mt-12 flex justify-center px-2">
-            <div className="flex items-center glass-effect rounded-full shadow-lg px-1 sm:px-2 py-1 max-w-full overflow-x-auto">
+      <div className="relative z-10 max-w-4xl w-full mx-auto px-2 sm:px-8 flex flex-col items-center justify-center min-h-[800px] mt-8 mb-16">
+        <div className="bg-white rounded-3xl shadow-2xl p-14 sm:p-20 flex flex-col items-center w-full">
+          {/* Language Bar - glassmorphised, at top of card */}
+          <div className="flex items-center glass-effect rounded-full shadow-lg px-1 sm:px-2 py-1 max-w-full overflow-x-auto mt-2 mb-8">
               {languages.map((lang) => (
                 <button
                   key={lang.code}
@@ -309,20 +654,17 @@ const ProfilePage = () => {
                 </button>
               ))}
             </div>
-          </div>
-
-          {/* Main Content */}
-          <div className="px-2 sm:px-4 pt-8 sm:pt-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center"
-            >
-              {/* Profile Header */}
-              <div className="mb-8 sm:mb-12">
+          {/* Edit Button - inside card, not cut off */}
+          <button
+            onClick={handleEditProfile}
+            className="absolute top-4 right-4 z-40 bg-white border border-white/40 shadow-lg rounded-full p-4 hover:bg-primary/10 transition-all flex items-center justify-center"
+            style={{ boxShadow: '0 4px 24px 0 rgba(80,80,180,0.10)' }}
+            aria-label="Edit Profile"
+          >
+            <MdEdit size={28} color="#2563eb" />
+          </button>
                 {/* Avatar */}
-                <div className="relative inline-block mb-6">
+          <div className="relative inline-block mb-6 mt-6">
                   {profile.profile_image ? (
                     <img
                       src={profile.profile_image}
@@ -335,41 +677,194 @@ const ProfilePage = () => {
                     </div>
                   )}
                 </div>
+          {/* User Info - name and email directly under avatar */}
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">
+            {profile.user.first_name} {profile.user.last_name}
+          </h1>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            {showEmail && <p className="text-primary text-lg">{profile.user.email}</p>}
+            <label className="flex items-center gap-2 cursor-pointer select-none text-xs text-gray-500">
+              <span>Show email</span>
+              <span className="relative inline-block w-10 h-6 align-middle select-none">
+                <input
+                  type="checkbox"
+                  checked={showEmail}
+                  onChange={handleShowEmailToggle}
+                  className="sr-only peer"
+                />
+                <span className="block w-10 h-6 bg-gray-300 rounded-full transition peer-checked:bg-primary/80"></span>
+                <span className="absolute left-1 top-1 w-4 h-4 bg-white rounded-full shadow transition-transform duration-200 peer-checked:translate-x-4"></span>
+              </span>
+            </label>
+          </div>
+          {/* Current title pill under email */}
+          <div style={{
+            display: 'inline-block',
+            background: '#2563eb',
+            color: '#fff',
+            fontWeight: 600,
+            fontSize: 14,
+            borderRadius: 999,
+            padding: '3px 16px',
+            marginBottom: 8,
+            textAlign: 'center',
+            boxShadow: '0 2px 8px #2563eb22',
+          }}>
+            {level === 1 ? 'Gnome' : 'Warrior'}
+          </div>
+          
+          {/* Activity Controls */}
+          {activityStats && (
+            <div className="mb-6 flex flex-wrap gap-3 justify-center">
+              <button
+                onClick={() => setShowXPLogs(!showXPLogs)}
+                className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm font-semibold"
+              >
+                {currentTranslation.xpLogs}
+              </button>
+            </div>
+          )}
 
                 {/* XP and Level System */}
-                <div className="mb-6 max-w-md mx-auto">
-                  <div className="glass-effect rounded-2xl p-4 sm:p-6">
-                    <div className="flex justify-between items-center mb-3">
+          <div className="mb-10 w-3/4 mx-auto">
+            <div className="rounded-3xl p-8 sm:p-12">
+              <div className="flex flex-col items-center mb-4">
+                <span className="text-3xl font-extrabold text-primary drop-shadow-lg mb-2 tracking-wide animate-pulse">{profile.xp} XP</span>
                       <span className="text-lg font-bold text-gray-900">{currentTranslation.level} {level}</span>
-                      <span className="text-sm text-gray-600">{profile.xp} XP</span>
                     </div>
-                    <div className="relative">
-                      <div className="w-full bg-gray-200 rounded-full h-3">
-                        <motion.div
-                          className="bg-gradient-to-r from-primary/80 to-blue-600 h-3 rounded-full"
-                          initial={{ width: 0 }}
-                          animate={{ width: `${progress}%` }}
-                          transition={{ duration: 1, delay: 0.5 }}
-                        />
+              {profile && !isNaN(xpPercent) && (
+                <div className="w-full flex flex-col items-center" style={{ maxWidth: 400 }}>
+                  {/* ... XP bar ... */}
+                  <div className="relative w-full flex flex-col items-center mb-6">
+                    {/* Flat, minimalist XP Bar */}
+                    <div
+                      className="relative w-full"
+                      style={{
+                        background: '#f4f6fa',
+                        borderRadius: 8,
+                        border: '1.5px solid #2563eb',
+                        height: 20,
+                        overflow: 'hidden',
+                        position: 'relative',
+                      }}
+                    >
+                      {/* Progress fill */}
+                      <div
+                        style={{
+                          width: xpBarAnimated ? `${xpPercent}%` : 0,
+                          height: '100%',
+                          background: 'linear-gradient(90deg, #2563eb 0%, #38a3fd 100%)',
+                          borderRadius: 8,
+                          transition: 'width 1.2s cubic-bezier(.4,2,.6,1)',
+                        }}
+                      />
+                      {/* Percentage floating center inside the bar, color adapts for contrast */}
+                      <div
+                        style={{
+                          position: 'absolute',
+                          left: 0,
+                          top: 0,
+                          width: '100%',
+                          height: '100%',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontWeight: 700,
+                          fontSize: 14,
+                          color: xpPercent >= 50 ? '#fff' : '#2563eb',
+                          textShadow: xpPercent >= 50 ? '0 1px 8px #2563eb88' : '0 1px 8px #fff',
+                          pointerEvents: 'none',
+                          zIndex: 3,
+                        }}
+                      >
+                        {Math.round(xpPercent)}%
                       </div>
-                      <div className="flex justify-between text-xs text-gray-500 mt-1">
-                        <span>{xpInCurrentLevel}/100</span>
-                        <span>{currentTranslation.xpToNext}: {xpToNextLevel}</span>
+                      {/* Optional: tick marks */}
+                      <div style={{ position: 'absolute', left: 0, top: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 2 }}>
+                        {[0, 25, 50, 75, 100].map((tick) => (
+                          <div
+                            key={tick}
+                            style={{
+                              position: 'absolute',
+                              left: `calc(${tick}% - 1px)`,
+                              top: 0,
+                              width: 2,
+                              height: '100%',
+                              background: '#e0e7ef',
+                              opacity: tick === 0 || tick === 100 ? 0.7 : 0.4,
+                            }}
+                          />
+                        ))}
                       </div>
                     </div>
                   </div>
+                  {/* Liquid circle with percentage and next title inside */}
+                  <div className="mb-4">
+                    <LiquidXPProgress percent={xpPercent} size={160} nextTitle={level === 1 ? 'Warrior' : 'Mage'} />
+                  </div>
+                </div>
+              )}
+              <div className="flex justify-between text-base text-gray-500 mt-2 font-semibold">
+                <span>0</span>
+                <span>100</span>
                 </div>
 
-                {/* User Info */}
-                <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
-                  {profile.user.first_name} {profile.user.last_name}
-                </h1>
-                <p className="text-primary text-lg mb-1">{profile.user.email}</p>
-                {profile.user.place && (
-                  <p className="text-gray-600 text-sm">{profile.user.place}</p>
-                )}
+              {/* Daily Progress */}
+              {activityStats && (
+                <div className="mt-4 p-4 bg-blue-50 rounded-xl">
+                  <h3 className="text-sm font-semibold text-gray-700 mb-2">{currentTranslation.dailyProgress}</h3>
+                  <div className="flex justify-between text-sm text-gray-600">
+                    <span>{currentTranslation.xpRemaining}: {activityStats.daily_xp_remaining}</span>
+                    <span>{currentTranslation.todayMinutes}: {activityStats.today_minutes}</span>
+                  </div>
+                </div>
+              )}
+            </div>
               </div>
 
+          {/* XP Logs Modal */}
+          {showXPLogs && (
+            <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+              <div className="bg-white rounded-2xl p-6 max-w-md w-full max-h-96 overflow-y-auto">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-lg font-bold">{currentTranslation.xpLogs}</h3>
+                  <button
+                    onClick={() => setShowXPLogs(false)}
+                    className="text-gray-500 hover:text-gray-700"
+                  >
+                    ×
+                  </button>
+                </div>
+                <div className="space-y-3">
+                  {xpLogs.map((log, index) => (
+                    <div key={index} className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                      <div>
+                        <div className="font-semibold text-green-600">+{log.amount} XP</div>
+                        <div className="text-sm text-gray-600">{log.description}</div>
+                      </div>
+                      <div className="text-xs text-gray-500">
+                        {new Date(log.created_at).toLocaleDateString()}
+                      </div>
+                    </div>
+                  ))}
+                  {xpLogs.length === 0 && (
+                    <p className="text-gray-500 text-center py-4">No XP logs yet</p>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Main Content */}
+          <div className="px-2 sm:px-4 pt-8 sm:pt-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center"
+            >
+              {/* Profile Header */}
+              <div className="mb-8 sm:mb-12">
               {/* Bio */}
               {profile.bio && (
                 <div className="mb-8 sm:mb-12">
@@ -425,6 +920,7 @@ const ProfilePage = () => {
                       🏆 {badge}
                     </span>
                   )) : <span className="text-gray-400">{currentTranslation.noBadgesYet}</span>}
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -449,8 +945,8 @@ const ProfilePage = () => {
               initial={{ scale: 0.97, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.97, opacity: 0 }}
-              className="w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl border border-white/30 shadow-2xl p-8 bg-white/30 backdrop-blur-2xl"
-              style={{ boxShadow: '0 8px 40px 0 rgba(80,80,180,0.13)', background: 'rgba(255,255,255,0.22)', border: '1.5px solid rgba(255,255,255,0.25)' }}
+              className="w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl border border-white/30 shadow-2xl p-8 bg-white/80 glass-effect"
+              style={{ boxShadow: '0 8px 40px 0 rgba(80,80,180,0.13)', background: 'rgba(255,255,255,0.92)', border: '1.5px solid rgba(255,255,255,0.25)' }}
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex justify-between items-center mb-6">
@@ -640,6 +1136,61 @@ const ProfilePage = () => {
                   {editLoading ? 'Saving...' : currentTranslation.saveChanges}
                 </button>
               </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Level Up Modal */}
+      <AnimatePresence>
+        {showLevelUpModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm"
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="bg-white rounded-3xl shadow-2xl p-10 max-w-lg w-full flex flex-col items-center relative"
+            >
+              {/* Confetti or Sparkle effect (simple SVG or emoji for now) */}
+              <div className="absolute top-0 left-0 w-full flex justify-center mt-[-2.5rem]">
+                <span className="text-5xl animate-bounce">🎉✨</span>
+              </div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4 mt-2">Welcome! Level 1 Unlocked</h2>
+              <p className="text-lg text-gray-700 mb-8">You've started your journey. Here's your XP progress:</p>
+              {/* Animated XP Bar */}
+              <div className="w-full max-w-md mx-auto mb-6">
+                <div className="flex justify-between mb-1">
+                  <span className="text-lg font-bold text-gray-900">Level 1</span>
+                  <span className="text-sm text-gray-600">{animatedXP} / 500 XP</span>
+                </div>
+                <div className="relative w-full h-6 bg-gray-200 rounded-full overflow-hidden">
+                  <motion.div
+                    className="absolute left-0 top-0 h-6 rounded-full"
+                    initial={{ width: 0 }}
+                    animate={{ width: `${(animatedXP / 500) * 100}%` }}
+                    transition={{ duration: 2, ease: 'easeInOut' }}
+                    style={{
+                      background: 'linear-gradient(90deg, #ffe259 0%, #bc6ff1 50%, #2563eb 100%)',
+                      boxShadow: '0 2px 12px 0 #ffe25955',
+                    }}
+                  />
+                </div>
+                <div className="flex justify-between text-xs text-gray-500 mt-1">
+                  <span>0</span>
+                  <span>500</span>
+                </div>
+              </div>
+              <button
+                onClick={() => setShowLevelUpModal(false)}
+                className="mt-4 px-6 py-2 bg-primary/80 text-white rounded-xl font-semibold shadow hover:bg-primary transition-all"
+              >
+                Continue
+              </button>
             </motion.div>
           </motion.div>
         )}

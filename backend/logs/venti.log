@@ -462,4 +462,895 @@
 [2025-07-01 14:32:27,111] [INFO] [users.authentication] Existing user found and updated: kaito443322@gmail.com
 [2025-07-01 14:35:51,851] [INFO] [users.authentication] Firebase token verified for user: kaito443322@gmail.com (UID: 1SYe09m57EXRvBrI6JIhs20PLN23)
 [2025-07-01 14:35:52,050] [INFO] [users.authentication] Existing user found and updated: kaito443322@gmail.com
-                                                                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                                   [2025-07-03 19:34:33,566] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-03 19:34:33,657] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-03 19:41:35,031] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 19:41:35,546] [INFO] [users.authentication] New user created: kaitkaito168@gmail.com
+[2025-07-03 19:41:36,201] [INFO] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": true, "timestamp": "2025-07-03T19:41:36.187720+00:00"}
+[2025-07-03 19:41:37,721] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 19:41:37,908] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 19:41:39,149] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 19:41:39,487] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 19:41:51,798] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 19:41:51,945] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 19:41:52,302] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 19:41:52,467] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 19:51:08,035] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 19:51:08,082] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 19:51:08,348] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 19:51:08,421] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:06:04,912] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:06:04,994] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:06:05,152] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:06:05,219] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:08:59,668] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:08:59,721] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:08:59,965] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:09:00,010] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:14:50,079] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:14:50,133] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:14:50,239] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:14:50,296] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:15:02,270] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:15:02,339] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:15:02,460] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:15:02,510] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:15:23,245] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:15:23,385] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:15:23,943] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:15:24,009] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:18:37,058] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:18:37,169] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:19:07,773] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:19:07,931] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:19:32,937] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:19:33,175] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:20:05,467] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:20:05,684] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:20:13,019] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:20:13,144] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:21:34,408] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:21:34,519] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:21:40,356] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:21:40,546] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:21:40,787] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:21:40,912] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:22:28,175] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:22:28,271] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:22:28,791] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:22:28,922] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:22:47,917] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:22:48,033] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:23:41,639] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:23:41,745] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:24:30,874] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:24:31,001] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:24:37,600] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:24:37,861] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:29:29,061] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:29:29,146] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:34:08,966] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:34:09,005] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:35:37,893] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:35:38,125] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:36:56,367] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:36:56,436] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:36:56,648] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:36:56,707] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:38:23,400] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:38:23,530] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:40:25,884] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:40:25,990] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:43:03,257] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:43:03,348] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:43:03,452] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:43:03,524] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:43:50,800] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:43:50,862] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:45:21,035] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:45:21,234] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:45:53,852] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:45:53,954] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:48:47,265] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:48:47,342] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:48:47,556] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:48:47,694] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:49:03,166] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:49:03,232] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:51:39,226] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:51:39,320] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:51:39,495] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:51:39,605] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:54:29,827] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:54:29,863] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:55:14,279] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:55:14,580] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:55:14,804] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:55:14,941] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:55:26,852] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:55:27,027] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 20:55:33,941] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 20:55:34,041] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 21:00:24,469] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 21:00:24,580] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 21:00:24,897] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 21:00:25,024] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 21:10:24,523] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 21:10:24,636] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 21:12:29,718] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 21:12:29,819] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 21:12:38,535] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 21:12:38,681] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 21:12:40,056] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 21:12:40,264] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 21:14:45,690] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 21:14:45,751] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 21:15:09,544] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 21:15:09,688] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 21:15:10,020] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 21:15:10,164] [INFO] [users.authentication] Existing user found and updated: kaitkaito168@gmail.com
+[2025-07-03 21:20:30,099] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-03 21:20:30,545] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-03 21:21:25,790] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-03 21:21:26,432] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-03 21:22:21,488] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-03 21:22:21,740] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-03 21:22:58,494] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-03 21:22:59,220] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-03 21:24:13,155] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-03 21:24:13,457] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-03 21:24:48,378] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-03 21:24:48,502] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-03 21:25:05,865] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-03 21:25:06,174] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-03 21:25:18,071] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-03 21:25:18,210] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-03 21:35:00,258] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 21:35:00,399] [ERROR] [users.authentication] Firebase authentication error: no such column: users_profile.last_activity
+[2025-07-03 21:35:00,696] [INFO] [users.authentication] Firebase token verified for user: kaitkaito168@gmail.com (UID: WPcZHqTw3JPg1gyrgUcyMEcXLTF2)
+[2025-07-03 21:35:00,774] [ERROR] [users.authentication] Firebase authentication error: no such column: users_profile.last_activity
+[2025-07-03 21:36:09,152] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-03 21:36:09,477] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-03 21:42:20,528] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-03 21:42:20,845] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-03 22:26:38,483] [ERROR] [users.authentication] Firebase authentication error: Token expired: Token expired, 1751580884 < 1751581598
+[2025-07-03 22:26:38,793] [ERROR] [users.authentication] Firebase authentication error: Token expired: Token expired, 1751580884 < 1751581598
+[2025-07-03 22:27:14,235] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-03 22:27:14,503] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-03 22:28:07,084] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-03 22:28:07,242] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-03 22:28:26,910] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-03 22:28:27,430] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-03 22:30:34,278] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-03 22:30:34,812] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-03 22:40:35,802] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-03 22:40:35,999] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-03 22:42:03,890] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-03 22:42:04,044] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-03 22:49:58,402] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-03 22:49:58,610] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-03 22:50:15,820] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-03 22:50:16,114] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-03 23:00:41,002] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-03 23:00:41,575] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-03 23:02:23,942] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-03 23:02:24,324] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-03 23:02:55,765] [ERROR] [users.authentication] Firebase authentication error: Token expired: Token expired, 1751580884 < 1751583775
+[2025-07-03 23:02:55,937] [ERROR] [users.authentication] Firebase authentication error: Token expired: Token expired, 1751580884 < 1751583775
+[2025-07-03 23:02:55,977] [ERROR] [users.authentication] Firebase authentication error: Token expired: Token expired, 1751580884 < 1751583775
+[2025-07-03 23:02:56,076] [ERROR] [users.authentication] Firebase authentication error: Token expired: Token expired, 1751580884 < 1751583776
+[2025-07-03 23:02:56,287] [ERROR] [users.authentication] Firebase authentication error: Token expired: Token expired, 1751580884 < 1751583776
+[2025-07-03 23:02:56,300] [ERROR] [users.authentication] Firebase authentication error: Token expired: Token expired, 1751580884 < 1751583776
+[2025-07-03 23:03:57,608] [ERROR] [users.authentication] Firebase authentication error: Token expired: Token expired, 1751580884 < 1751583837
+[2025-07-03 23:03:57,617] [ERROR] [users.authentication] Firebase authentication error: Token expired: Token expired, 1751580884 < 1751583837
+[2025-07-03 23:03:57,699] [ERROR] [users.authentication] Firebase authentication error: Token expired: Token expired, 1751580884 < 1751583837
+[2025-07-03 23:03:57,974] [ERROR] [users.authentication] Firebase authentication error: Token expired: Token expired, 1751580884 < 1751583837
+[2025-07-03 23:03:57,987] [ERROR] [users.authentication] Firebase authentication error: Token expired: Token expired, 1751580884 < 1751583837
+[2025-07-03 23:03:58,195] [ERROR] [users.authentication] Firebase authentication error: Token expired: Token expired, 1751580884 < 1751583838
+[2025-07-03 23:04:44,504] [ERROR] [users.authentication] Firebase authentication error: Token used too early, 1751583884 < 1751584450. Check that your computer's clock is set correctly.
+[2025-07-03 23:04:44,532] [ERROR] [users.authentication] Firebase authentication error: Token used too early, 1751583884 < 1751584450. Check that your computer's clock is set correctly.
+[2025-07-03 23:04:44,539] [ERROR] [users.authentication] Firebase authentication error: Token used too early, 1751583884 < 1751584450. Check that your computer's clock is set correctly.
+[2025-07-03 23:04:44,663] [ERROR] [users.authentication] Firebase authentication error: Token used too early, 1751583884 < 1751584450. Check that your computer's clock is set correctly.
+[2025-07-03 23:04:44,874] [ERROR] [users.authentication] Firebase authentication error: Token used too early, 1751583884 < 1751584450. Check that your computer's clock is set correctly.
+[2025-07-03 23:04:44,892] [ERROR] [users.authentication] Firebase authentication error: Token used too early, 1751583884 < 1751584450. Check that your computer's clock is set correctly.
+[2025-07-03 23:06:27,311] [ERROR] [users.authentication] Firebase authentication error: Token used too early, 1751583987 < 1751584548. Check that your computer's clock is set correctly.
+[2025-07-03 23:06:27,313] [ERROR] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": false, "timestamp": "2025-07-03T23:06:27.313244+00:00", "error": "Invalid Firebase token"}
+[2025-07-03 23:06:28,187] [ERROR] [users.authentication] Firebase authentication error: Token used too early, 1751583988 < 1751584548. Check that your computer's clock is set correctly.
+[2025-07-03 23:06:28,188] [ERROR] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": false, "timestamp": "2025-07-03T23:06:28.188308+00:00", "error": "Invalid Firebase token"}
+[2025-07-03 23:14:11,017] [ERROR] [users.authentication] Firebase authentication error: Token used too early, 1751584451 < 1751585015. Check that your computer's clock is set correctly.
+[2025-07-03 23:14:11,025] [ERROR] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": false, "timestamp": "2025-07-03T23:14:11.024768+00:00", "error": "Invalid Firebase token"}
+[2025-07-03 23:14:11,977] [ERROR] [users.authentication] Firebase authentication error: Token used too early, 1751584451 < 1751585015. Check that your computer's clock is set correctly.
+[2025-07-03 23:14:11,978] [ERROR] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": false, "timestamp": "2025-07-03T23:14:11.978315+00:00", "error": "Invalid Firebase token"}
+[2025-07-03 23:16:20,485] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-03 23:16:20,617] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-03 23:16:53,544] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-03 23:16:53,717] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-03 23:17:17,465] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-03 23:17:17,739] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-03 23:19:48,390] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-03 23:19:48,911] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-03 23:19:51,595] [ERROR] [users.authentication] Firebase authentication error: Token used too early, 1751584791 < 1751585249. Check that your computer's clock is set correctly.
+[2025-07-03 23:19:51,596] [ERROR] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": false, "timestamp": "2025-07-03T23:19:51.595892+00:00", "error": "Invalid Firebase token"}
+[2025-07-03 23:19:55,159] [ERROR] [users.authentication] Firebase authentication error: Token used too early, 1751584795 < 1751585249. Check that your computer's clock is set correctly.
+[2025-07-03 23:19:55,164] [ERROR] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": false, "timestamp": "2025-07-03T23:19:55.164586+00:00", "error": "Invalid Firebase token"}
+[2025-07-03 23:21:07,668] [ERROR] [users.authentication] Firebase authentication error: Token used too early, 1751584867 < 1751585431. Check that your computer's clock is set correctly.
+[2025-07-03 23:21:07,669] [ERROR] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": false, "timestamp": "2025-07-03T23:21:07.668751+00:00", "error": "Invalid Firebase token"}
+[2025-07-03 23:21:08,583] [ERROR] [users.authentication] Firebase authentication error: Token used too early, 1751584868 < 1751585431. Check that your computer's clock is set correctly.
+[2025-07-03 23:21:08,595] [ERROR] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": false, "timestamp": "2025-07-03T23:21:08.594879+00:00", "error": "Invalid Firebase token"}
+[2025-07-03 23:22:11,343] [ERROR] [users.authentication] Firebase authentication error: Token used too early, 1751584931 < 1751585496. Check that your computer's clock is set correctly.
+[2025-07-03 23:22:11,346] [ERROR] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": false, "timestamp": "2025-07-03T23:22:11.345924+00:00", "error": "Invalid Firebase token"}
+[2025-07-03 23:22:11,934] [ERROR] [users.authentication] Firebase authentication error: Token used too early, 1751584931 < 1751585496. Check that your computer's clock is set correctly.
+[2025-07-03 23:22:11,936] [ERROR] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": false, "timestamp": "2025-07-03T23:22:11.935582+00:00", "error": "Invalid Firebase token"}
+[2025-07-04 19:40:16,141] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-04 19:40:16,262] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-04 19:42:08,939] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-04 19:42:09,296] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-04 19:46:22,265] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-04 19:46:22,499] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-04 20:08:16,810] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-04 20:08:17,148] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-04 20:10:29,842] [ERROR] [users.authentication] Firebase authentication error: Token used too early, 1751659829 < 1751659917. Check that your computer's clock is set correctly.
+[2025-07-04 20:10:29,844] [ERROR] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": false, "timestamp": "2025-07-04T20:10:29.843743+00:00", "error": "Invalid Firebase token"}
+[2025-07-04 20:10:30,625] [ERROR] [users.authentication] Firebase authentication error: Token used too early, 1751659830 < 1751659917. Check that your computer's clock is set correctly.
+[2025-07-04 20:10:30,656] [ERROR] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": false, "timestamp": "2025-07-04T20:10:30.656203+00:00", "error": "Invalid Firebase token"}
+[2025-07-04 20:11:06,358] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-04 20:11:07,527] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-04 23:24:15,093] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-04 23:24:15,638] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-04 23:25:18,179] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-04 23:25:18,341] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-04 23:26:20,697] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:26:20,815] [INFO] [users.authentication] New user created: lkaitshit@gmail.com
+[2025-07-04 23:26:20,914] [INFO] [venti_logger] [USER_LOGIN] User login attempt via firebase | Details: {"method": "firebase", "success": true, "timestamp": "2025-07-04T23:26:20.914062+00:00"}
+[2025-07-04 23:26:21,682] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:26:21,709] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:26:21,858] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:26:21,943] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:26:21,995] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:26:22,190] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:26:22,281] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:26:22,327] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:26:22,482] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:26:22,498] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:26:22,612] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:26:22,757] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:26:44,859] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:26:44,903] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:26:45,028] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:26:45,070] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:26:50,327] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:26:50,383] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:26:57,139] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:26:57,187] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:27:03,060] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:27:03,119] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:27:03,339] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:27:03,398] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:27:03,774] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:27:03,831] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:27:03,839] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:27:03,903] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:27:04,076] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:27:04,137] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:27:25,811] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:27:25,826] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:27:25,836] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:27:25,974] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:27:26,005] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:27:26,119] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:27:26,143] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:27:26,183] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:27:26,328] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:27:26,378] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:27:26,455] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:27:26,575] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:36:55,694] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-04 23:36:56,013] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-04 23:37:09,771] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-04 23:37:10,055] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-04 23:37:16,289] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-04 23:37:16,531] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-04 23:37:28,103] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-04 23:37:28,352] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-04 23:38:32,344] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:38:32,472] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:38:32,503] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:38:32,574] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:38:32,757] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:38:32,810] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:38:32,885] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:38:33,109] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:38:33,173] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:38:33,307] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:38:34,039] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:38:34,152] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:52:28,932] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:52:29,036] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:52:29,062] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:52:29,080] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:52:29,248] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:52:29,400] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:52:29,745] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:52:29,989] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:52:30,084] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:52:30,350] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:52:30,797] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:52:30,899] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:52:47,342] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:52:47,370] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:52:47,344] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:52:47,640] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:52:47,690] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:52:47,869] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:52:48,844] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:52:48,891] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:52:49,229] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:52:49,704] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:52:50,976] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:52:51,093] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:53:15,448] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:53:15,534] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:53:15,589] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:53:15,673] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:53:15,789] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:53:15,883] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:53:16,369] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:53:16,378] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:53:16,503] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-04 23:53:16,533] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:53:16,577] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:53:16,678] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-04 23:55:35,330] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-04 23:55:36,133] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-05 00:03:05,161] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:03:05,248] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:03:05,266] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:03:05,319] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:03:05,499] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:03:05,525] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:03:05,800] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:03:05,847] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:03:05,894] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:03:06,027] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:03:06,120] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:03:06,185] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:14:53,727] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:14:53,755] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:14:53,841] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:14:53,862] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:14:53,928] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:14:54,058] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:14:54,214] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:14:54,226] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:14:54,276] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:14:54,375] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:14:54,443] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:14:54,496] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:21:07,907] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-05 00:21:08,022] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-05 00:26:00,480] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:26:00,482] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:26:00,533] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:26:00,643] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:26:00,775] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:26:00,888] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:26:01,092] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:26:01,343] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:26:01,353] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:26:01,497] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:26:01,738] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:26:01,815] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:27:43,191] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-05 00:27:43,407] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-05 00:27:56,092] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-05 00:27:56,218] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-05 00:28:08,883] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-05 00:28:09,628] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-05 00:28:23,917] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-05 00:28:24,038] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-05 00:28:44,427] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-05 00:28:44,806] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-05 00:31:07,788] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:31:07,830] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:31:07,845] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:31:07,971] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:31:08,165] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:31:08,185] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:31:08,343] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:31:08,436] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:31:08,445] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:31:08,512] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:31:08,746] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:31:08,776] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:31:18,970] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:31:19,018] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:31:19,030] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:31:19,177] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:31:19,248] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:31:19,415] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:31:19,482] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:31:19,626] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:31:19,718] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:31:19,784] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:31:19,887] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:31:19,939] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:31:53,665] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-05 00:31:53,753] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-05 00:35:05,503] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-05 00:35:06,204] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-05 00:35:19,242] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-05 00:35:19,442] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-05 00:35:27,839] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-05 00:35:28,556] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-05 00:35:40,822] [INFO] [users.authentication] Using default service account from: /home/meeh/Desktop/venti2.0/backend/firebase-service-account.json
+[2025-07-05 00:35:40,995] [INFO] [users.authentication] Firebase Admin SDK initialized with default service account
+[2025-07-05 00:35:55,255] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-05 00:35:55,473] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-05 00:42:38,678] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:42:38,761] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:42:38,796] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:42:38,892] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:42:38,992] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:42:39,081] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:42:39,231] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:42:39,308] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:42:39,361] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:42:39,450] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:42:39,527] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:42:39,585] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:42:48,712] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:42:48,789] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:42:48,854] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:42:48,865] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:42:49,003] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:42:49,118] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:42:49,123] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:42:49,250] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:42:49,409] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:42:49,433] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:42:49,493] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:42:49,578] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:57:08,911] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:57:08,920] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:57:09,109] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:57:09,349] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:57:09,455] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:57:09,739] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:57:10,137] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:57:10,528] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:57:10,626] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:57:10,694] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:57:10,930] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:57:11,042] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:57:41,677] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:57:41,789] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:57:41,830] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:57:41,855] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:57:42,181] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:57:42,280] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:57:42,459] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:57:42,574] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:57:42,792] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:57:42,808] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 00:57:42,946] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 00:57:42,985] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:02:28,889] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:02:28,893] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:02:29,018] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:02:29,214] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:02:29,301] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:02:29,349] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:02:57,805] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:02:57,816] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:02:57,822] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:02:57,945] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:02:58,024] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:02:58,060] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:02:58,595] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:02:58,604] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:02:58,615] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:02:58,745] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:02:58,769] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:02:58,840] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:04:32,475] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:04:32,477] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:04:32,479] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:04:32,699] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:04:32,733] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:04:32,877] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:06:33,371] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:06:33,415] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:06:33,570] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:06:33,612] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:06:33,671] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:06:33,837] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:06:59,353] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:06:59,362] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:06:59,366] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:06:59,420] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:06:59,458] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:06:59,582] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:06:59,588] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:06:59,669] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:06:59,690] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:06:59,852] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:06:59,976] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:07:00,026] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:08:54,630] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:08:54,707] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:08:54,737] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:08:54,743] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:08:54,881] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:08:54,920] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:11:01,589] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:11:01,613] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:11:01,627] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:11:01,725] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:11:01,744] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:11:01,806] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:11:01,972] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:11:02,024] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:11:02,111] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:11:02,113] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:11:02,189] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:11:02,255] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:13:43,607] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:13:43,620] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:13:43,623] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:13:43,723] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:13:43,769] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:13:43,790] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:13:53,931] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:13:53,948] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:13:53,950] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:13:54,075] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:13:54,130] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:13:54,289] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:13:55,016] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:13:55,042] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:13:55,051] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:13:55,152] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:13:55,195] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:13:55,327] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:18:38,465] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:18:38,493] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:18:38,514] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:18:38,810] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:18:39,206] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:18:39,490] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:22:48,985] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:22:49,094] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:22:49,140] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:22:49,218] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:22:49,244] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:22:49,647] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:23:04,410] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:23:04,425] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:23:04,440] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:23:04,482] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:23:04,582] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:23:04,611] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:23:04,850] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:23:04,914] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:23:04,942] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:23:04,955] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:23:05,008] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:23:05,111] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:23:25,369] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:23:25,386] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:23:25,390] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:23:25,436] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:23:25,563] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:23:25,614] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:23:25,710] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:23:25,861] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:23:25,941] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:23:25,970] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:23:26,037] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:23:26,337] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:25:01,678] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:25:01,772] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:25:01,806] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:25:01,988] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:25:02,093] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:25:02,355] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:25:02,587] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:25:02,763] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:25:02,766] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:25:03,047] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:25:03,081] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:25:03,109] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:25:22,325] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:25:22,363] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:25:22,543] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:25:22,638] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:25:22,777] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:25:22,803] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:25:23,133] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:25:23,183] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:25:23,491] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:25:23,538] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:25:23,576] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:25:23,646] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:25:38,870] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:25:38,883] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:25:38,922] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:25:39,086] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:25:39,223] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:25:39,342] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:25:39,997] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:25:40,010] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:25:40,013] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:25:40,248] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:25:40,289] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:25:40,341] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:29:20,374] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:29:20,442] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:29:20,765] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:29:20,827] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:29:20,893] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:29:20,907] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:29:42,601] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:29:42,602] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:29:42,613] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:29:42,724] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:29:42,739] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:29:42,839] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:29:43,048] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:29:43,066] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:29:43,113] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:29:43,219] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:29:43,966] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:29:44,045] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:29:56,541] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:29:56,671] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:30:11,093] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:30:11,095] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:30:11,121] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:30:11,268] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:30:11,311] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:30:11,391] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:30:11,753] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:30:11,755] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:30:11,770] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:30:11,885] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:30:11,902] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:30:12,039] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:30:15,697] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:30:15,739] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:32:49,222] [INFO] [users.authentication] Using service account from: ./firebase-service-account.json
+[2025-07-05 01:32:49,730] [INFO] [users.authentication] Firebase Admin SDK initialized with service account
+[2025-07-05 01:32:55,228] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:32:55,284] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:32:59,083] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:32:59,130] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:33:08,887] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:33:08,931] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:33:09,054] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:33:09,102] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:33:09,146] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:33:09,353] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:33:09,894] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:33:09,895] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:33:09,897] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:33:10,008] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:33:10,046] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:33:10,128] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:36:12,612] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:36:12,633] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:36:12,703] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:36:12,769] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:36:12,874] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:36:12,927] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:36:49,808] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:36:49,808] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:36:49,814] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:36:49,862] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:36:49,963] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:36:50,044] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:36:50,110] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:36:50,147] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:36:50,191] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:36:50,244] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:36:50,310] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:36:50,337] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:40:02,441] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:40:02,465] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:40:02,513] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:40:02,697] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:40:02,854] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:40:02,917] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:40:30,896] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:40:30,913] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:40:31,025] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:40:31,203] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:40:32,151] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:40:32,264] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:40:32,290] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:40:32,364] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:40:32,519] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:40:32,644] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:40:32,889] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:40:33,011] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:42:13,303] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:42:13,327] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:42:13,359] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:42:13,551] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:42:13,590] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:42:13,612] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:45:53,027] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:45:53,029] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:45:53,093] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:45:53,136] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:45:53,226] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:45:53,302] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:45:53,551] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:45:53,595] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:45:53,617] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:45:53,717] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:45:53,766] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:45:53,846] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:48:55,502] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:48:55,638] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:48:55,863] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:48:55,921] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:48:55,993] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:48:56,068] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:49:10,898] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:49:10,899] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:49:10,905] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:49:11,005] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:49:11,075] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:49:11,115] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:49:11,332] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:49:11,348] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:49:11,352] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:49:11,470] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:49:11,494] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:49:11,514] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:51:43,383] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:51:43,516] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:51:43,537] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:51:43,755] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:51:43,847] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:51:43,914] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:54:12,782] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:54:12,842] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:54:12,847] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:54:13,039] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:54:13,086] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:54:13,133] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:54:35,480] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:54:35,504] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:54:35,505] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:54:35,684] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:54:35,712] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:54:35,747] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:57:03,840] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:57:03,891] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:57:04,019] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:57:04,147] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:57:04,174] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:57:04,427] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:59:27,209] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:59:27,235] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:59:27,247] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 01:59:27,418] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:59:27,445] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 01:59:27,474] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:01:01,224] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:01:01,380] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:01:01,397] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:01:01,583] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:01:01,767] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:01:01,889] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:03:27,598] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:03:27,604] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:03:27,647] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:03:27,978] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:03:28,039] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:03:28,280] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:05:04,785] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:05:04,829] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:05:04,831] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:05:05,111] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:05:05,132] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:05:05,239] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:07:46,258] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:07:46,271] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:07:46,291] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:07:46,641] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:07:46,730] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:07:46,751] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:09:27,729] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:09:27,781] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:09:27,827] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:09:27,946] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:09:28,017] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:09:28,134] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:11:22,017] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:11:22,033] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:11:22,038] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:11:22,242] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:11:22,267] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:11:22,300] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:13:17,308] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:13:17,352] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:13:17,357] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:13:17,468] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:13:17,599] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:13:17,652] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:14:44,297] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:14:44,347] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:14:44,368] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:14:44,566] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:14:44,648] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:14:44,886] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:15:08,517] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:15:08,562] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:15:08,579] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:15:08,759] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:15:08,813] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:15:09,029] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:15:10,475] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:15:10,518] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:15:10,610] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:15:10,780] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:15:10,781] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:15:10,972] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:16:22,432] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:16:22,580] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:16:22,585] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:16:22,588] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:16:22,887] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:16:22,982] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:19:00,282] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:19:00,323] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:19:00,385] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:19:00,481] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:19:00,802] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:19:00,895] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:20:37,095] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:20:37,131] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:20:37,140] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:20:37,249] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:20:37,280] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:20:37,349] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:20:37,422] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:20:37,425] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:20:37,482] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:20:37,528] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:20:37,551] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:20:37,651] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:20:44,994] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:20:45,045] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:20:47,570] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:20:47,614] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:20:49,234] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:20:49,269] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:21:57,215] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:21:57,262] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:21:57,350] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:21:57,600] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:21:57,730] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:21:57,846] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:22:12,792] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:22:12,968] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:22:14,361] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:22:14,425] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:23:06,226] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:23:06,307] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:23:07,715] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:23:07,838] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:24:22,015] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:24:22,068] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:24:22,577] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:24:22,609] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:24:22,704] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:24:22,720] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:26:02,176] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:26:02,201] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:26:02,286] [INFO] [users.authentication] Firebase token verified for user: lkaitshit@gmail.com (UID: 6V37yQkodqck9uEgIiKcLnBHnxu2)
+[2025-07-05 02:26:02,287] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:26:02,414] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com
+[2025-07-05 02:26:02,469] [INFO] [users.authentication] Existing user found and updated: lkaitshit@gmail.com

@@ -51,6 +51,10 @@ export const signInWithGoogle = async (): Promise<User> => {
     
     // Send token to Django backend using the correct endpoint
     console.log('Sending token to Django backend...');
+    console.log('Token length:', firebaseToken.length);
+    console.log('Token preview:', firebaseToken.substring(0, 50) + '...');
+    
+    try {
     const response = await api.post('auth/firebase-login/', {
       firebase_token: firebaseToken
     });
@@ -72,6 +76,22 @@ export const signInWithGoogle = async (): Promise<User> => {
     }
     
     return result.user;
+    } catch (apiError: any) {
+      console.error('❌ Django backend authentication failed:', {
+        status: apiError.response?.status,
+        statusText: apiError.response?.statusText,
+        data: apiError.response?.data,
+        message: apiError.message
+      });
+      
+      // Log the specific error from Django
+      if (apiError.response?.data?.error) {
+        console.error('Django error message:', apiError.response.data.error);
+      }
+      
+      // Re-throw the error with more context
+      throw new Error(`Backend authentication failed: ${apiError.response?.data?.error || apiError.message}`);
+    }
   } catch (error: any) {
     console.error('Detailed error information:', {
       message: error.message,

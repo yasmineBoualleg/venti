@@ -1,8 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { LanguageProvider } from './context/LanguageContext';
 import { LoadingProvider } from './context/LoadingContext';
+import AuthStatusHandler from './components/AuthStatusHandler';
 import Landing from './pages/Landing';
 import Login from './pages/Login';
 import Welcome from './pages/Welcome';
@@ -37,8 +38,8 @@ const App = () => {
     <LoadingProvider>
       <ApiLoadingControllerBridge />
     <AuthProvider>
+        <AuthStatusHandler>
       <LanguageProvider>
-        <Router>
           <div className="min-h-screen">
             <Routes>
               {/* Public routes */}
@@ -56,27 +57,13 @@ const App = () => {
                 <Route path="/chat" element={<ProtectedRoute><ChatPage /></ProtectedRoute>} />
                 <Route path="/study-arena" element={<ProtectedRoute><StudyArenaPage /></ProtectedRoute>} />
                 {/* Admin-only routes */}
-              <Route
-                  path="/admin/logs" 
-                element={
-                    <AdminProtectedRoute>
-                      <LogsViewer />
-                    </AdminProtectedRoute>
-                }
-              />
-              <Route
-                  path="/admin/test-logging" 
-                element={
-                    <AdminProtectedRoute>
-                      <TestLogging />
-                    </AdminProtectedRoute>
-                  } 
-                />
+                <Route path="/admin/logs" element={<AdminProtectedRoute><LogsViewer /></AdminProtectedRoute>} />
+                <Route path="/admin/test-logging" element={<AdminProtectedRoute><TestLogging /></AdminProtectedRoute>} />
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </div>
-        </Router>
       </LanguageProvider>
+        </AuthStatusHandler>
     </AuthProvider>
     </LoadingProvider>
   );

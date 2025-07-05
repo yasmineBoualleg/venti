@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth import get_user_model
-from .models import Profile, CollabRequest, PastCollaboration
+from .models import Profile, CollabRequest, PastCollaboration, XPLog, UserActivity
 
 User = get_user_model()
 
@@ -30,26 +30,38 @@ class CustomUserAdmin(UserAdmin):
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
     """Admin for Profile model."""
-    list_display = ('user', 'xp', 'skills_count', 'interests_count', 'hobbies_count', 'badges_count', 'created_at')
-    list_filter = ('created_at', 'updated_at')
+    list_display = ('user', 'xp', 'daily_xp_earned', 'last_daily_reset', 'created_at')
+    list_filter = ('created_at', 'last_daily_reset')
     search_fields = ('user__email', 'user__username', 'bio')
-    readonly_fields = ('xp', 'badges', 'created_at', 'updated_at')
+    readonly_fields = ('created_at', 'updated_at', 'xp', 'daily_xp_earned', 'last_daily_reset')
+    date_hierarchy = 'created_at'
     
-    def skills_count(self, obj):
-        return len(obj.skills)
-    skills_count.short_description = 'Skills'
-    
-    def interests_count(self, obj):
-        return len(obj.interests)
-    interests_count.short_description = 'Interests'
-    
-    def hobbies_count(self, obj):
-        return len(obj.hobbies)
-    hobbies_count.short_description = 'Hobbies'
-    
-    def badges_count(self, obj):
-        return len(obj.badges)
-    badges_count.short_description = 'Badges'
+    fieldsets = (
+        ('User Info', {'fields': ('user',)}),
+        ('XP & Activity', {'fields': ('xp', 'daily_xp_earned', 'last_daily_reset', 'last_activity')}),
+        ('Profile Content', {'fields': ('bio', 'skills', 'interests', 'hobbies', 'profile_image', 'badges')}),
+        ('Timestamps', {'fields': ('created_at', 'updated_at')}),
+    )
+
+@admin.register(XPLog)
+class XPLogAdmin(admin.ModelAdmin):
+    """Admin for XPLog model."""
+    list_display = ('profile', 'amount', 'reason', 'created_at')
+    list_filter = ('reason', 'created_at')
+    search_fields = ('profile__user__email', 'description')
+    readonly_fields = ('created_at',)
+    date_hierarchy = 'created_at'
+    ordering = ('-created_at',)
+
+@admin.register(UserActivity)
+class UserActivityAdmin(admin.ModelAdmin):
+    """Admin for UserActivity model."""
+    list_display = ('user', 'session_start', 'session_end', 'duration_minutes', 'is_active')
+    list_filter = ('is_active', 'session_start')
+    search_fields = ('user__email',)
+    readonly_fields = ('session_start', 'session_end', 'duration_minutes')
+    date_hierarchy = 'session_start'
+    ordering = ('-session_start',)
 
 @admin.register(CollabRequest)
 class CollabRequestAdmin(admin.ModelAdmin):
@@ -64,7 +76,7 @@ class CollabRequestAdmin(admin.ModelAdmin):
 class PastCollaborationAdmin(admin.ModelAdmin):
     """Admin for PastCollaboration model."""
     list_display = ('user_a', 'user_b', 'skill_used', 'collab_type', 'timestamp')
-    list_filter = ('collab_type', 'skill_used', 'timestamp')
+    list_filter = ('collab_type', 'timestamp', 'skill_used')
     search_fields = ('user_a__email', 'user_b__email', 'skill_used')
     readonly_fields = ('timestamp',)
     date_hierarchy = 'timestamp' 

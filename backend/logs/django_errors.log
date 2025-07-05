@@ -50,3 +50,439 @@ Traceback (most recent call last):
 AttributeError: Got AttributeError when attempting to get a value for field `email` on serializer `UserSerializer`.
 The serializer field might be named incorrectly and not match any attribute or key on the `AnonymousUser` instance.
 Original exception text was: 'AnonymousUser' object has no attribute 'email'.
+[2025-07-04 23:26:50,586] [ERROR] [django.request] Internal Server Error: /api/users/profiles/end_activity/
+Traceback (most recent call last):
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/users/views.py", line 185, in end_activity
+    'duration_minutes': session.duration_minutes,
+                        ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'duration_minutes'
+[2025-07-04 23:38:33,978] [ERROR] [django.request] Internal Server Error: /api/users/profiles/me/
+Traceback (most recent call last):
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/users/views.py", line 90, in me
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 507, in to_representation
+    for field in fields:
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 1148, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'skill_levels' was declared on serializer ProfileSerializer, but has not been included in the 'fields' option.
+[2025-07-04 23:38:34,535] [ERROR] [django.request] Internal Server Error: /api/users/profiles/me/
+Traceback (most recent call last):
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/users/views.py", line 90, in me
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 507, in to_representation
+    for field in fields:
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 1148, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'skill_levels' was declared on serializer ProfileSerializer, but has not been included in the 'fields' option.
+[2025-07-04 23:52:30,714] [ERROR] [django.request] Internal Server Error: /api/users/profiles/me/
+Traceback (most recent call last):
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/users/views.py", line 90, in me
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 507, in to_representation
+    for field in fields:
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 1148, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'skill_levels' was declared on serializer ProfileSerializer, but has not been included in the 'fields' option.
+[2025-07-04 23:52:31,417] [ERROR] [django.request] Internal Server Error: /api/users/profiles/me/
+Traceback (most recent call last):
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/users/views.py", line 90, in me
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 507, in to_representation
+    for field in fields:
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 1148, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'skill_levels' was declared on serializer ProfileSerializer, but has not been included in the 'fields' option.
+[2025-07-04 23:52:50,781] [ERROR] [django.request] Internal Server Error: /api/users/profiles/me/
+Traceback (most recent call last):
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/users/views.py", line 90, in me
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 507, in to_representation
+    for field in fields:
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 1148, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'skill_levels' was declared on serializer ProfileSerializer, but has not been included in the 'fields' option.
+[2025-07-04 23:52:51,862] [ERROR] [django.request] Internal Server Error: /api/users/profiles/me/
+Traceback (most recent call last):
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/users/views.py", line 90, in me
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 507, in to_representation
+    for field in fields:
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 1148, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'skill_levels' was declared on serializer ProfileSerializer, but has not been included in the 'fields' option.
+[2025-07-04 23:53:16,264] [ERROR] [django.request] Internal Server Error: /api/users/profiles/me/
+Traceback (most recent call last):
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/users/views.py", line 90, in me
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 507, in to_representation
+    for field in fields:
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 1148, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'skill_levels' was declared on serializer ProfileSerializer, but has not been included in the 'fields' option.
+[2025-07-04 23:53:17,254] [ERROR] [django.request] Internal Server Error: /api/users/profiles/me/
+Traceback (most recent call last):
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/users/views.py", line 90, in me
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 507, in to_representation
+    for field in fields:
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 368, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/meeh/Desktop/venti2.0/backend/venv/lib/python3.12/site-packages/rest_framework/serializers.py", line 1148, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'skill_levels' was declared on serializer ProfileSerializer, but has not been included in the 'fields' option.

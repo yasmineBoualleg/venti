@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MdHome, MdGroups, MdMenuBook, MdNote, MdForum, MdChat, MdEmojiEvents, MdPerson, MdMenu, MdClose } from 'react-icons/md';
+import { useTransitionOverlay } from '../context/TransitionOverlayContext';
 
 const Navigation = () => {
   const location = useLocation();
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { triggerTransition, isTransitioning } = useTransitionOverlay();
 
   const navItems = [
     { path: '/', icon: <MdHome size={24} />, label: 'Homepage', name: 'homepage' },
@@ -43,10 +45,13 @@ const Navigation = () => {
     return location.pathname.startsWith(path);
   };
 
+  // Hide nav when transitioning
+  if (isTransitioning) return null;
+
   // Sidebar for desktop/tablet
   const sidebar = (
     <nav className="fixed top-0 left-0 h-full w-16 flex-col items-center justify-center z-50 hidden sm:flex">
-      <div className="flex flex-col items-center h-full w-full overflow-y-auto py-6 px-2 bg-white/80 backdrop-blur-xl shadow-2xl rounded-r-3xl mt-8 mb-8">
+      <div className="flex flex-col items-center h-full w-full overflow-y-auto py-6 px-2 bg-white shadow-2xl rounded-r-3xl mt-8 mb-8">
         <motion.div
           className="flex flex-col items-center justify-center h-full w-full space-y-4"
           variants={containerVariants}
@@ -55,12 +60,14 @@ const Navigation = () => {
         >
           {navItems.map((item) => (
             <motion.div key={item.path} variants={itemVariants} className="w-full">
-              <Link
-                to={item.path}
-                className="relative group w-full flex flex-col items-center"
+              <button
+                type="button"
+                className="relative group w-full flex flex-col items-center bg-transparent border-none outline-none"
                 onMouseEnter={() => setHoveredItem(item.name)}
                 onMouseLeave={() => setHoveredItem(null)}
                 aria-label={item.label}
+                onClick={e => triggerTransition(e, item.path)}
+                style={{ cursor: 'pointer' }}
               >
                 <div className="relative flex flex-col items-center w-full">
                   <span>
@@ -73,7 +80,7 @@ const Navigation = () => {
                     </span>
                   </span>
                 </div>
-              </Link>
+              </button>
             </motion.div>
           ))}
         </motion.div>
@@ -86,7 +93,7 @@ const Navigation = () => {
     <>
       {/* Hamburger button */}
       <button
-        className="fixed bottom-6 left-6 z-50 sm:hidden bg-white/80 backdrop-blur-xl shadow-xl rounded-full p-3 flex items-center justify-center"
+        className="venti-hamburger fixed bottom-6 left-6 z-50 sm:hidden bg-white shadow-xl rounded-full p-3 flex items-center justify-center"
         onClick={() => setMobileOpen((open) => !open)}
         aria-label="Open navigation menu"
       >
@@ -118,19 +125,19 @@ const Navigation = () => {
               }}
               style={{ pointerEvents: mobileOpen ? 'auto' : 'none', position: 'absolute', left: 0, right: 0 }}
             >
-              <Link
-                to={item.path}
+              <button
+                type="button"
                 className="flex items-center justify-center w-14 h-14 rounded-full shadow-md transition-all duration-300 bg-white/0 hover:bg-white/20 active:bg-white/30"
                 style={{ minWidth: 48, minHeight: 48 }}
                 aria-label={item.label}
-                onClick={() => setMobileOpen(false)}
+                onClick={e => { setMobileOpen(false); triggerTransition(e, item.path); }}
               >
                 {React.cloneElement(item.icon, {
                   color: isActive(item.path) ? ORANGE : BLUE,
                   size: 28,
                   style: { transition: 'color 0.3s ease-in-out' }
                 })}
-              </Link>
+              </button>
             </motion.li>
           ))}
         </motion.ul>
