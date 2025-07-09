@@ -1,0 +1,8 @@
+id,password,last_login,is_superuser,username,first_name,last_name,is_staff,is_active,date_joined,email,firebase_uid,place
+1,!0oYKE7GS492avfu7wGOQ1UKgFGduLkwDdaZFdrdg,2025-06-30 11:01:21.847197+00:00,False,bouallegyasmine260,yasmine boualleg,,False,True,2025-06-28 23:11:18.008056+00:00,bouallegyasmine260@gmail.com,bHszjbCkQpP4i4ZOa1YS4sesLOr2,
+2,pbkdf2_sha256$600000$n7Wgq5zq31tpy3QI6mRa6g$QOdy8dPkuLhCPZjJgLfDnB0pwvHOSNU4Z3tFh0JGIkc=,2025-06-30 13:14:33.249191+00:00,True,airijapan1,yasmin,,True,True,2025-06-29 11:47:44.403674+00:00,airijapan1@gmail.com,2Oj0GqJwaoTGIyBOWzSXwWb26qD2,
+3,!w5viTVTbolk9WQ3gCpur3egTS0QUtZVt3nXVJzcT,2025-06-29 21:01:22.532905+00:00,False,usmista2006,MInA BlG,,False,True,2025-06-29 21:01:22.455375+00:00,usmista2006@gmail.com,HY647ibGdyNkYREdkjZoL7NgKBH3,
+4,!FsfaPKkrmusXOQwExRMlVfKHTVvs5Rdy56Ie1D0Y,2025-07-01 14:25:29.672546+00:00,False,dangdangtinder,dang dang,,False,True,2025-06-29 23:01:14.813798+00:00,dangdangtinder@gmail.com,kLTmtjgCQjf6OUuhb3eHAAaIDNy2,
+5,!A7LDew3KhDt2rBhcZIsIW8I0ya2CB1or7Jl8BAh2,2025-07-01 14:26:33.535747+00:00,False,kaito443322,Hashimoto kaito,,False,True,2025-07-01 14:26:33.470597+00:00,kaito443322@gmail.com,1SYe09m57EXRvBrI6JIhs20PLN23,
+6,!YRv7RDK7VoIu19WVsCBr0p4DUT9Xba2crKHFsLWs,2025-07-03 19:41:35.729908+00:00,False,kaitkaito168,kaito kait,,False,True,2025-07-03 19:41:35.097601+00:00,kaitkaito168@gmail.com,WPcZHqTw3JPg1gyrgUcyMEcXLTF2,
+7,!uPv45sakLc0brMdpxuqORBs0CADjQZaJzgyu4FNw,2025-07-07 16:03:15.848439+00:00,False,lkaitshit,kaitshit l,,False,True,2025-07-04 23:26:20.715327+00:00,lkaitshit@gmail.com,6V37yQkodqck9uEgIiKcLnBHnxu2,

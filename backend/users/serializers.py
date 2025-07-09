@@ -52,7 +52,7 @@ class ProfileSerializer(serializers.ModelSerializer):
 
 class ProfileUpdateSerializer(serializers.ModelSerializer):
     """Serializer for updating user profiles."""
-    profile_image = serializers.CharField(required=False, allow_blank=True)
+    profile_image = serializers.ImageField(required=False, allow_null=True)
     
     class Meta:
         model = Profile
@@ -82,14 +82,15 @@ class ProfileUpdateSerializer(serializers.ModelSerializer):
             return None
         
         # Check if it's a base64 encoded image
-        if value.startswith('data:image'):
+        if isinstance(value, str) and value.startswith('data:image'):
             try:
                 # Extract the base64 data
                 format, imgstr = value.split(';base64,')
                 ext = format.split('/')[-1]
                 
                 # Generate filename
-                filename = f"profile_image_{self.instance.user.id}.{ext}"
+                user_id = self.instance.user.id if self.instance else self.context['request'].user.id
+                filename = f"profile_image_{user_id}.{ext}"
                 
                 # Convert base64 to file
                 data = ContentFile(base64.b64decode(imgstr), name=filename)
@@ -98,6 +99,12 @@ class ProfileUpdateSerializer(serializers.ModelSerializer):
                 raise serializers.ValidationError(f"Invalid image format: {str(e)}")
         
         return value
+    
+    def to_internal_value(self, data):
+        """Handle the case where profile_image is sent as null or empty string."""
+        if 'profile_image' in data and (data['profile_image'] is None or data['profile_image'] == ''):
+            data.pop('profile_image')  # Remove the field so it doesn't get validated
+        return super().to_internal_value(data)
 
 class CollabRequestSerializer(serializers.ModelSerializer):
     """Serializer for collaboration requests."""
@@ -129,6 +136,8 @@ class CollabRequestSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         """Create a new collaboration request."""
         request = self.context.get('request')
+        if not request or not hasattr(request, 'user'):
+            raise serializers.ValidationError("Request user is required to create a collaboration request")
         validated_data['from_user'] = request.user
         validated_data['to_user_id'] = validated_data.pop('to_user_id')
         return super().create(validated_data)

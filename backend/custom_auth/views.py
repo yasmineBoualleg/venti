@@ -23,8 +23,8 @@ def firebase_login(request):
     """
     firebase_token = request.data.get('firebase_token')
     
-    print(f"🔥 Firebase login attempt - Token length: {len(firebase_token) if firebase_token else 0}")
-    print(f"🔥 Request data: {request.data}")
+    logger.info('AUTHENTICATION', f"Firebase login attempt - Token length: {len(firebase_token) if firebase_token else 0}")
+    logger.info('AUTHENTICATION', f"Request data: {request.data}")
     
     if not firebase_token:
         logger.warning('AUTHENTICATION', 'Firebase login attempt without token', request=request)
@@ -34,13 +34,13 @@ def firebase_login(request):
         )
     
     try:
-        print(f"🔥 Attempting to authenticate with Firebase token...")
+        logger.info('AUTHENTICATION', "Attempting to authenticate with Firebase token...")
         # Use Firebase authentication backend
         auth_backend = FirebaseAuthenticationBackend()
         user = auth_backend.authenticate(request, firebase_token=firebase_token)
         
         if user:
-            print(f"✅ Authentication successful for user: {user.email}")
+            logger.info('AUTHENTICATION', f"Authentication successful for user: {user.email}")
             # Log the user in, specifying the backend explicitly
             login(request, user, backend='users.authentication.FirebaseAuthenticationBackend')
             
@@ -66,7 +66,7 @@ def firebase_login(request):
                 'authenticated': True
             }, status=status.HTTP_200_OK)
         else:
-            print(f"❌ Authentication failed - user is None")
+            logger.warning('AUTHENTICATION', "Authentication failed - user is None")
             # Log failed login attempt
             logger.user_login(
                 'unknown', 
@@ -81,10 +81,10 @@ def firebase_login(request):
             )
             
     except Exception as e:
-        print(f"❌ Firebase authentication exception: {e}")
-        print(f"❌ Exception type: {type(e).__name__}")
+        logger.error('AUTHENTICATION', f"Firebase authentication exception: {e}")
+        logger.error('AUTHENTICATION', f"Exception type: {type(e).__name__}")
         import traceback
-        print(f"❌ Traceback: {traceback.format_exc()}")
+        logger.error('AUTHENTICATION', f"Traceback: {traceback.format_exc()}")
         
         # Log authentication error
         logger.authentication_error(e, 'firebase_login', request)
@@ -145,9 +145,9 @@ def debug_firebase_token(request):
     """
     firebase_token = request.data.get('firebase_token')
     
-    print(f"🔍 Debug: Testing Firebase token...")
-    print(f"🔍 Token length: {len(firebase_token) if firebase_token else 0}")
-    print(f"🔍 Token preview: {firebase_token[:50] + '...' if firebase_token else 'None'}")
+    logger.info('FIREBASE_DEBUG', "Debug: Testing Firebase token...")
+    logger.info('FIREBASE_DEBUG', f"Token length: {len(firebase_token) if firebase_token else 0}")
+    logger.info('FIREBASE_DEBUG', f"Token preview: {firebase_token[:50] + '...' if firebase_token else 'None'}")
     
     if not firebase_token:
         return Response(
@@ -159,15 +159,15 @@ def debug_firebase_token(request):
         from firebase_admin import auth
         from firebase_admin.auth import InvalidIdTokenError
         
-        print(f"🔍 Attempting to verify token...")
+        logger.info('FIREBASE_DEBUG', "Attempting to verify token...")
         decoded_token = auth.verify_id_token(firebase_token)
         
-        print(f"✅ Token verification successful!")
-        print(f"🔍 Decoded token keys: {list(decoded_token.keys())}")
-        print(f"🔍 UID: {decoded_token.get('uid', 'Not found')}")
-        print(f"🔍 Email: {decoded_token.get('email', 'Not found')}")
-        print(f"🔍 Issuer: {decoded_token.get('iss', 'Not found')}")
-        print(f"🔍 Audience: {decoded_token.get('aud', 'Not found')}")
+        logger.info('FIREBASE_DEBUG', "Token verification successful!")
+        logger.info('FIREBASE_DEBUG', f"Decoded token keys: {list(decoded_token.keys())}")
+        logger.info('FIREBASE_DEBUG', f"UID: {decoded_token.get('uid', 'Not found')}")
+        logger.info('FIREBASE_DEBUG', f"Email: {decoded_token.get('email', 'Not found')}")
+        logger.info('FIREBASE_DEBUG', f"Issuer: {decoded_token.get('iss', 'Not found')}")
+        logger.info('FIREBASE_DEBUG', f"Audience: {decoded_token.get('aud', 'Not found')}")
         
         return Response({
             'success': True,
@@ -182,15 +182,15 @@ def debug_firebase_token(request):
         })
         
     except InvalidIdTokenError as e:
-        print(f"❌ Invalid token error: {e}")
+        logger.error('FIREBASE_DEBUG', f"Invalid token error: {e}")
         return Response(
             {'error': f'Invalid Firebase token: {str(e)}'}, 
             status=status.HTTP_401_UNAUTHORIZED
         )
     except Exception as e:
-        print(f"❌ Unexpected error: {e}")
+        logger.error('FIREBASE_DEBUG', f"Unexpected error: {e}")
         import traceback
-        print(f"❌ Traceback: {traceback.format_exc()}")
+        logger.error('FIREBASE_DEBUG', f"Traceback: {traceback.format_exc()}")
         return Response(
             {'error': f'Token verification failed: {str(e)}'}, 
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
