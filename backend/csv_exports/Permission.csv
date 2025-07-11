@@ -1,0 +1,45 @@
+id,name,content_type,codename
+1,Can add log entry,Administration | log entry,add_logentry
+2,Can change log entry,Administration | log entry,change_logentry
+3,Can delete log entry,Administration | log entry,delete_logentry
+4,Can view log entry,Administration | log entry,view_logentry
+9,Can add group,Authentication and Authorization | group,add_group
+10,Can change group,Authentication and Authorization | group,change_group
+11,Can delete group,Authentication and Authorization | group,delete_group
+12,Can view group,Authentication and Authorization | group,view_group
+5,Can add permission,Authentication and Authorization | permission,add_permission
+6,Can change permission,Authentication and Authorization | permission,change_permission
+7,Can delete permission,Authentication and Authorization | permission,delete_permission
+8,Can view permission,Authentication and Authorization | permission,view_permission
+13,Can add content type,Content Types | content type,add_contenttype
+14,Can change content type,Content Types | content type,change_contenttype
+15,Can delete content type,Content Types | content type,delete_contenttype
+16,Can view content type,Content Types | content type,view_contenttype
+17,Can add session,Sessions | session,add_session
+18,Can change session,Sessions | session,change_session
+19,Can delete session,Sessions | session,delete_session
+20,Can view session,Sessions | session,view_session
+25,Can add Collaboration Request,Users | Collaboration Request,add_collabrequest
+26,Can change Collaboration Request,Users | Collaboration Request,change_collabrequest
+27,Can delete Collaboration Request,Users | Collaboration Request,delete_collabrequest
+28,Can view Collaboration Request,Users | Collaboration Request,view_collabrequest
+33,Can add Past Collaboration,Users | Past Collaboration,add_pastcollaboration
+34,Can change Past Collaboration,Users | Past Collaboration,change_pastcollaboration
+35,Can delete Past Collaboration,Users | Past Collaboration,delete_pastcollaboration
+36,Can view Past Collaboration,Users | Past Collaboration,view_pastcollaboration
+29,Can add Profile,Users | Profile,add_profile
+30,Can change Profile,Users | Profile,change_profile
+31,Can delete Profile,Users | Profile,delete_profile
+32,Can view Profile,Users | Profile,view_profile
+21,Can add user,Users | user,add_user
+22,Can change user,Users | user,change_user
+23,Can delete user,Users | user,delete_user
+24,Can view user,Users | user,view_user
+37,Can add User Activity,Users | User Activity,add_useractivity
+38,Can change User Activity,Users | User Activity,change_useractivity
+39,Can delete User Activity,Users | User Activity,delete_useractivity
+40,Can view User Activity,Users | User Activity,view_useractivity
+41,Can add XP Log,Users | XP Log,add_xplog
+42,Can change XP Log,Users | XP Log,change_xplog
+43,Can delete XP Log,Users | XP Log,delete_xplog
+44,Can view XP Log,Users | XP Log,view_xplog

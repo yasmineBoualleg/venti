@@ -119,29 +119,25 @@ class FirebaseAuthenticationBackend(BaseBackend):
     
     def authenticate(self, request, firebase_token=None):
         if not firebase_token:
-            print("❌ No Firebase token provided")
+            logger.error("No Firebase token provided")
             return None
         
         if not firebase_initialized:
-            print("❌ Firebase Admin SDK not initialized")
             logger.error("Firebase Admin SDK not initialized")
             return None
             
         try:
-            print(f"🔥 Verifying Firebase token...")
             # Verify the Firebase token
             decoded_token = auth.verify_id_token(firebase_token)
             firebase_uid = decoded_token['uid']
             email = decoded_token.get('email', '')
             name = decoded_token.get('name', '')
             
-            print(f"✅ Firebase token verified for user: {email} (UID: {firebase_uid})")
             logger.info(f"Firebase token verified for user: {email} (UID: {firebase_uid})")
             
             # Try to get existing user by Firebase UID
             try:
                 user = User.objects.get(firebase_uid=firebase_uid)
-                print(f"✅ Existing user found: {user.email}")
                 # Update user info if needed
                 if email and user.email != email:
                     user.email = email
@@ -151,7 +147,6 @@ class FirebaseAuthenticationBackend(BaseBackend):
                 logger.info(f"Existing user found and updated: {user.email}")
                 return user
             except User.DoesNotExist:
-                print(f"🆕 Creating new user for: {email}")
                 # Create new user
                 username = email.split('@')[0] if email else f"user_{firebase_uid[:8]}"
                 user = User.objects.create_user(
@@ -160,22 +155,16 @@ class FirebaseAuthenticationBackend(BaseBackend):
                     first_name=name,
                     firebase_uid=firebase_uid
                 )
-                print(f"✅ New user created: {user.email}")
                 logger.info(f"New user created: {user.email}")
                 return user
                 
         except InvalidIdTokenError as e:
-            print(f"❌ Invalid Firebase token: {e}")
             if 'expired' in str(e).lower():
                 logger.error(f"Firebase authentication error: Token expired: {e}")
                 return None
             logger.error(f"Firebase authentication error: {e}")
             return None
         except Exception as e:
-            print(f"❌ Firebase authentication error: {e}")
-            print(f"❌ Exception type: {type(e).__name__}")
-            import traceback
-            print(f"❌ Traceback: {traceback.format_exc()}")
             logger.error(f"Firebase authentication error: {e}")
             return None
     

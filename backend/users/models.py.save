@@ -142,20 +142,20 @@ class Profile(models.Model):
             if self.daily_xp_earned + amount > 100:
                 amount = max(0, 100 - self.daily_xp_earned)
                 if amount == 0:
-                    return {'success': False, 'level_up': False}  # Daily limit reached
-
+                    return False  # Daily limit reached
+        
         if amount > 0:
             old_level = self.level
-            self.xp += amount
+        self.xp += amount
             self.daily_xp_earned += amount
-
+            
             # Calculate new level
             new_level = self.calculate_level()
             level_up = new_level > old_level
             self.level = new_level
-
+            
             self.save()
-
+            
             # Log the XP gain
             XPLog.objects.create(
                 profile=self,
@@ -163,7 +163,7 @@ class Profile(models.Model):
                 reason=reason,
                 description=description
             )
-
+            
             # Return level up info
             return {
                 'success': True,
