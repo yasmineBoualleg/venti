@@ -1,5 +1,5 @@
-import { auth } from '../config/firebase';
 import { User } from 'firebase/auth';
+import { auth } from '../config/firebase';
 
 interface TokenInfo {
   token: string;
@@ -12,17 +12,38 @@ class TokenManager {
   private tokenRefreshInterval: NodeJS.Timeout | null = null;
 
   /**
+   * Store token in localStorage
+   */
+  private storeToken(token: string): void {
+    localStorage.setItem('firebase_token', token);
+  }
+
+  /**
+   * Get token from localStorage
+   */
+  private getStoredToken(): string | null {
+    return localStorage.getItem('firebase_token');
+  }
+
+  /**
+   * Clear stored token from localStorage
+   */
+  private clearStoredToken(): void {
+    localStorage.removeItem('firebase_token');
+  }
+
+  /**
    * Get a valid Firebase token, refreshing if necessary
    */
   async getValidToken(): Promise<string | null> {
     try {
       const user = auth.currentUser;
       if (!user) {
-        return localStorage.getItem('firebase_token');
+        return this.getStoredToken();
       }
 
       // Check if we have a stored token and if it's still valid
-      const storedToken = localStorage.getItem('firebase_token');
+      const storedToken = this.getStoredToken();
       if (storedToken) {
         const tokenInfo = this.parseToken(storedToken);
         if (tokenInfo && this.isTokenValid(tokenInfo)) {
@@ -61,15 +82,29 @@ class TokenManager {
     try {
       console.log('🔄 Refreshing Firebase token...');
       const token = await user.getIdToken(true);
-      localStorage.setItem('firebase_token', token);
+      this.storeToken(token);
       console.log('✅ Token refreshed successfully');
       return token;
     } catch (error) {
       console.error('❌ Failed to refresh token:', error);
       // Clear invalid token
-      localStorage.removeItem('firebase_token');
+      this.clearStoredToken();
       throw error;
     }
+  }
+
+  /**
+   * Public method to get stored token (for AuthContext)
+   */
+  getStoredTokenPublic(): string | null {
+    return this.getStoredToken();
+  }
+
+  /**
+   * Public method to store token (for AuthContext)
+   */
+  storeTokenPublic(token: string): void {
+    this.storeToken(token);
   }
 
   /**
@@ -135,7 +170,7 @@ class TokenManager {
    * Clear all stored tokens
    */
   clearTokens(): void {
-    localStorage.removeItem('firebase_token');
+    this.clearStoredToken();
     localStorage.removeItem('user');
     localStorage.removeItem('token');
     this.stopAutoRefresh();
@@ -145,7 +180,7 @@ class TokenManager {
    * Get token expiration time
    */
   getTokenExpirationTime(): number | null {
-    const token = localStorage.getItem('firebase_token');
+    const token = this.getStoredToken();
     if (!token) return null;
 
     const tokenInfo = this.parseToken(token);
@@ -167,4 +202,4 @@ class TokenManager {
 
 // Export singleton instance
 export const tokenManager = new TokenManager();
-export default tokenManager; 
+export default tokenManager;
